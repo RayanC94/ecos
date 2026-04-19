@@ -2,6 +2,37 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 
+// Minimal SpeechRecognition typings — TypeScript's standard lib doesn't
+// ship these, so we declare the shape we actually use.
+interface SpeechRecognitionAlternative {
+  transcript: string;
+  confidence: number;
+}
+interface SpeechRecognitionResult {
+  readonly length: number;
+  isFinal: boolean;
+  [index: number]: SpeechRecognitionAlternative;
+}
+interface SpeechRecognitionResultList {
+  readonly length: number;
+  [index: number]: SpeechRecognitionResult;
+}
+interface SpeechRecognitionEvent extends Event {
+  resultIndex: number;
+  results: SpeechRecognitionResultList;
+}
+interface SpeechRecognition extends EventTarget {
+  lang: string;
+  continuous: boolean;
+  interimResults: boolean;
+  onresult: ((event: SpeechRecognitionEvent) => void) | null;
+  onend: (() => void) | null;
+  onerror: ((event: Event) => void) | null;
+  start: () => void;
+  stop: () => void;
+  abort: () => void;
+}
+
 declare global {
   interface Window {
     SpeechRecognition: new () => SpeechRecognition;

@@ -281,11 +281,7 @@ export function buildPatientSystemBlocks(caseData: ECOSCase): Array<{
 // ============================================================
 export function buildEvaluatorSystemPrompt(
   caseData: ECOSCase,
-  conclusion?: {
-    hypotheses?: string;
-    examens?: string;
-    prise_en_charge?: string;
-  } | null
+  conclusion?: { conclusion?: string } | null
 ): string {
   const grid = caseData.evaluation_grid;
 
@@ -310,30 +306,28 @@ export function buildEvaluatorSystemPrompt(
     }
   }
 
-  let conclusionBlock = "";
-  if (conclusion) {
-    conclusionBlock = `\n=== CONCLUSION DONNÉE PAR L'ÉTUDIANT EN FIN DE STATION ===
-Hypothèses diagnostiques : ${conclusion.hypotheses?.trim() || "(non renseigné)"}
-Examens complémentaires proposés : ${conclusion.examens?.trim() || "(non renseigné)"}
-Prise en charge / thérapeutique : ${conclusion.prise_en_charge?.trim() || "(non renseigné)"}
-`;
-  }
+  const conclusionText = conclusion?.conclusion?.trim() ?? "";
+  const conclusionBlock = conclusion
+    ? `\n=== CONCLUSION DONNÉE PAR L'ÉTUDIANT EN FIN DE STATION ===
+${conclusionText || "(aucune conclusion — l'étudiant n'a rien rédigé : ne pénalise pas, évalue uniquement l'interrogatoire et l'examen menés dans le transcript)"}
+`
+    : "";
 
   const refSheet = caseData.reference_sheet
     ? `\n=== CORRIGÉ / FICHE DE RÉFÉRENCE ===\n${caseData.reference_sheet}`
     : "";
 
-  return `Tu es un évaluateur ECOS. Tu évalues la performance d'un étudiant en médecine à partir de la transcription complète de la consultation et de sa conclusion finale.
+  return `Tu es un évaluateur ECOS. Tu évalues la performance d'un étudiant en médecine à partir de la transcription complète de la consultation et, si elle existe, d'une conclusion libre rédigée en fin de station.
 
-=== RÈGLES D'ÉVALUATION ===
-1. Pour chaque item de la grille, indique :
-   - "fait" (score plein) si l'étudiant l'a clairement abordé,
-   - "partiel" (demi-score) si abordé incomplètement,
-   - "non_fait" (0) s'il ne l'a pas abordé.
-2. Chaque score DOIT être justifié par une citation exacte du transcript ou de la conclusion (entre guillemets).
-3. Évalue également la QUALITÉ de la conclusion (hypothèses, examens, prise en charge) : cohérence avec le cas, présence des diagnostics attendus, examens pertinents.
-4. Sois objectif. Pas de points implicites.
-5. Les aspects de communication sont évalués selon la grille si présente.
+=== RÈGLES D'ÉVALUATION — TOUT OU RIEN ===
+1. Barème binaire strict : pour chaque item de la grille, le statut est soit "fait" (score = max_score), soit "non_fait" (score = 0). Aucun demi-point, jamais.
+2. Un item est "fait" UNIQUEMENT si l'étudiant l'a réalisé INTÉGRALEMENT. Si l'item comporte plusieurs composantes (ex : Glasgow = ouverture des yeux + réponse verbale + réponse motrice ; examen neuro = motricité + sensibilité + réflexes ; etc.) et qu'une seule manque, c'est "non_fait" (0).
+3. Exemple concret : si l'item exige d'évaluer les 3 composantes du Glasgow et que l'étudiant n'interroge que l'ouverture des yeux, status = "non_fait", score = 0.
+4. Chaque score DOIT être justifié par une citation exacte du transcript ou de la conclusion (entre guillemets).
+5. La conclusion libre (si rédigée) peut servir à rattraper certains items du domaine "raisonnement / synthèse" (hypothèses, examens, prise en charge). Si la conclusion est vide ou absente, NE PÉNALISE PAS : les items sont évalués uniquement sur ce qui apparaît dans le transcript.
+6. En plus du barème item par item, donne UN score global pour la conclusion (qualité du raisonnement clinique : hypothèses pertinentes, examens cohérents, prise en charge adaptée). Si la conclusion est vide, "conclusion_score" doit être null.
+7. Sois objectif. Pas de points implicites. Pas de bienveillance.
+8. Les aspects de communication sont évalués selon la grille si présente (ceux-ci peuvent rester sur une échelle continue 0–1, ils ne sont pas concernés par la règle tout-ou-rien).
 
 === CONTEXTE DU CAS ===
 Titre : ${caseData.title}
@@ -353,16 +347,14 @@ Réponds UNIQUEMENT en JSON valide, format exact :
   "communication_scores": [
     { "name": "...", "score": 0.75, "label": "Très Satisfaisante", "justification": "..." }
   ],
-  "conclusion_score": {
-    "hypotheses": { "score": 2, "max_score": 2, "comment": "..." },
-    "examens":    { "score": 1, "max_score": 2, "comment": "..." },
-    "prise_en_charge": { "score": 1, "max_score": 2, "comment": "..." }
-  },
+  "conclusion_score": { "score": 2, "max_score": 3, "comment": "..." },
   "total_score": 0,
   "max_score": 0,
   "percentage": 0,
   "strengths": ["..."],
   "improvements": ["..."],
   "summary": "Résumé global de la performance"
-}`;
+}
+
+Rappel : "status" ne peut valoir que "fait" ou "non_fait". "score" doit être soit 0, soit égal à max_score. Si l'étudiant n'a pas rédigé de conclusion, mets "conclusion_score": null.`;
 }

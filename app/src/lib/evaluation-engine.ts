@@ -17,13 +17,12 @@ function formatTranscript(chatHistory: ChatMessage[]): string {
 export function extractConclusion(chatHistory: ChatMessage[]): StudentConclusion | null {
   const entries = chatHistory.filter((m) => m.role === "conclusion");
   if (entries.length === 0) return null;
-  const out: StudentConclusion = { hypotheses: "", examens: "", prise_en_charge: "" };
-  for (const e of entries) {
-    if (e.conclusion_field && e.conclusion_field in out) {
-      out[e.conclusion_field] = e.content;
-    }
-  }
-  return out;
+  // Single-field conclusion: join any entries we find (typically one).
+  const text = entries
+    .map((e) => e.content.trim())
+    .filter(Boolean)
+    .join("\n");
+  return { conclusion: text };
 }
 
 export async function evaluateSession(
@@ -59,15 +58,53 @@ export async function evaluateSession(
 
   const parsed = JSON.parse(jsonMatch[0]);
 
+  // Enforce all-or-nothing scoring even if the model slips and returns
+  // "partiel" or a fractional score. Tout-ou-rien: round down.
+  const rawTasks: Array<{
+    item_number?: number;
+    description?: string;
+    score?: number;
+    max_score?: number;
+    status?: string;
+    evidence?: string;
+  }> = Array.isArray(parsed.task_scores) ? parsed.task_scores : [];
+  const task_scores = rawTasks.map((t) => {
+    const max = Number(t.max_score ?? 1);
+    const isFait = t.status === "fait" && Number(t.score ?? 0) >= max;
+    return {
+      item_number: Number(t.item_number ?? 0),
+      description: String(t.description ?? ""),
+      max_score: max,
+      score: isFait ? max : 0,
+      status: isFait ? ("fait" as const) : ("non_fait" as const),
+      evidence: String(t.evidence ?? ""),
+    };
+  });
+
+  // Recompute the total from the normalized tasks so displayed percentages
+  // always match the displayed badges, regardless of what the model returned.
+  const taskTotal = task_scores.reduce((s, t) => s + t.score, 0);
+  const taskMax = task_scores.reduce((s, t) => s + t.max_score, 0);
+  const conclusionScore = parsed.conclusion_score ?? null;
+  const conclusionAdd =
+    conclusionScore &&
+    typeof conclusionScore.score === "number" &&
+    typeof conclusionScore.max_score === "number"
+      ? { score: conclusionScore.score, max: conclusionScore.max_score }
+      : { score: 0, max: 0 };
+  const total = taskTotal + conclusionAdd.score;
+  const max = taskMax + conclusionAdd.max;
+  const percentage = max > 0 ? Math.round((total / max) * 100) : 0;
+
   return {
     session_id: sessionId,
     case_id: caseData.id,
-    task_scores: parsed.task_scores ?? [],
+    task_scores,
     communication_scores: parsed.communication_scores ?? [],
-    conclusion_score: parsed.conclusion_score ?? null,
-    total_score: parsed.total_score ?? 0,
-    max_score: parsed.max_score ?? 0,
-    percentage: parsed.percentage ?? 0,
+    conclusion_score: conclusionScore,
+    total_score: total,
+    max_score: max,
+    percentage,
     strengths: parsed.strengths ?? [],
     improvements: parsed.improvements ?? [],
     summary: parsed.summary ?? "",

@@ -52,24 +52,14 @@ export function ResultsSummary({ evaluation }: ResultsSummaryProps) {
           {evaluation.task_scores.map((task, i) => (
             <div key={i} className="flex items-start gap-3">
               <Badge
-                variant={
-                  task.status === "fait"
-                    ? "default"
-                    : task.status === "partiel"
-                      ? "secondary"
-                      : "destructive"
-                }
+                variant={task.status === "fait" ? "default" : "destructive"}
                 className="shrink-0 mt-0.5 text-xs min-w-[60px] justify-center"
               >
-                {task.status === "fait"
-                  ? "Fait"
-                  : task.status === "partiel"
-                    ? "Partiel"
-                    : "Manqué"}
+                {task.status === "fait" ? "Fait" : "Manqué"}
               </Badge>
               <div className="flex-1 min-w-0">
                 <p className="text-sm">{task.description}</p>
-                {task.evidence && task.status !== "non_fait" && (
+                {task.evidence && task.status === "fait" && (
                   <p className="text-xs text-gray-400 mt-0.5 italic">
                     {task.evidence}
                   </p>
@@ -83,38 +73,26 @@ export function ResultsSummary({ evaluation }: ResultsSummaryProps) {
         </CardContent>
       </Card>
 
-      {/* Conclusion scores */}
+      {/* Conclusion score (single free-text field) */}
       {evaluation.conclusion_score && (
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Conclusion clinique</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3">
-            {(
-              [
-                ["hypotheses", "Hypothèses diagnostiques"],
-                ["examens", "Examens complémentaires"],
-                ["prise_en_charge", "Prise en charge"],
-              ] as const
-            ).map(([key, label]) => {
-              const c = evaluation.conclusion_score?.[key];
-              if (!c) return null;
-              return (
-                <div key={key} className="flex items-start gap-3">
-                  <span className="text-sm font-medium shrink-0 min-w-[180px]">
-                    {label}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    {c.comment && (
-                      <p className="text-sm text-gray-600">{c.comment}</p>
-                    )}
-                  </div>
-                  <span className="text-sm font-medium shrink-0">
-                    {c.score}/{c.max_score}
-                  </span>
-                </div>
-              );
-            })}
+          <CardContent>
+            <div className="flex items-start gap-3">
+              <div className="flex-1 min-w-0">
+                {evaluation.conclusion_score.comment && (
+                  <p className="text-sm text-gray-600">
+                    {evaluation.conclusion_score.comment}
+                  </p>
+                )}
+              </div>
+              <span className="text-sm font-medium shrink-0">
+                {evaluation.conclusion_score.score}/
+                {evaluation.conclusion_score.max_score}
+              </span>
+            </div>
           </CardContent>
         </Card>
       )}

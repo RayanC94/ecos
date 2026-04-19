@@ -16,11 +16,7 @@ import { useSpeechInput, addQuestionMark } from "@/hooks/use-speech-input";
 import { cleanOpeningLine } from "@/lib/prompt-templates";
 import { Mic, MicOff, Eye, EyeOff, RefreshCw } from "lucide-react";
 import type { ECOSCase } from "@/types/case";
-import type {
-  ChatMessage,
-  ConclusionField,
-  StudentConclusion,
-} from "@/types/session";
+import type { ChatMessage, StudentConclusion } from "@/types/session";
 
 export default function SessionPage() {
   const params = useParams();
@@ -54,7 +50,11 @@ export default function SessionPage() {
     setTtsEnabled,
     speakText,
     cancelSpeech,
+    isSpeaking,
   } = usePatientTts();
+
+  const isSpeakingRef = useRef(isSpeaking);
+  isSpeakingRef.current = isSpeaking;
 
   const revealMatchingAnnexes = useCallback(
     (text: string) => {
@@ -91,10 +91,23 @@ export default function SessionPage() {
       onStudentMessage: (text) => revealMatchingAnnexes(text),
       onPatientResponse: (text) => {
         justSentRef.current = false;
+        // Make sure the mic is muted BEFORE TTS starts — otherwise the
+        // speaker output leaks back into the microphone and the AI "hears"
+        // itself, triggering a self-reply loop.
+        convoListenerRef.current?.stop();
         speakText(text, () => {
-          if (conversationModeRef.current) {
-            convoListenerRef.current?.start();
-          }
+          if (!conversationModeRef.current) return;
+          // Short pause so the speaker audio fully stops before we re-arm
+          // the mic. Without this, tail-end echoes can still be captured.
+          setTimeout(() => {
+            if (
+              conversationModeRef.current &&
+              !isSpeakingRef.current &&
+              !chatLoadingRef.current
+            ) {
+              convoListenerRef.current?.start();
+            }
+          }, 450);
         });
         revealMatchingAnnexes(text);
       },
@@ -123,10 +136,12 @@ export default function SessionPage() {
         if (justSentRef.current) return;
         // No valid segment was produced — restart listening after a short
         // pause so the browser releases the recognition session cleanly.
+        // Don't restart while TTS is speaking (self-echo prevention).
         setTimeout(() => {
           if (
             conversationModeRef.current &&
             !chatLoadingRef.current &&
+            !isSpeakingRef.current &&
             convoListenerRef.current
           ) {
             convoListenerRef.current.start();
@@ -207,21 +222,25 @@ export default function SessionPage() {
   // Watchdog: if conversation mode is on but nothing is listening and
   // nothing is being processed, force-restart the mic after a brief delay.
   // This unwedges the "stuck in 'Le patient répond'" state.
+  // Crucially: DON'T restart while TTS is speaking — the mic would
+  // capture the patient's own voice and trigger a self-reply loop.
   useEffect(() => {
     if (!conversationMode) return;
     if (convoSpeech.isListening) return;
     if (chatLoading) return;
+    if (isSpeaking) return;
     const t = setTimeout(() => {
       if (
         conversationModeRef.current &&
         !chatLoadingRef.current &&
+        !isSpeakingRef.current &&
         convoListenerRef.current
       ) {
         convoListenerRef.current.start();
       }
     }, 2500);
     return () => clearTimeout(t);
-  }, [conversationMode, convoSpeech.isListening, chatLoading]);
+  }, [conversationMode, convoSpeech.isListening, chatLoading, isSpeaking]);
 
   function manualRestartListening() {
     cancelSpeech();
@@ -241,19 +260,17 @@ export default function SessionPage() {
     setEvaluating(true);
 
     const now = Date.now();
-    const fields: Array<[ConclusionField, string]> = [
-      ["hypotheses", conclusion.hypotheses],
-      ["examens", conclusion.examens],
-      ["prise_en_charge", conclusion.prise_en_charge],
-    ];
-    const conclusionEntries: ChatMessage[] = fields.map(([field, content]) => ({
+    // Always push one conclusion entry, even if empty — keeps the schema
+    // consistent and lets the evaluator distinguish "no conclusion" from
+    // "session never reached the wrap-up step".
+    const conclusionEntry: ChatMessage = {
       id: crypto.randomUUID(),
       role: "conclusion",
-      content,
+      content: conclusion.conclusion,
       timestamp: now,
-      conclusion_field: field,
-    }));
-    const fullHistory = [...messages, ...conclusionEntries];
+      conclusion_field: "conclusion",
+    };
+    const fullHistory = [...messages, conclusionEntry];
 
     try {
       await fetch("/api/session/end", {
@@ -312,11 +329,13 @@ export default function SessionPage() {
   }
 
   const oralModeStatus = conversationMode
-    ? convoSpeech.isListening
-      ? "listening"
+    ? isSpeaking
+      ? "speaking"
       : chatLoading
         ? "thinking"
-        : "speaking"
+        : convoSpeech.isListening
+          ? "listening"
+          : "thinking"
     : "off";
 
   return (

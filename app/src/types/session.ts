@@ -1,14 +1,13 @@
 export type ChatRole = "student" | "patient" | "conclusion";
 
-export type ConclusionField = "hypotheses" | "examens" | "prise_en_charge";
+export type ConclusionField = "conclusion";
 
 export interface ChatMessage {
   id: string;
   role: ChatRole;
   content: string;
   timestamp: number;
-  // Only set when role === "conclusion". Identifies which field of the
-  // student's end-of-station conclusion this entry represents.
+  // Only set when role === "conclusion". Single free-text field.
   conclusion_field?: ConclusionField;
 }
 
@@ -23,7 +22,5 @@ export interface Session {
 }
 
 export interface StudentConclusion {
-  hypotheses: string;
-  examens: string;
-  prise_en_charge: string;
+  conclusion: string;
 }

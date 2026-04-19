@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Mic } from "lucide-react";
 import { ChatMessage } from "./chat-message";
 import { ChatInput } from "./chat-input";
@@ -84,9 +83,9 @@ export function ChatWindow({
           )}
         </div>
       ) : (
-        <ScrollArea
-          className="flex-1 px-3 py-2 sm:px-4 sm:py-3"
-          viewportRef={scrollRef}
+        <div
+          ref={scrollRef}
+          className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-3 py-2 sm:px-4 sm:py-3"
         >
           <div className="flex flex-col gap-3">
             {visibleMessages.length === 0 && (
@@ -101,7 +100,7 @@ export function ChatWindow({
               <ChatMessage key={message.id} message={message} />
             ))}
           </div>
-        </ScrollArea>
+        </div>
       )}
 
       <ChatInput

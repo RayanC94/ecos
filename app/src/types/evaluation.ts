@@ -1,9 +1,10 @@
 export interface TaskScore {
   item_number: number;
   description: string;
-  score: number; // 0, 0.5, or 1 (normalized)
+  // All-or-nothing: score is either 0 or max_score. No partial credit.
+  score: number;
   max_score: number;
-  status: "fait" | "partiel" | "non_fait";
+  status: "fait" | "non_fait";
   evidence: string; // Quote from transcript
 }
 
@@ -14,16 +15,10 @@ export interface CommunicationScore {
   justification: string;
 }
 
-export interface ConclusionFieldScore {
+export interface ConclusionScore {
   score: number;
   max_score: number;
   comment: string;
-}
-
-export interface ConclusionScore {
-  hypotheses: ConclusionFieldScore;
-  examens: ConclusionFieldScore;
-  prise_en_charge: ConclusionFieldScore;
 }
 
 export interface EvaluationResult {

@@ -23,80 +23,6 @@ interface ConclusionDialogProps {
   onSubmit: (conclusion: StudentConclusion) => void;
 }
 
-type FieldKey = "hypotheses" | "examens" | "prise_en_charge";
-
-interface ConclusionFieldProps {
-  label: string;
-  placeholder: string;
-  value: string;
-  onChange: (v: string) => void;
-  disabled: boolean;
-  activeMic: FieldKey | null;
-  setActiveMic: (v: FieldKey | null) => void;
-  fieldKey: FieldKey;
-}
-
-function ConclusionField({
-  label,
-  placeholder,
-  value,
-  onChange,
-  disabled,
-  activeMic,
-  setActiveMic,
-  fieldKey,
-}: ConclusionFieldProps) {
-  const { isListening, isSupported, startListening, stopListening } =
-    useSpeechInput(
-      (segment) => onChange((value ? value.trim() + " " : "") + segment),
-      {
-        continuous: true,
-        onEnd: () => setActiveMic(null),
-      }
-    );
-  const micActive = activeMic === fieldKey && isListening;
-
-  function toggleMic() {
-    if (isListening) {
-      stopListening();
-      setActiveMic(null);
-    } else {
-      setActiveMic(fieldKey);
-      startListening();
-    }
-  }
-
-  return (
-    <div className="flex flex-col gap-1">
-      <div className="flex items-center justify-between">
-        <label className="text-xs font-medium text-gray-700">{label}</label>
-        {isSupported && (
-          <button
-            type="button"
-            onClick={toggleMic}
-            disabled={disabled || (activeMic !== null && activeMic !== fieldKey)}
-            className={`text-[11px] flex items-center gap-1 px-2 py-0.5 rounded ${
-              micActive
-                ? "bg-red-50 text-red-600 animate-pulse"
-                : "text-teal-700 hover:bg-teal-50"
-            } disabled:opacity-40`}
-          >
-            {micActive ? <MicOff className="h-3 w-3" /> : <Mic className="h-3 w-3" />}
-            {micActive ? "Écoute…" : "Dicter"}
-          </button>
-        )}
-      </div>
-      <textarea
-        className="w-full min-h-[72px] rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
-        placeholder={placeholder}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        disabled={disabled}
-      />
-    </div>
-  );
-}
-
 export function ConclusionDialog({
   open,
   onOpenChange,
@@ -106,17 +32,23 @@ export function ConclusionDialog({
   onCancel,
   onSubmit,
 }: ConclusionDialogProps) {
-  const [hypotheses, setHypotheses] = useState("");
-  const [examens, setExamens] = useState("");
-  const [priseEnCharge, setPriseEnCharge] = useState("");
-  const [activeMic, setActiveMic] = useState<FieldKey | null>(null);
+  const [conclusion, setConclusion] = useState("");
+
+  const { isListening, isSupported, startListening, stopListening } =
+    useSpeechInput(
+      (segment) =>
+        setConclusion((prev) => (prev ? prev.trim() + " " : "") + segment),
+      { continuous: true }
+    );
+
+  function toggleMic() {
+    if (isListening) stopListening();
+    else startListening();
+  }
 
   function handleSubmit() {
-    onSubmit({
-      hypotheses: hypotheses.trim(),
-      examens: examens.trim(),
-      prise_en_charge: priseEnCharge.trim(),
-    });
+    if (isListening) stopListening();
+    onSubmit({ conclusion: conclusion.trim() });
   }
 
   return (
@@ -128,41 +60,42 @@ export function ConclusionDialog({
           </DialogTitle>
           <DialogDescription>
             {timeUp
-              ? "Le temps est écoulé. Remplissez ce que vous voulez (tout est optionnel) puis validez — l'évaluation se base sur toute la consultation et votre conclusion."
-              : `Il vous reste ${remainingFormatted}. Remplissez ce que vous voulez (tout est optionnel) — l'évaluation se base sur toute la consultation et votre conclusion.`}
+              ? "Le temps est écoulé. Conclusion optionnelle : dictez ou tapez librement (hypothèses, examens, prise en charge…). Si vous laissez vide, vous serez noté·e sur votre interrogatoire seul."
+              : `Il vous reste ${remainingFormatted}. Conclusion optionnelle : dictez ou tapez librement (hypothèses, examens, prise en charge…). Si vous laissez vide, vous serez noté·e sur votre interrogatoire seul.`}
           </DialogDescription>
         </DialogHeader>
 
-        <div className="flex flex-col gap-3 mt-2">
-          <ConclusionField
-            fieldKey="hypotheses"
-            label="Hypothèses diagnostiques"
-            placeholder="Principales hypothèses que vous retenez à l'issue de l'interrogatoire / examen…"
-            value={hypotheses}
-            onChange={setHypotheses}
+        <div className="flex flex-col gap-2 mt-2">
+          <div className="flex items-center justify-between">
+            <label className="text-xs font-medium text-gray-700">
+              Conclusion
+            </label>
+            {isSupported && (
+              <button
+                type="button"
+                onClick={toggleMic}
+                disabled={submitting}
+                className={`text-[11px] flex items-center gap-1 px-2 py-0.5 rounded ${
+                  isListening
+                    ? "bg-red-50 text-red-600 animate-pulse"
+                    : "text-teal-700 hover:bg-teal-50"
+                } disabled:opacity-40`}
+              >
+                {isListening ? (
+                  <MicOff className="h-3 w-3" />
+                ) : (
+                  <Mic className="h-3 w-3" />
+                )}
+                {isListening ? "Écoute…" : "Dicter"}
+              </button>
+            )}
+          </div>
+          <textarea
+            className="w-full min-h-[140px] rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+            placeholder="Ex : suspicion de syndrome coronarien aigu ST+, je demande ECG et tropo, transfert USIC…"
+            value={conclusion}
+            onChange={(e) => setConclusion(e.target.value)}
             disabled={submitting}
-            activeMic={activeMic}
-            setActiveMic={setActiveMic}
-          />
-          <ConclusionField
-            fieldKey="examens"
-            label="Examens complémentaires à demander"
-            placeholder="Biologie, imagerie, autres (ECG, ETT, ponction…)"
-            value={examens}
-            onChange={setExamens}
-            disabled={submitting}
-            activeMic={activeMic}
-            setActiveMic={setActiveMic}
-          />
-          <ConclusionField
-            fieldKey="prise_en_charge"
-            label="Prise en charge / thérapeutique"
-            placeholder="Orientation, traitement initial, surveillance, avis spécialisé…"
-            value={priseEnCharge}
-            onChange={setPriseEnCharge}
-            disabled={submitting}
-            activeMic={activeMic}
-            setActiveMic={setActiveMic}
           />
         </div>
 
@@ -181,7 +114,7 @@ export function ConclusionDialog({
             disabled={submitting}
             className="flex-1 sm:flex-none"
           >
-            {submitting ? "Évaluation en cours…" : "Valider et être évalué·e"}
+            {submitting ? "Évaluation en cours…" : "Conclure et être évalué·e"}
           </Button>
         </div>
       </DialogContent>

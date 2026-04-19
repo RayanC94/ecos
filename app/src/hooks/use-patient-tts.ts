@@ -12,6 +12,35 @@ interface UsePatientTtsReturn {
   cancelSpeech: () => void;
 }
 
+// Preference order (substring match, case-insensitive) for French voices.
+// Cloud / premium voices first — they sound markedly more human than the
+// default local ones. `Google français` is Chrome's WaveNet voice;
+// Amélie / Thomas / Aurélie are macOS premium voices.
+const FRENCH_VOICE_PREFERENCES = [
+  "google français",
+  "google french",
+  "amélie",
+  "thomas",
+  "aurélie",
+  "céline",
+  "virginie",
+  "daniel",
+];
+
+function pickFrenchVoice(
+  voices: SpeechSynthesisVoice[]
+): SpeechSynthesisVoice | null {
+  const fr = voices.filter((v) => v.lang.toLowerCase().startsWith("fr"));
+  if (fr.length === 0) return null;
+  for (const pref of FRENCH_VOICE_PREFERENCES) {
+    const match = fr.find((v) => v.name.toLowerCase().includes(pref));
+    if (match) return match;
+  }
+  const cloud = fr.find((v) => v.localService === false);
+  if (cloud) return cloud;
+  return fr[0];
+}
+
 export function usePatientTts(): UsePatientTtsReturn {
   const [isTtsEnabled, setIsTtsEnabled] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -44,12 +73,15 @@ export function usePatientTts(): UsePatientTtsReturn {
         return;
       }
       window.speechSynthesis.cancel();
+      setIsSpeaking(true);
 
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = "fr-FR";
-      utterance.rate = 0.95;
+      // ~1.5× the previous 0.95 rate — feels naturally brisk rather than slow.
+      utterance.rate = 1.4;
+      utterance.pitch = 1;
 
-      const frenchVoice = voicesRef.current.find((v) => v.lang.startsWith("fr"));
+      const frenchVoice = pickFrenchVoice(voicesRef.current);
       if (frenchVoice) utterance.voice = frenchVoice;
 
       utterance.onstart = () => setIsSpeaking(true);
