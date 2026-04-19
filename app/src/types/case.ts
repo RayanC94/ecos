@@ -121,7 +121,24 @@ export const StudentInstructionsSchema = z.object({
 export const AnnexItemSchema = z.object({
   filename: z.string(),
   description: z.string().default(""),
-  type: z.enum(["ecg", "photo", "lab", "other"]).default("other"),
+  type: z
+    .enum([
+      "ecg",
+      "photo",
+      "lab",
+      "biologie",
+      "eps",
+      "radio",
+      "scan",
+      "irm",
+      "echographie",
+      "ophtalmo",
+      "derma",
+      "schema",
+      "tableau",
+      "other",
+    ])
+    .default("other"),
   url: z.string(),
   // If true, the annex is shown as soon as the session starts.
   // Otherwise it stays hidden until the student (or the AI) explicitly

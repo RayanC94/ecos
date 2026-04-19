@@ -6,10 +6,27 @@ interface UsePatientTtsReturn {
   isTtsEnabled: boolean;
   isSpeaking: boolean;
   isSupported: boolean;
+  rate: number;
+  setRate: (rate: number) => void;
   toggleTts: () => void;
   setTtsEnabled: (enabled: boolean) => void;
   speakText: (text: string, onEnd?: () => void) => void;
   cancelSpeech: () => void;
+}
+
+const TTS_RATE_STORAGE_KEY = "ecos-tts-rate";
+const DEFAULT_TTS_RATE = 1.15;
+
+function readStoredRate(): number {
+  if (typeof window === "undefined") return DEFAULT_TTS_RATE;
+  try {
+    const raw = window.localStorage.getItem(TTS_RATE_STORAGE_KEY);
+    const n = raw == null ? NaN : Number(raw);
+    if (Number.isFinite(n) && n >= 0.5 && n <= 2) return n;
+  } catch {
+    // ignore
+  }
+  return DEFAULT_TTS_RATE;
 }
 
 // Preference order (substring match, case-insensitive) for French voices.
@@ -44,9 +61,27 @@ function pickFrenchVoice(
 export function usePatientTts(): UsePatientTtsReturn {
   const [isTtsEnabled, setIsTtsEnabled] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [rate, setRateState] = useState<number>(DEFAULT_TTS_RATE);
   const voicesRef = useRef<SpeechSynthesisVoice[]>([]);
   const isTtsEnabledRef = useRef(isTtsEnabled);
   isTtsEnabledRef.current = isTtsEnabled;
+  const rateRef = useRef(rate);
+  rateRef.current = rate;
+
+  // Hydrate rate from localStorage on the client (SSR-safe).
+  useEffect(() => {
+    setRateState(readStoredRate());
+  }, []);
+
+  const setRate = useCallback((r: number) => {
+    const clamped = Math.max(0.5, Math.min(2, r));
+    setRateState(clamped);
+    try {
+      window.localStorage.setItem(TTS_RATE_STORAGE_KEY, String(clamped));
+    } catch {
+      // ignore
+    }
+  }, []);
 
   const isSupported =
     typeof window !== "undefined" && "speechSynthesis" in window;
@@ -77,8 +112,7 @@ export function usePatientTts(): UsePatientTtsReturn {
 
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = "fr-FR";
-      // ~1.5× the previous 0.95 rate — feels naturally brisk rather than slow.
-      utterance.rate = 1.4;
+      utterance.rate = rateRef.current;
       utterance.pitch = 1;
 
       const frenchVoice = pickFrenchVoice(voicesRef.current);
@@ -127,6 +161,8 @@ export function usePatientTts(): UsePatientTtsReturn {
     isTtsEnabled,
     isSpeaking,
     isSupported,
+    rate,
+    setRate,
     toggleTts,
     setTtsEnabled,
     speakText,

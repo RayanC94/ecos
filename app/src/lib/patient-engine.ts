@@ -3,7 +3,10 @@ import { buildPatientSystemBlocks } from "./prompt-templates";
 import type { ECOSCase } from "@/types/case";
 import type { ChatMessage } from "@/types/session";
 
-const MODEL = "claude-sonnet-4-20250514";
+// Haiku 4.5: ~2× faster than Sonnet for the kind of short, constrained
+// in-character replies this role-play produces — keeps oral back-and-forth
+// snappy without losing faithfulness to the character sheet.
+const MODEL = "claude-haiku-4-5-20251001";
 
 export async function generatePatientResponse(
   caseData: ECOSCase,

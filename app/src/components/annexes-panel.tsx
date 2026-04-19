@@ -7,11 +7,18 @@ import type { AnnexItem } from "@/types/case";
 // Default keyword patterns per annex type — used when the annex has
 // no explicit reveal_triggers. Matches in student or patient messages
 // (case-insensitive) unlock the annex.
-const DEFAULT_TRIGGERS: Record<AnnexItem["type"], RegExp | null> = {
+const DEFAULT_TRIGGERS: Partial<Record<AnnexItem["type"], RegExp>> = {
   ecg: /\b(ecg|électro(cardiogramme)?|electro(cardiogramme)?|trac[ée]\s+cardiaque?)\b/i,
   lab: /\b(bilan(\s+(biologique|sanguin|lipidique|h[ée]patique|r[ée]nal))?|biolog\w*|n\.?f\.?s\.?|ionogramme|h[ée]mogramme|glyc[ée]mie|cr[ée]atinin\w*|prise\s+de\s+sang|gaz\s+du\s+sang|bilan\s+thyro[ïi]dien)\b/i,
-  photo: /\b(photo(graphie)?|image|clich[ée]|scan(ner)?|irm|radio(graphie)?|ultrasons?|[ée]chographie)\b/i,
-  other: null,
+  biologie: /\b(bilan(\s+(biologique|sanguin|lipidique|h[ée]patique|r[ée]nal))?|biolog\w*|n\.?f\.?s\.?|ionogramme|h[ée]mogramme|glyc[ée]mie|cr[ée]atinin\w*|prise\s+de\s+sang|gaz\s+du\s+sang|bilan\s+thyro[ïi]dien|[ée]lectrophor[èe]se|eps)\b/i,
+  eps: /\b(eps|[ée]lectrophor[èe]se|spirom[ée]trie|efr|vems|cvf|dlco|bronchodilatateur)\b/i,
+  photo: /\b(photo(graphie)?|image|clich[ée])\b/i,
+  radio: /\b(radio(graphie)?|rx|radiographie)\b/i,
+  scan: /\b(scan(ner)?|tdm|tomodensitom[ée]trie)\b/i,
+  irm: /\b(irm|r[ée]sonance\s+magn[ée]tique)\b/i,
+  echographie: /\b([ée]chograph\w*|ultrasons?|doppler)\b/i,
+  ophtalmo: /\b(fond\s+d['']?œil|fond\s+d['']?oeil|fo\b|r[ée]tine|pupille|mydriase|myosis|œil|oeil|segment\s+ant[ée]rieur)\b/i,
+  derma: /\b(l[ée]sion|[ée]ruption|plaque|bouton|rash|peau|dermato\w*)\b/i,
 };
 
 export function annexRevealRegex(annex: AnnexItem): RegExp | null {
@@ -28,6 +35,16 @@ const TYPE_LABELS: Record<string, string> = {
   ecg: "ECG",
   photo: "Photo",
   lab: "Labo",
+  biologie: "Biologie",
+  eps: "EFR",
+  radio: "Radio",
+  scan: "Scanner",
+  irm: "IRM",
+  echographie: "Échographie",
+  ophtalmo: "Ophtalmo",
+  derma: "Dermato",
+  schema: "Schéma",
+  tableau: "Tableau",
   other: "Document",
 };
 
@@ -35,6 +52,16 @@ const TYPE_COLORS: Record<string, string> = {
   ecg: "bg-red-100 text-red-700",
   photo: "bg-blue-100 text-blue-700",
   lab: "bg-green-100 text-green-700",
+  biologie: "bg-green-100 text-green-700",
+  eps: "bg-cyan-100 text-cyan-700",
+  radio: "bg-indigo-100 text-indigo-700",
+  scan: "bg-indigo-100 text-indigo-700",
+  irm: "bg-indigo-100 text-indigo-700",
+  echographie: "bg-indigo-100 text-indigo-700",
+  ophtalmo: "bg-amber-100 text-amber-700",
+  derma: "bg-pink-100 text-pink-700",
+  schema: "bg-violet-100 text-violet-700",
+  tableau: "bg-slate-100 text-slate-700",
   other: "bg-gray-100 text-gray-700",
 };
 

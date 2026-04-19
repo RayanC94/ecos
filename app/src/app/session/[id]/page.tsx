@@ -51,6 +51,8 @@ export default function SessionPage() {
     speakText,
     cancelSpeech,
     isSpeaking,
+    rate: ttsRate,
+    setRate: setTtsRate,
   } = usePatientTts();
 
   const isSpeakingRef = useRef(isSpeaking);
@@ -427,6 +429,22 @@ export default function SessionPage() {
                 : "🎙 Parler au patient"}
             </span>
           </Button>
+
+          <label className="inline-flex items-center gap-1.5 text-xs text-gray-700">
+            <span className="hidden sm:inline font-medium">Vitesse :</span>
+            <select
+              value={ttsRate}
+              onChange={(e) => setTtsRate(Number(e.target.value))}
+              className="h-9 rounded-md border border-gray-300 bg-white px-2 text-xs font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-400"
+              title="Vitesse de la voix du patient"
+            >
+              <option value={0.9}>Lent</option>
+              <option value={1}>Normal</option>
+              <option value={1.15}>Rapide</option>
+              <option value={1.3}>Très rapide</option>
+              <option value={1.5}>Ultra rapide</option>
+            </select>
+          </label>
 
           {conversationMode && (
             <>

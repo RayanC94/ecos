@@ -310,46 +310,63 @@
     "reference_sheet": "Cet ECOS vous place dans la peau d'un interne d'ophtalmologie qui dispose des principaux éléments qui lui sont nécessaires pour raisonner face à une baisse de vision aiguë. Il faut reconnaître le tableau d'une baisse de vision brutale, sur un œil blanc, avec fond d'œil accessible et anormal. Les principaux diagnostics à évoquer d'après le LISA sont l'OACR, l'OVCR, le décollement de rétine et la complication de la DMLA. Dans ce cas précis, le caractère profond et brutal de la baisse, la présence d'une pâleur rétinienne avec une macula rouge cerise, ainsi que l'existence d'une mydriase dite sensorielle font pencher pour l'OACR. Il faut alors reconnaître l'OACR comme un accident vasculaire cérébral et proposer une imagerie cérébrale, de préférence une IRM, ainsi qu'une imagerie des troncs supra-aortiques. Par ailleurs, l'artérite à cellules géantes (maladie de Horton) est à évoquer de par le risque de bilatéralisation et le traitement rapide disponible. Il est donc impératif de doser un paramètre inflammatoire, la CRP.",
     "iconography": [
       {
-        "filename": "pdfimg-8.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-8.png"
-      },
-      {
-        "filename": "pdfimg-9.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-9.png"
-      },
-      {
-        "filename": "pdfimg-10.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-10.png"
-      },
-      {
         "filename": "pdfimg-23.png",
-        "description": "Image extraite du PDF (page 10)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-23.png"
+        "description": "Photographie de l'œil droit avec mydriase",
+        "type": "ophtalmo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-23.png",
+        "reveal_triggers": [
+          "œil",
+          "segment antérieur",
+          "mydriase",
+          "pupille",
+          "œil blanc",
+          "examen oculaire"
+        ]
       },
       {
         "filename": "pdfimg-28.jpg",
-        "description": "Image extraite du PDF (page 11)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-28.jpg"
+        "description": "Fond d'œil droit avec macula rouge cerise et pâleur rétinienne",
+        "type": "ophtalmo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-28.jpg",
+        "reveal_triggers": [
+          "fond d'œil",
+          "rétine",
+          "macula",
+          "rouge cerise",
+          "pâleur rétinienne",
+          "fond oculaire",
+          "FO"
+        ]
       },
       {
         "filename": "annex-page-10.png",
-        "description": "Annexe (page 10)",
-        "type": "other",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-10.png"
+        "description": "Annexe 1 photo œil droit et Annexe 2 schéma réflexe pupillaire lumineux",
+        "type": "ophtalmo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-10.png",
+        "reveal_triggers": [
+          "réflexe pupillaire",
+          "réflexe photomoteur",
+          "pupille",
+          "mydriase",
+          "œil",
+          "luminosité",
+          "annexe"
+        ]
       },
       {
         "filename": "annex-page-11.png",
-        "description": "Annexe (page 11)",
-        "type": "other",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-11.png"
+        "description": "Annexe 3 fond d'œil droit avec œdème blanc ischémique et macula rouge cerise",
+        "type": "ophtalmo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-11.png",
+        "reveal_triggers": [
+          "fond d'œil",
+          "rétine",
+          "macula rouge cerise",
+          "pâleur rétinienne",
+          "ischémie rétinienne",
+          "FO",
+          "annexe"
+        ]
       }
     ]
   },
@@ -722,20 +739,7 @@
       ]
     },
     "reference_sheet": "Cette station peut paraître dure à négocier, cependant on se tient strictement aux attendus nationaux des compétences pour la SDD 141 - Sensation de brûlure oculaire. L'énoncé est clair, il s'agit d'un tableau de pathologie auto-immune, chez une femme jeune, à implication ophtalmologique. Ici on pense d'abord à un syndrome sec secondaire à un Syndrome de Gougerot-Sjögren. L'interrogatoire de la patiente oriente sur la plainte ophtalmologique uniquement et il faut rester clinique. Bien penser à objectiver le trouble: L'instillation de fluorescéine (par l'ophtalmologiste) permet de d'évaluer le break-up time et de rechercher une kérato-conjonctivite sèche; un test de Schirmer peut également être proposé. Pour la prise en charge, il faudra d'une part traquer les facteurs favorisants (tabac, climatisation…) afin de donner des conseils pratiques ; et d'autre part mettre en place un traitement symptomatique (larmes artificielles). La prise en charge complète échappant aux prérequis du 2eme cycle, il faut avoir le réflexe d'orienter le patient chez l'ophtalmologiste.",
-    "iconography": [
-      {
-        "filename": "pdfimg-13.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-141-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-13.png"
-      },
-      {
-        "filename": "pdfimg-22.png",
-        "description": "Image extraite du PDF (page 9)",
-        "type": "photo",
-        "url": "/annexes/sdd-141-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-22.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-147-1-sdd-147-epistaxis",
@@ -1042,34 +1046,46 @@
     "reference_sheet": "Ce qui me semble important à retenir : => les signes de gravités +++ ils conditionnent la suite de la prise en charge, si ils sont présent il faudra d'abord conditionner le patient avec 1 voire 2 VVP, un monitoring, +/- oxygénothérapie et hospitalisation en USI, il faudra aussi prévoir un bilan biologique (NFS = retentissement de l'hémorragie, plaquette/TCA/TP/INR(si AVK) = troubles de l'hémostase, bilan pré transfusionnel (groupe ABO, Rhésus, RAI)) => retenir les grandes lignes d'un tamponnement antérieur, ça implique le patient dans sa prise en charge car il comprend ce qu'on va lui faire. Toujours penser à l'antalgie/anxiolyse du patient, ça permet de rendre l'expérience moins douloureuse pour le patient et ça renforce le lien de confiance. => ATTENTION, il est INNACCEPTABLE de laisser un patient avec une épistaxis couché, il y un fort risque d'inhalation !!!!!!! => Bien que le patient soit couché/demi assis/assis, l'étudiant s'est mis à sa hauteur grâce à la chaise mise à disposition ou en montant/descendant la table. Ce genre de comportement peut vous rapporter des points dans la partie comportement et communication non verbale !",
     "iconography": [
       {
-        "filename": "pdfimg-4.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-4.png"
-      },
-      {
         "filename": "pdfimg-5.jpg",
-        "description": "Image extraite du PDF (page 8)",
+        "description": "Membres inférieurs sans marbrures ni lésions visibles",
         "type": "photo",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-5.jpg"
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-5.jpg",
+        "reveal_triggers": [
+          "marbrures",
+          "membres inférieurs",
+          "pâleur",
+          "jambes",
+          "signes cutanés"
+        ]
       },
       {
         "filename": "pdfimg-6.jpg",
-        "description": "Image extraite du PDF (page 9)",
+        "description": "Gros plan sur l'œil du patient sans télangiectasies",
         "type": "photo",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-6.jpg"
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-6.jpg",
+        "reveal_triggers": [
+          "télangiectasies",
+          "œil",
+          "Rendu-Osler",
+          "lésions oculaires",
+          "conjonctive"
+        ]
       },
       {
         "filename": "pdfimg-8.png",
-        "description": "Image extraite du PDF (page 10)",
-        "type": "photo",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-8.png"
-      },
-      {
-        "filename": "annex-page-5.png",
-        "description": "Annexe (page 5)",
-        "type": "other",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/annex-page-5.png"
+        "description": "Monitoring du patient : FC 80, SpO2 100%, PA 120/70, FR 14",
+        "type": "tableau",
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-8.png",
+        "reveal_triggers": [
+          "monitoring",
+          "constantes",
+          "fréquence cardiaque",
+          "tension artérielle",
+          "saturation",
+          "paramètres vitaux",
+          "scope",
+          "ECG"
+        ]
       }
     ]
   },
@@ -1370,38 +1386,7 @@
       ]
     },
     "reference_sheet": "Si l'etudiant propose le laser a l'oeil atteint sans preciser le 2eme oeil, le patient doit demander ce qu'on fait du 2eme oeil, pour l'orienter. Si l'etudiant repond juste, le point est attribué.",
-    "iconography": [
-      {
-        "filename": "pdfimg-6.png",
-        "description": "Image extraite du PDF (page 3)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-6.png"
-      },
-      {
-        "filename": "pdfimg-11.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-11.png"
-      },
-      {
-        "filename": "pdfimg-12.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-12.png"
-      },
-      {
-        "filename": "pdfimg-15.png",
-        "description": "Image extraite du PDF (page 6)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-15.png"
-      },
-      {
-        "filename": "pdfimg-16.png",
-        "description": "Image extraite du PDF (page 6)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-16.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-152-1-des-n-1-chirurgie-t-te-et-cou-",
@@ -1715,38 +1700,7 @@
       ]
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "pdfimg-6.png",
-        "description": "Image extraite du PDF (page 3)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-6.png"
-      },
-      {
-        "filename": "pdfimg-11.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-11.png"
-      },
-      {
-        "filename": "pdfimg-12.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-12.png"
-      },
-      {
-        "filename": "pdfimg-15.png",
-        "description": "Image extraite du PDF (page 6)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-15.png"
-      },
-      {
-        "filename": "pdfimg-16.png",
-        "description": "Image extraite du PDF (page 6)",
-        "type": "photo",
-        "url": "/annexes/sdd-152-1-des-n-1-chirurgie-t-te-et-cou-/pdfimg-16.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-16-1-sdd-16-ad-nopathies",
@@ -2023,32 +1977,7 @@
       ]
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "pdfimg-0.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-16-1-sdd-16-ad-nopathies/pdfimg-0.png"
-      },
-      {
-        "filename": "pdfimg-1.jpg",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-16-1-sdd-16-ad-nopathies/pdfimg-1.jpg"
-      },
-      {
-        "filename": "pdfimg-2.jpg",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-16-1-sdd-16-ad-nopathies/pdfimg-2.jpg"
-      },
-      {
-        "filename": "annex-page-7.png",
-        "description": "Annexe (page 7)",
-        "type": "other",
-        "url": "/annexes/sdd-16-1-sdd-16-ad-nopathies/annex-page-7.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-193-1-sdd-193-anomalie-de-l-eps",
@@ -2298,33 +2227,33 @@
     "iconography": [
       {
         "filename": "Copie_de_ECOS_-_Pic_monoclonal_.png",
-        "description": "Annexe jointe : Copie de ECOS - Pic monoclonal .png",
-        "type": "photo",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/Copie_de_ECOS_-_Pic_monoclonal_.png"
-      },
-      {
-        "filename": "pdfimg-2.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-2.png"
-      },
-      {
-        "filename": "pdfimg-3.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-3.png"
+        "description": "Électrophorèse des protéines sériques avec pic monoclonal gamma",
+        "type": "biologie",
+        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/Copie_de_ECOS_-_Pic_monoclonal_.png",
+        "reveal_triggers": [
+          "EPP",
+          "électrophorèse",
+          "protéines sériques",
+          "pic monoclonal",
+          "bilan biologique",
+          "résultats",
+          "électrophorèse des protéines"
+        ]
       },
       {
         "filename": "pdfimg-4.png",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-4.png"
-      },
-      {
-        "filename": "annex-page-5.png",
-        "description": "Annexe (page 5)",
-        "type": "other",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/annex-page-5.png"
+        "description": "Électrophorèse des protéines sériques avec pic monoclonal gamma",
+        "type": "biologie",
+        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-4.png",
+        "reveal_triggers": [
+          "EPP",
+          "électrophorèse",
+          "protéines sériques",
+          "pic monoclonal",
+          "bilan biologique",
+          "résultats",
+          "électrophorèse des protéines"
+        ]
       }
     ]
   },
@@ -2607,32 +2536,7 @@
       ]
     },
     "reference_sheet": "Bilan Biologique du 05/03/2024\nHb : 15,2 g/dL\nHt : 44,7%\nLeucocytes 6.000/mm3 (4000-10 000 / mm3 )\nNeutrophiles : 3500/mm3 (1500-7000)\nÉosinophiles : 100/mm3 (50-500)\nLymphocytes : 2000/mm3 (1500-7000)\nPlaquettes : 120 G/L\nNatrémie : 139 mmol/L\nKaliémie : 4,0 mmol/L\nCRP : 3 mg/L (N<5)\nASAT : 15 (6-25)\nALAT : 18 (6-25)\nGGT : 15 U/L (10-40)\nPAL : 35 U/L (30-100)\nBilirubinémie totale : 1,1 mg/dL (0,3-1,9)\nCréatininémie : 60 μmol/L\nUrémie : 5,2 mmol/L\nTP : 90%\nTCA ratio patient/témoin : 1,35\nFibrinogène : 3 g/L\nVitamine K : 500 ng/L (N: 150-900)",
-    "iconography": [
-      {
-        "filename": "annex-page-2.png",
-        "description": "Annexe (page 2)",
-        "type": "other",
-        "url": "/annexes/sdd-213-1-des-n-10-oncologie-hge-h-matol/annex-page-2.png"
-      },
-      {
-        "filename": "annex-page-3.png",
-        "description": "Annexe (page 3)",
-        "type": "other",
-        "url": "/annexes/sdd-213-1-des-n-10-oncologie-hge-h-matol/annex-page-3.png"
-      },
-      {
-        "filename": "annex-page-4.png",
-        "description": "Annexe (page 4)",
-        "type": "other",
-        "url": "/annexes/sdd-213-1-des-n-10-oncologie-hge-h-matol/annex-page-4.png"
-      },
-      {
-        "filename": "annex-page-5.png",
-        "description": "Annexe (page 5)",
-        "type": "other",
-        "url": "/annexes/sdd-213-1-des-n-10-oncologie-hge-h-matol/annex-page-5.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-220-220-sdd-220-hyperlymphocytose",
@@ -3483,26 +3387,7 @@
       ]
     },
     "reference_sheet": "Toute fièvre au retour de zone d'endémie doit faire suspecter un paludisme. Il faut rechercher les critères de gravité clinique ou biologique qui imposeraient une hospitalisation pour un traitement par voie intraveineuse. En absence de critères clinique ou biologique de gravité et si bonne compréhension du patient il est possible d'organiser la prise en charge en ambulatoire.",
-    "iconography": [
-      {
-        "filename": "pdfimg-1.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-222-272-sdd-222-frottis-sanguin/pdfimg-1.png"
-      },
-      {
-        "filename": "pdfimg-2.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-222-272-sdd-222-frottis-sanguin/pdfimg-2.png"
-      },
-      {
-        "filename": "annex-page-6.png",
-        "description": "Annexe (page 6)",
-        "type": "other",
-        "url": "/annexes/sdd-222-272-sdd-222-frottis-sanguin/annex-page-6.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-223-2-sdd-223-interpr-tation-d-h-mog",
@@ -3849,14 +3734,7 @@
       ]
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "annex-page-8.png",
-        "description": "Annexe (page 8)",
-        "type": "other",
-        "url": "/annexes/sdd-223-2-sdd-223-interpr-tation-d-h-mog/annex-page-8.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-223-1-sujet-n-1-interrogatoire-exame",
@@ -4189,32 +4067,7 @@
       ]
     },
     "reference_sheet": "Il faut toujours recherche une cause gynécologique chez une femme en âge de procréer puis les causes digestives (attention la recherche de sang dans les selles n'est pas suffisante). Pour réviser l'interrogatoire pour les menstruations et son abondance, je vous conseille d'aller lire l'échelle d'Higham qui permet de mieux se repérer sur l'abondance des menstruations.",
-    "iconography": [
-      {
-        "filename": "pdfimg-3.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-223-1-sujet-n-1-interrogatoire-exame/pdfimg-3.png"
-      },
-      {
-        "filename": "pdfimg-4.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-223-1-sujet-n-1-interrogatoire-exame/pdfimg-4.png"
-      },
-      {
-        "filename": "pdfimg-5.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-223-1-sujet-n-1-interrogatoire-exame/pdfimg-5.png"
-      },
-      {
-        "filename": "annex-page-8.png",
-        "description": "Annexe (page 8)",
-        "type": "other",
-        "url": "/annexes/sdd-223-1-sujet-n-1-interrogatoire-exame/annex-page-8.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-58-1-sdd-58-spl-nom-galie-format-r-",
@@ -4454,20 +4307,7 @@
       ]
     },
     "reference_sheet": "La rate est un organe profond, non palpable en situation physiologique et dont la palpation même en situation pathologique (sauf splénomégalie extrême) reste complexe. La palpation commence en hypochondre gauche et remonte progressivement sous les côtes. Il faut connaître les outils pour faciliter sa palpation : demander au patient d'inspirer profondément et de retenir sa respiration pour pousser au maximum la rate vers l'abdomen, Eventuellement demander au patient de plier les cuisses, Eventuellement positionner le patient en décubitus latéral droit, permettant de décoller la rate de la paroi thoracique en la faisant descendre en avant et vers la droite. Le contexte du patient oriente vers deux étiologies principales : une hémopathie en particulier (lymphome, leucémie lymphoïde ou myéloïde notamment) qui est l'objet principal des investigations, une infection, subaigüe du fait de l'évolution depuis plusieurs semaines sans signe de gravité (pas de sepsis) et sans point d'entrée évident, orientant un peu plus vers une étiologie virale ou bactérienne torpide comme la tuberculose. Les examens biologiques vont chercher des anomalies à la NFS et en particulier une lymphocytose ou toutes cytopénies pouvant témoigner d'un envahissement médullaire notamment. Le frottis peut rapidement donner des éléments orientant vers un aspect atypique des cellules sanguines et potentiellement un syndrome mononucléosique. La sérologie VIH est un réflexe diagnostic à réaliser tôt car il conditionne la prise en charge diagnostique (recherche d'infection opportuniste) et thérapeutique (anti-rétroviraux). De plus, les autres examens ne montreront pas nécessairement d'argument pour ou contre une primo-infection VIH (syndrome mononucléosique non systématique) qui en fait un réflexe diagnostique à part. En moindre urgence (deuxième intention) dans le bilan étiologique, le bilan des infections pouvant mimer la présentation clinique d'une hémopathie, à savoir les infections EBV, CMV (une immunodépression sera alors à chercher) ou Toxoplasmose. L'hémoculture est un réflexe à avoir en cas de fièvre sans argument pour une étiologie virale, ici l'examen reste utile mais la présentation clinique n'est pas très en faveur d'une bactériémie.",
-    "iconography": [
-      {
-        "filename": "pdfimg-2.png",
-        "description": "Image extraite du PDF (page 1)",
-        "type": "photo",
-        "url": "/annexes/sdd-58-1-sdd-58-spl-nom-galie-format-r-/pdfimg-2.png"
-      },
-      {
-        "filename": "annex-page-5.png",
-        "description": "Annexe (page 5)",
-        "type": "other",
-        "url": "/annexes/sdd-58-1-sdd-58-spl-nom-galie-format-r-/annex-page-5.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-1-1-des-n-11-p-diatrie",
@@ -5444,14 +5284,7 @@
       ]
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "pdfimg-9.png",
-        "description": "Image extraite du PDF (page 3)",
-        "type": "photo",
-        "url": "/annexes/sdd-37-1-sdd-37-eruptions-chez-l-enfant/pdfimg-9.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-161-2-sdd-161-douleur-thoracique-suj",
@@ -5881,14 +5714,7 @@
       "communication_rubrics": []
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "annex-page-2.png",
-        "description": "Annexe (page 2)",
-        "type": "other",
-        "url": "/annexes/sdd-0-1-sdd-167-toux/annex-page-2.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-167-1-sdd-167-toux",
@@ -6499,44 +6325,7 @@
       ]
     },
     "reference_sheet": "Score d'orientation du patient : CRB 65\n\nRemarques concernant le traitement :\n- Fluoroquinolones réservées aux situations de résistance au pneumocoque\n- Traitements injectables (C3G) plus douloureux (IM) et moins pratiques en ville (IV : passage d'IDE au domicile tous les jours)\n- Pristinamycine : réservée aux allergies à la pénicilline\n\nPenser à cette consultation de contrôle à 48-72h +++",
-    "iconography": [
-      {
-        "filename": "pdfimg-0.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-167-1-sdd-167-toux-format-r-vision/pdfimg-0.png"
-      },
-      {
-        "filename": "pdfimg-1.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-167-1-sdd-167-toux-format-r-vision/pdfimg-1.png"
-      },
-      {
-        "filename": "pdfimg-2.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-167-1-sdd-167-toux-format-r-vision/pdfimg-2.png"
-      },
-      {
-        "filename": "pdfimg-3.jpg",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-167-1-sdd-167-toux-format-r-vision/pdfimg-3.jpg"
-      },
-      {
-        "filename": "annex-page-6.png",
-        "description": "Annexe (page 6)",
-        "type": "other",
-        "url": "/annexes/sdd-167-1-sdd-167-toux-format-r-vision/annex-page-6.png"
-      },
-      {
-        "filename": "annex-page-8.png",
-        "description": "Annexe (page 8)",
-        "type": "other",
-        "url": "/annexes/sdd-167-1-sdd-167-toux-format-r-vision/annex-page-8.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-18-1-sdd-18-anomalie-l-auscultation",
@@ -7014,44 +6803,7 @@
       ]
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "pdfimg-0.png",
-        "description": "Image extraite du PDF (page 1)",
-        "type": "photo",
-        "url": "/annexes/sdd-230-1-sdd-230-d-couverte-d-une-anoma/pdfimg-0.png"
-      },
-      {
-        "filename": "pdfimg-4.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-230-1-sdd-230-d-couverte-d-une-anoma/pdfimg-4.png"
-      },
-      {
-        "filename": "pdfimg-5.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-230-1-sdd-230-d-couverte-d-une-anoma/pdfimg-5.png"
-      },
-      {
-        "filename": "pdfimg-6.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-230-1-sdd-230-d-couverte-d-une-anoma/pdfimg-6.png"
-      },
-      {
-        "filename": "pdfimg-7.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-230-1-sdd-230-d-couverte-d-une-anoma/pdfimg-7.png"
-      },
-      {
-        "filename": "pdfimg-8.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-230-1-sdd-230-d-couverte-d-une-anoma/pdfimg-8.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-69-1-sdd-248-prescription-d-un-trai",
@@ -7374,26 +7126,7 @@
       ]
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "pdfimg-3.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-69-1-sdd-248-prescription-d-un-trai/pdfimg-3.png"
-      },
-      {
-        "filename": "pdfimg-4.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-69-1-sdd-248-prescription-d-un-trai/pdfimg-4.png"
-      },
-      {
-        "filename": "pdfimg-5.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-69-1-sdd-248-prescription-d-un-trai/pdfimg-5.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-283-1-sdd-283-consultation-de-suivi-",
@@ -7653,34 +7386,49 @@
     "reference_sheet": null,
     "iconography": [
       {
-        "filename": "pdfimg-2.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-2.png"
-      },
-      {
-        "filename": "pdfimg-3.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-3.png"
-      },
-      {
         "filename": "pdfimg-4.jpg",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-4.jpg"
+        "description": "DLCO et capacité de diffusion du CO",
+        "type": "eps",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-4.jpg",
+        "reveal_triggers": [
+          "DLCO",
+          "diffusion",
+          "capacité de diffusion",
+          "monoxyde de carbone",
+          "EFR",
+          "spirométrie"
+        ]
       },
       {
         "filename": "pdfimg-5.png",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-5.png"
+        "description": "Volumes pulmonaires CPT VR avant et après bronchodilatateurs",
+        "type": "eps",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-5.png",
+        "reveal_triggers": [
+          "CPT",
+          "volumes pulmonaires",
+          "VR",
+          "pléthysmographie",
+          "EFR",
+          "spirométrie",
+          "bronchodilatateurs"
+        ]
       },
       {
         "filename": "pdfimg-6.png",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-6.png"
+        "description": "Spirométrie VEMS CVF courbes débit-volume avant après BD",
+        "type": "eps",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-6.png",
+        "reveal_triggers": [
+          "VEMS",
+          "Tiffeneau",
+          "spirométrie",
+          "EFR",
+          "courbe débit volume",
+          "CVF",
+          "bronchodilatateurs",
+          "explorations fonctionnelles"
+        ]
       }
     ]
   },
@@ -8015,32 +7763,7 @@
       ]
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "pdfimg-2.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-54-1-sdd-54-oed-mes-diffus/pdfimg-2.png"
-      },
-      {
-        "filename": "pdfimg-3.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-54-1-sdd-54-oed-mes-diffus/pdfimg-3.png"
-      },
-      {
-        "filename": "pdfimg-4.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-54-1-sdd-54-oed-mes-diffus/pdfimg-4.png"
-      },
-      {
-        "filename": "pdfimg-5.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-54-1-sdd-54-oed-mes-diffus/pdfimg-5.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-87-2-sdd-87-grosse-jambe-rouge-aigu",
@@ -8615,32 +8338,7 @@
       ]
     },
     "reference_sheet": "BIOPSIES PROSTATIQUES - Présence sur 3 des 6 biopsies communiquées, d'un adénocarcinome prostatique, Gleason 3+4=7, intéressant 55% des prélèvements du lobe gauche, infiltrant le tissu périprostatique au niveau de la base gauche, sans engainement de filets nerveux. Classification TNM et D'Amico incluses dans les annexes.",
-    "iconography": [
-      {
-        "filename": "pdfimg-24.jpg",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-180-232-des-n-2-chirurgie-hors-t-te-et/pdfimg-24.jpg"
-      },
-      {
-        "filename": "pdfimg-28.png",
-        "description": "Image extraite du PDF (page 9)",
-        "type": "photo",
-        "url": "/annexes/sdd-180-232-des-n-2-chirurgie-hors-t-te-et/pdfimg-28.png"
-      },
-      {
-        "filename": "pdfimg-32.jpg",
-        "description": "Image extraite du PDF (page 10)",
-        "type": "photo",
-        "url": "/annexes/sdd-180-232-des-n-2-chirurgie-hors-t-te-et/pdfimg-32.jpg"
-      },
-      {
-        "filename": "pdfimg-33.jpg",
-        "description": "Image extraite du PDF (page 10)",
-        "type": "photo",
-        "url": "/annexes/sdd-180-232-des-n-2-chirurgie-hors-t-te-et/pdfimg-33.jpg"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-243-1-des-n-2-chirurgie-hors-t-te-et",
@@ -8839,14 +8537,7 @@
       ]
     },
     "reference_sheet": "Sur un membre douloureux et œdématié il est possible de faire une surélévation du membre ou un glaçage pour diminuer l'œdème, la patiente ayant une résine le glaçage n'est pas réalisable. La surélévation est cependant possible. Elle n'est pas prise en compte dans le barème car il est précisé qu'il s'agit d'un poignet peu œdématié, ce qui est assez fréquent sur des Pouteau-Colles. Si un patient a un œdème majeur on ne peut pas lui faire une résine circulaire, dans ce cas il faut faire une attelle plâtrée postérieure et la revoir précocement pour la circulariser lors de la fonte de l'œdème. Les consignes sous plâtre sont un élément indispensable de la prise en charge et doivent être répétées à chaque consultation. L'autre élément non abordé dans cette station est la thromboprophylaxie, indispensable lors du retrait de l'appui, pas le cas ici car traumatisme du membre supérieur.",
-    "iconography": [
-      {
-        "filename": "pdfimg-2.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-243-1-des-n-2-chirurgie-hors-t-te-et/pdfimg-2.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-304-1-sdd-304-d-pistage-diab-te-gest",
@@ -9387,14 +9078,7 @@
       ]
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "annex-page-4.png",
-        "description": "Annexe (page 4)",
-        "type": "other",
-        "url": "/annexes/sdd-312-1-des-n-2-chirurgie-hors-t-te-et/annex-page-4.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-34-1-des-n-2-chirurgie-hors-t-te-et",
@@ -9708,20 +9392,7 @@
       ]
     },
     "reference_sheet": "Les douleurs post opératoires s'évaluent comme toute autre douleur, il faut cependant ajouter quelques éléments à votre analyse : - Evaluer les analgésies notament les ALR - Évaluer le contexte (sédation profonde, malade de réanimation etc… - Rechercher des complications des contextes chirurgicaux : MTEV pour tous, Confusion chez les sujets âgés - Rechercher des complications anesthésiques selon les contextes (ischémie myocardiques / AVC chez les sujets âgés et ou athéromateux, décompensation cardiaque etc…) - Et c'est évidement un contexte de chirurgie donc il faut regarder les pansements et les drains, se renseigner sur le déroulé de l'intervention et les consignes post opératoires, rechercher des complications chirurgicales et notamment le syndrome des loges ou la dévascularisation. Dans ce contexte précis, il faut avoir évoquer un syndrome des loges : le contexte de fracture fermée, des deux os de la jambe ou de l'avant-bras, d'enclouage centromédullaire, de traumatisme à haute cinétique ou par écrasement ou par choc direct les principaux facteurs favorisants - La douleur d'un syndrome des loges est morphinorésistante, mais elle peut céder sous ALR, la jambe est augmentée de volume, parfois luisante ou réfléchissant la lumière mieux que l'autre jambe / segment de membre, la douleur est augmentée lors de l'étirement passif des muscles du segment de membre et à la palpation des loges musculaires qui sont tendues - PIÈGE / ! \\ : Le syndrome des loges est une ischémie capillaire initialement donc les pouls peuvent être préservés !! - La situation dans laquelle les pouls sont abolis est le syndrome des loges secondaire à une ischémie de jambe, l'abolition des pouls peut donc être la cause d'un syndrome de loge plutôt que sa conséquence",
-    "iconography": [
-      {
-        "filename": "pdfimg-3.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-34-1-des-n-2-chirurgie-hors-t-te-et/pdfimg-3.png"
-      },
-      {
-        "filename": "pdfimg-4.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-34-1-des-n-2-chirurgie-hors-t-te-et/pdfimg-4.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-151-1-des-n-3-m-decine-de-l-aigu-mar",
@@ -10285,26 +9956,7 @@
       ]
     },
     "reference_sheet": null,
-    "iconography": [
-      {
-        "filename": "pdfimg-11.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-234-2-des-n-3-m-decine-de-l-aigu-mar/pdfimg-11.png"
-      },
-      {
-        "filename": "pdfimg-12.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-234-2-des-n-3-m-decine-de-l-aigu-mar/pdfimg-12.png"
-      },
-      {
-        "filename": "annex-page-6.png",
-        "description": "Annexe (page 6)",
-        "type": "other",
-        "url": "/annexes/sdd-234-2-des-n-3-m-decine-de-l-aigu-mar/annex-page-6.png"
-      }
-    ]
+    "iconography": []
   },
   {
     "id": "sdd-45-1-des-n-3-m-decine-de-l-aigu-mar",
@@ -10630,15 +10282,17 @@
     "iconography": [
       {
         "filename": "pdfimg-21.png",
-        "description": "ECG à l'entrée aux urgences",
+        "description": "ECG 12 dérivations avec onde J d'Osborn et bradycardie",
         "type": "ecg",
         "url": "/annexes/sdd-45-1-des-n-3-m-decine-de-l-aigu-mar/pdfimg-21.png",
         "reveal_triggers": [
           "ECG",
           "électrocardiogramme",
-          "electro",
-          "cardio",
-          "tracé"
+          "tracé cardiaque",
+          "onde J",
+          "Osborn",
+          "bradycardie",
+          "électro"
         ]
       }
     ]
@@ -10962,21 +10616,17 @@
     "iconography": [
       {
         "filename": "Document_complmentaire.jpg",
-        "description": "Annexe jointe : Document complémentaire.jpg",
-        "type": "photo",
-        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/Document_complmentaire.jpg"
-      },
-      {
-        "filename": "pdfimg-11.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/pdfimg-11.png"
-      },
-      {
-        "filename": "pdfimg-12.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/pdfimg-12.png"
+        "description": "ECG 12 dérivations réalisé aux urgences",
+        "type": "ecg",
+        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/Document_complmentaire.jpg",
+        "reveal_triggers": [
+          "ECG",
+          "électrocardiogramme",
+          "tracé cardiaque",
+          "électro",
+          "bilan cardiaque",
+          "examen complémentaire"
+        ]
       }
     ]
   }

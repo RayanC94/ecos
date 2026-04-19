@@ -304,34 +304,46 @@
     "reference_sheet": "Ce qui me semble important à retenir : => les signes de gravités +++ ils conditionnent la suite de la prise en charge, si ils sont présent il faudra d'abord conditionner le patient avec 1 voire 2 VVP, un monitoring, +/- oxygénothérapie et hospitalisation en USI, il faudra aussi prévoir un bilan biologique (NFS = retentissement de l'hémorragie, plaquette/TCA/TP/INR(si AVK) = troubles de l'hémostase, bilan pré transfusionnel (groupe ABO, Rhésus, RAI)) => retenir les grandes lignes d'un tamponnement antérieur, ça implique le patient dans sa prise en charge car il comprend ce qu'on va lui faire. Toujours penser à l'antalgie/anxiolyse du patient, ça permet de rendre l'expérience moins douloureuse pour le patient et ça renforce le lien de confiance. => ATTENTION, il est INNACCEPTABLE de laisser un patient avec une épistaxis couché, il y un fort risque d'inhalation !!!!!!! => Bien que le patient soit couché/demi assis/assis, l'étudiant s'est mis à sa hauteur grâce à la chaise mise à disposition ou en montant/descendant la table. Ce genre de comportement peut vous rapporter des points dans la partie comportement et communication non verbale !",
     "iconography": [
       {
-        "filename": "pdfimg-4.png",
-        "description": "Image extraite du PDF (page 5)",
-        "type": "photo",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-4.png"
-      },
-      {
         "filename": "pdfimg-5.jpg",
-        "description": "Image extraite du PDF (page 8)",
+        "description": "Membres inférieurs sans marbrures ni lésions visibles",
         "type": "photo",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-5.jpg"
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-5.jpg",
+        "reveal_triggers": [
+          "marbrures",
+          "membres inférieurs",
+          "pâleur",
+          "jambes",
+          "signes cutanés"
+        ]
       },
       {
         "filename": "pdfimg-6.jpg",
-        "description": "Image extraite du PDF (page 9)",
+        "description": "Gros plan sur l'œil du patient sans télangiectasies",
         "type": "photo",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-6.jpg"
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-6.jpg",
+        "reveal_triggers": [
+          "télangiectasies",
+          "œil",
+          "Rendu-Osler",
+          "lésions oculaires",
+          "conjonctive"
+        ]
       },
       {
         "filename": "pdfimg-8.png",
-        "description": "Image extraite du PDF (page 10)",
-        "type": "photo",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-8.png"
-      },
-      {
-        "filename": "annex-page-5.png",
-        "description": "Annexe (page 5)",
-        "type": "other",
-        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/annex-page-5.png"
+        "description": "Monitoring du patient : FC 80, SpO2 100%, PA 120/70, FR 14",
+        "type": "tableau",
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-8.png",
+        "reveal_triggers": [
+          "monitoring",
+          "constantes",
+          "fréquence cardiaque",
+          "tension artérielle",
+          "saturation",
+          "paramètres vitaux",
+          "scope",
+          "ECG"
+        ]
       }
     ]
   },
@@ -583,33 +595,33 @@
     "iconography": [
       {
         "filename": "Copie_de_ECOS_-_Pic_monoclonal_.png",
-        "description": "Annexe jointe : Copie de ECOS - Pic monoclonal .png",
-        "type": "photo",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/Copie_de_ECOS_-_Pic_monoclonal_.png"
-      },
-      {
-        "filename": "pdfimg-2.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-2.png"
-      },
-      {
-        "filename": "pdfimg-3.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-3.png"
+        "description": "Électrophorèse des protéines sériques avec pic monoclonal gamma",
+        "type": "biologie",
+        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/Copie_de_ECOS_-_Pic_monoclonal_.png",
+        "reveal_triggers": [
+          "EPP",
+          "électrophorèse",
+          "protéines sériques",
+          "pic monoclonal",
+          "bilan biologique",
+          "résultats",
+          "électrophorèse des protéines"
+        ]
       },
       {
         "filename": "pdfimg-4.png",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-4.png"
-      },
-      {
-        "filename": "annex-page-5.png",
-        "description": "Annexe (page 5)",
-        "type": "other",
-        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/annex-page-5.png"
+        "description": "Électrophorèse des protéines sériques avec pic monoclonal gamma",
+        "type": "biologie",
+        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-4.png",
+        "reveal_triggers": [
+          "EPP",
+          "électrophorèse",
+          "protéines sériques",
+          "pic monoclonal",
+          "bilan biologique",
+          "résultats",
+          "électrophorèse des protéines"
+        ]
       }
     ]
   },
@@ -1212,34 +1224,49 @@
     "reference_sheet": null,
     "iconography": [
       {
-        "filename": "pdfimg-2.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-2.png"
-      },
-      {
-        "filename": "pdfimg-3.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-3.png"
-      },
-      {
         "filename": "pdfimg-4.jpg",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-4.jpg"
+        "description": "DLCO et capacité de diffusion du CO",
+        "type": "eps",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-4.jpg",
+        "reveal_triggers": [
+          "DLCO",
+          "diffusion",
+          "capacité de diffusion",
+          "monoxyde de carbone",
+          "EFR",
+          "spirométrie"
+        ]
       },
       {
         "filename": "pdfimg-5.png",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-5.png"
+        "description": "Volumes pulmonaires CPT VR avant et après bronchodilatateurs",
+        "type": "eps",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-5.png",
+        "reveal_triggers": [
+          "CPT",
+          "volumes pulmonaires",
+          "VR",
+          "pléthysmographie",
+          "EFR",
+          "spirométrie",
+          "bronchodilatateurs"
+        ]
       },
       {
         "filename": "pdfimg-6.png",
-        "description": "Image extraite du PDF (page 8)",
-        "type": "photo",
-        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-6.png"
+        "description": "Spirométrie VEMS CVF courbes débit-volume avant après BD",
+        "type": "eps",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-6.png",
+        "reveal_triggers": [
+          "VEMS",
+          "Tiffeneau",
+          "spirométrie",
+          "EFR",
+          "courbe débit volume",
+          "CVF",
+          "bronchodilatateurs",
+          "explorations fonctionnelles"
+        ]
       }
     ]
   },
@@ -1562,21 +1589,17 @@
     "iconography": [
       {
         "filename": "Document_complmentaire.jpg",
-        "description": "Annexe jointe : Document complémentaire.jpg",
-        "type": "photo",
-        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/Document_complmentaire.jpg"
-      },
-      {
-        "filename": "pdfimg-11.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/pdfimg-11.png"
-      },
-      {
-        "filename": "pdfimg-12.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/pdfimg-12.png"
+        "description": "ECG 12 dérivations réalisé aux urgences",
+        "type": "ecg",
+        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/Document_complmentaire.jpg",
+        "reveal_triggers": [
+          "ECG",
+          "électrocardiogramme",
+          "tracé cardiaque",
+          "électro",
+          "bilan cardiaque",
+          "examen complémentaire"
+        ]
       }
     ]
   },
@@ -1891,46 +1914,63 @@
     "reference_sheet": "Cet ECOS vous place dans la peau d'un interne d'ophtalmologie qui dispose des principaux éléments qui lui sont nécessaires pour raisonner face à une baisse de vision aiguë. Il faut reconnaître le tableau d'une baisse de vision brutale, sur un œil blanc, avec fond d'œil accessible et anormal. Les principaux diagnostics à évoquer d'après le LISA sont l'OACR, l'OVCR, le décollement de rétine et la complication de la DMLA. Dans ce cas précis, le caractère profond et brutal de la baisse, la présence d'une pâleur rétinienne avec une macula rouge cerise, ainsi que l'existence d'une mydriase dite sensorielle font pencher pour l'OACR. Il faut alors reconnaître l'OACR comme un accident vasculaire cérébral et proposer une imagerie cérébrale, de préférence une IRM, ainsi qu'une imagerie des troncs supra-aortiques. Par ailleurs, l'artérite à cellules géantes (maladie de Horton) est à évoquer de par le risque de bilatéralisation et le traitement rapide disponible. Il est donc impératif de doser un paramètre inflammatoire, la CRP.",
     "iconography": [
       {
-        "filename": "pdfimg-8.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-8.png"
-      },
-      {
-        "filename": "pdfimg-9.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-9.png"
-      },
-      {
-        "filename": "pdfimg-10.png",
-        "description": "Image extraite du PDF (page 4)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-10.png"
-      },
-      {
         "filename": "pdfimg-23.png",
-        "description": "Image extraite du PDF (page 10)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-23.png"
+        "description": "Photographie de l'œil droit avec mydriase",
+        "type": "ophtalmo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-23.png",
+        "reveal_triggers": [
+          "œil",
+          "segment antérieur",
+          "mydriase",
+          "pupille",
+          "œil blanc",
+          "examen oculaire"
+        ]
       },
       {
         "filename": "pdfimg-28.jpg",
-        "description": "Image extraite du PDF (page 11)",
-        "type": "photo",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-28.jpg"
+        "description": "Fond d'œil droit avec macula rouge cerise et pâleur rétinienne",
+        "type": "ophtalmo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-28.jpg",
+        "reveal_triggers": [
+          "fond d'œil",
+          "rétine",
+          "macula",
+          "rouge cerise",
+          "pâleur rétinienne",
+          "fond oculaire",
+          "FO"
+        ]
       },
       {
         "filename": "annex-page-10.png",
-        "description": "Annexe (page 10)",
-        "type": "other",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-10.png"
+        "description": "Annexe 1 photo œil droit et Annexe 2 schéma réflexe pupillaire lumineux",
+        "type": "ophtalmo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-10.png",
+        "reveal_triggers": [
+          "réflexe pupillaire",
+          "réflexe photomoteur",
+          "pupille",
+          "mydriase",
+          "œil",
+          "luminosité",
+          "annexe"
+        ]
       },
       {
         "filename": "annex-page-11.png",
-        "description": "Annexe (page 11)",
-        "type": "other",
-        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-11.png"
+        "description": "Annexe 3 fond d'œil droit avec œdème blanc ischémique et macula rouge cerise",
+        "type": "ophtalmo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-11.png",
+        "reveal_triggers": [
+          "fond d'œil",
+          "rétine",
+          "macula rouge cerise",
+          "pâleur rétinienne",
+          "ischémie rétinienne",
+          "FO",
+          "annexe"
+        ]
       }
     ]
   },
@@ -2258,15 +2298,17 @@
     "iconography": [
       {
         "filename": "pdfimg-21.png",
-        "description": "ECG à l'entrée aux urgences",
+        "description": "ECG 12 dérivations avec onde J d'Osborn et bradycardie",
         "type": "ecg",
         "url": "/annexes/sdd-45-1-des-n-3-m-decine-de-l-aigu-mar/pdfimg-21.png",
         "reveal_triggers": [
           "ECG",
           "électrocardiogramme",
-          "electro",
-          "cardio",
-          "tracé"
+          "tracé cardiaque",
+          "onde J",
+          "Osborn",
+          "bradycardie",
+          "électro"
         ]
       }
     ]
