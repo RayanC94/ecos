@@ -15,7 +15,7 @@ interface UsePatientTtsReturn {
 }
 
 const TTS_RATE_STORAGE_KEY = "ecos-tts-rate";
-const DEFAULT_TTS_RATE = 1.15;
+const DEFAULT_TTS_RATE = 1.0;
 
 function readStoredRate(): number {
   if (typeof window === "undefined") return DEFAULT_TTS_RATE;

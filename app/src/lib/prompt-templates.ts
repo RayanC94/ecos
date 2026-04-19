@@ -116,34 +116,37 @@ Genre : ${identity.gender === "F" ? "Femme" : "Homme"}`;
   // the student asks for weight/height/vitals.
   const cd = patient.clinical_data;
   if (cd) {
-    const lines: string[] = [];
     const bio = cd.biometrics;
+    const bioLines: string[] = [];
     if (bio) {
-      const bioBits: string[] = [];
-      if (bio.height_cm) bioBits.push(`${bio.height_cm} cm`);
-      if (bio.weight_kg) bioBits.push(`${bio.weight_kg} kg`);
-      if (bio.bmi) bioBits.push(`IMC ${bio.bmi}`);
-      if (bioBits.length) lines.push(`Biométrie : ${bioBits.join(", ")}`);
+      if (bio.height_cm) bioLines.push(`Taille : ${bio.height_cm} cm`);
+      if (bio.weight_kg) bioLines.push(`Poids : ${bio.weight_kg} kg`);
+      if (bio.bmi) bioLines.push(`IMC : ${bio.bmi}`);
     }
+    if (bioLines.length > 0) {
+      sheet += `\n\n=== BIOMÉTRIE (connue du patient lui-même) ===`;
+      for (const l of bioLines) sheet += `\n${l}`;
+      sheet += `\n(Ces valeurs sont celles que tu connais de toi-même. Si l'étudiant te demande ta taille ou ton poids, tu donnes EXACTEMENT ces valeurs.)`;
+    }
+
     const vs = cd.vital_signs;
+    const vsLines: string[] = [];
     if (vs) {
-      if (vs.blood_pressure) lines.push(`Pression artérielle : ${vs.blood_pressure}`);
-      if (vs.heart_rate) lines.push(`Fréquence cardiaque : ${vs.heart_rate}`);
-      if (vs.respiratory_rate) lines.push(`Fréquence respiratoire : ${vs.respiratory_rate}`);
-      if (vs.spo2) lines.push(`SpO2 : ${vs.spo2}`);
-      if (vs.temperature) lines.push(`Température : ${vs.temperature}`);
-      if (vs.blood_glucose) lines.push(`Glycémie : ${vs.blood_glucose}`);
+      if (vs.blood_pressure) vsLines.push(`Pression artérielle : ${vs.blood_pressure}`);
+      if (vs.heart_rate) vsLines.push(`Fréquence cardiaque : ${vs.heart_rate}`);
+      if (vs.respiratory_rate) vsLines.push(`Fréquence respiratoire : ${vs.respiratory_rate}`);
+      if (vs.spo2) vsLines.push(`SpO2 : ${vs.spo2}`);
+      if (vs.temperature) vsLines.push(`Température : ${vs.temperature}`);
+      if (vs.blood_glucose) vsLines.push(`Glycémie : ${vs.blood_glucose}`);
     }
-    if (lines.length > 0) {
-      sheet += `\n\n=== DONNÉES DU PATIENT (CONSTANTES, BIOMÉTRIE) ===`;
-      for (const l of lines) sheet += `\n${l}`;
-      if (cd.vital_signs_note) {
-        sheet += `\nNote : ${cd.vital_signs_note}`;
-      }
+    if (vsLines.length > 0) {
+      sheet += `\n\n=== CONSTANTES (au dossier — le patient ne les connaît pas par cœur) ===`;
+      for (const l of vsLines) sheet += `\n${l}`;
+      if (cd.vital_signs_note) sheet += `\nNote : ${cd.vital_signs_note}`;
       if (kind === "ide") {
         sheet += `\n(Ces valeurs sont AU DOSSIER. Quand l'étudiant les demande, tu donnes EXACTEMENT ces valeurs, verbatim — tu n'en inventes aucune. Si une valeur n'est pas listée ici, dis "ce n'est pas noté dans le dossier".)`;
       } else {
-        sheet += `\n(Tu ne les connais pas par cœur en tant que patient — si on te demande ta tension, ton pouls, etc., réponds "je ne sais pas, il faudrait me les prendre".)`;
+        sheet += `\n(Tu ne connais pas ces constantes en direct — si on te demande ta tension, ton pouls, ta saturation, ta température, réponds "je ne sais pas, il faudrait me les prendre".)`;
       }
     }
   }

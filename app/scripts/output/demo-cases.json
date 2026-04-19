@@ -76,7 +76,19 @@
       "scenario_instructions": "Le PSS au cours de l'examen n'est pas agité et ne présente pas de troubles de conscience.",
       "patient_questions": [
         "le patient vous a fait part du fait qu'il avait peur d'avoir mal et qu'il ne voudrait surement pas faire le geste si celui ci était trop douloureux"
-      ]
+      ],
+      "clinical_data": {
+        "biometrics": {
+          "height_cm": 185,
+          "weight_kg": 78
+        },
+        "vital_signs": {
+          "blood_pressure": "120/70 mmHg",
+          "heart_rate": "80 BPM",
+          "respiratory_rate": "14/min"
+        },
+        "vital_signs_note": "Les constantes ne sont pas données spontanément ; elles sont remises à l'étudiant sur document uniquement s'il les demande explicitement."
+      }
     },
     "qa_pairs": [],
     "conditional_responses": [
@@ -430,7 +442,19 @@
         "C'est contagieux docteur ?",
         "Est-ce qu'il y a un risque que mes enfants aient la même chose ?",
         "Est-ce qu'il faut dépister mes enfants ?"
-      ]
+      ],
+      "clinical_data": {
+        "biometrics": {
+          "height_cm": 175,
+          "weight_kg": 70
+        },
+        "vital_signs": {
+          "blood_pressure": "120/80 mmHg",
+          "heart_rate": "90 bpm",
+          "respiratory_rate": "12/minutes",
+          "spo2": "98% en AA"
+        }
+      }
     },
     "qa_pairs": [],
     "conditional_responses": [
@@ -702,7 +726,20 @@
       "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
       "patient_questions": [
         "Qu'est-ce que j'ai docteur ?"
-      ]
+      ],
+      "clinical_data": {
+        "biometrics": {
+          "height_cm": 181,
+          "weight_kg": 78
+        },
+        "vital_signs": {
+          "blood_pressure": "124/76 mmHg",
+          "heart_rate": "88 bpm",
+          "spo2": "100%",
+          "temperature": "38.1°C"
+        },
+        "vital_signs_note": "Les constantes sont données dans le contexte candidat (température 37.1°C) mais le scénario patient simulé indique 38.1°C pour la température."
+      }
     },
     "qa_pairs": [],
     "conditional_responses": [
@@ -1347,7 +1384,20 @@
       "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ». Ne répondre que précisément à la question posée/ne pas déroulé le script entièrement dès les première questi",
       "patient_questions": [
         "Vous vous demandez à quoi est dû ce malaise et si vous risquez d'en faire un nouveau dans la journée"
-      ]
+      ],
+      "clinical_data": {
+        "biometrics": {
+          "height_cm": 175,
+          "weight_kg": 75
+        },
+        "vital_signs": {
+          "blood_pressure": "111/70 mmHg",
+          "heart_rate": "65 bpm",
+          "spo2": "99% air ambiant",
+          "blood_glucose": "5,3 mmol/l (0,95 g/l)"
+        },
+        "vital_signs_note": "Constantes obtenues en box IAO avant la consultation ; test d'hypotension orthostatique normal ; examen clinique sans anomalie"
+      }
     },
     "qa_pairs": [
       {
@@ -1682,7 +1732,14 @@
       "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
       "patient_questions": [
         "Alors docteur vous pouvez me dire ce qui m'arrive ? Ça commence à m'inquiéter"
-      ]
+      ],
+      "clinical_data": {
+        "biometrics": {
+          "height_cm": 165,
+          "weight_kg": 83
+        },
+        "vital_signs_note": "Les constantes ne sont pas données spontanément ; si demandées par l'étudiant, le patient répond que tout est normal."
+      }
     },
     "qa_pairs": [],
     "conditional_responses": [
@@ -2062,9 +2119,9 @@
           "respiratory_rate": "25/min",
           "spo2": "95% en air ambiant",
           "temperature": "33°C",
-          "blood_glucose": "6 mmol/L (1.1 g/L)"
+          "blood_glucose": "6 mmol/L ou 1.1 g/L"
         },
-        "vital_signs_note": "Non données spontanément par l'IDE en dehors de la température — à demander pour les obtenir."
+        "vital_signs_note": "Constantes non données spontanément en dehors de la température ; à fournir uniquement si le candidat les demande."
       }
     },
     "qa_pairs": [],
@@ -2389,7 +2446,20 @@
       },
       "opening_line": "Aidez-moi Dr, j'ai du mal à respirer!",
       "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
-      "patient_questions": []
+      "patient_questions": [],
+      "clinical_data": {
+        "biometrics": {
+          "height_cm": 170,
+          "weight_kg": 80
+        },
+        "vital_signs": {
+          "blood_pressure": "115/75 mmHg",
+          "heart_rate": "135 bpm",
+          "respiratory_rate": "28 cycles par minute",
+          "spo2": "92% en air ambiant",
+          "temperature": "37,3°C"
+        }
+      }
     },
     "qa_pairs": [
       {
@@ -2980,7 +3050,20 @@
       "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
       "patient_questions": [
         "Donc si j'ai bien compris ma glycémie est normale sur la prise de sang, est-ce que je dois faire d'autres tests maintenant ?"
-      ]
+      ],
+      "clinical_data": {
+        "biometrics": {
+          "height_cm": 160,
+          "weight_kg": 73,
+          "bmi": 28.5
+        },
+        "vital_signs": {
+          "blood_pressure": "130/76 mmHg",
+          "heart_rate": "85 bpm",
+          "blood_glucose": "0,85 g/L (glycémie à jeûn)"
+        },
+        "vital_signs_note": "La patiente est apyrétique. Les constantes sont mentionnées dans le scénario patient simulé, non données spontanément au candidat."
+      }
     },
     "qa_pairs": [],
     "conditional_responses": [
