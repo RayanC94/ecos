@@ -83,6 +83,42 @@ export function ResultsSummary({ evaluation }: ResultsSummaryProps) {
         </CardContent>
       </Card>
 
+      {/* Conclusion scores */}
+      {evaluation.conclusion_score && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-lg">Conclusion clinique</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {(
+              [
+                ["hypotheses", "Hypothèses diagnostiques"],
+                ["examens", "Examens complémentaires"],
+                ["prise_en_charge", "Prise en charge"],
+              ] as const
+            ).map(([key, label]) => {
+              const c = evaluation.conclusion_score?.[key];
+              if (!c) return null;
+              return (
+                <div key={key} className="flex items-start gap-3">
+                  <span className="text-sm font-medium shrink-0 min-w-[180px]">
+                    {label}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    {c.comment && (
+                      <p className="text-sm text-gray-600">{c.comment}</p>
+                    )}
+                  </div>
+                  <span className="text-sm font-medium shrink-0">
+                    {c.score}/{c.max_score}
+                  </span>
+                </div>
+              );
+            })}
+          </CardContent>
+        </Card>
+      )}
+
       {/* Communication Scores */}
       {evaluation.communication_scores.length > 0 && (
         <Card>

@@ -1,15 +1,48 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import type { ChatMessage } from "@/types/session";
 
 interface UseChatProps {
   sessionId: string;
+  onPatientResponse?: (text: string) => void;
+  onStudentMessage?: (text: string) => void;
+  storageKey?: string;
 }
 
-export function useChat({ sessionId }: UseChatProps) {
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+export function useChat({
+  sessionId,
+  onPatientResponse,
+  onStudentMessage,
+  storageKey,
+}: UseChatProps) {
+  const [messages, setMessages] = useState<ChatMessage[]>(() => {
+    if (!storageKey || typeof window === "undefined") return [];
+    try {
+      const raw = window.localStorage.getItem(storageKey);
+      if (!raw) return [];
+      const parsed = JSON.parse(raw) as ChatMessage[];
+      if (!Array.isArray(parsed)) return [];
+      return parsed;
+    } catch {
+      return [];
+    }
+  });
   const [isLoading, setIsLoading] = useState(false);
+
+  // Persist messages so a refresh or a bugged conversation-mode session
+  // doesn't wipe the transcript (and the evaluator then receives nothing).
+  const storageKeyRef = useRef(storageKey);
+  storageKeyRef.current = storageKey;
+  useEffect(() => {
+    const key = storageKeyRef.current;
+    if (!key || typeof window === "undefined") return;
+    try {
+      window.localStorage.setItem(key, JSON.stringify(messages));
+    } catch {
+      // ignore quota / disabled storage
+    }
+  }, [messages]);
 
   const sendMessage = useCallback(
     async (content: string) => {
@@ -24,8 +57,8 @@ export function useChat({ sessionId }: UseChatProps) {
 
       setMessages((prev) => [...prev, studentMessage]);
       setIsLoading(true);
+      onStudentMessage?.(content.trim());
 
-      // Placeholder for patient response
       const patientMessageId = crypto.randomUUID();
       const patientMessage: ChatMessage = {
         id: patientMessageId,
@@ -34,6 +67,8 @@ export function useChat({ sessionId }: UseChatProps) {
         timestamp: Date.now(),
       };
       setMessages((prev) => [...prev, patientMessage]);
+
+      let fullText = "";
 
       try {
         const response = await fetch("/api/chat", {
@@ -55,7 +90,6 @@ export function useChat({ sessionId }: UseChatProps) {
         if (!reader) throw new Error("No response body");
 
         const decoder = new TextDecoder();
-        let fullText = "";
 
         while (true) {
           const { done, value } = await reader.read();
@@ -89,18 +123,20 @@ export function useChat({ sessionId }: UseChatProps) {
         }
       } catch (error) {
         console.error("Chat error:", error);
+        fullText = "Désolé, je n'ai pas compris. Pouvez-vous reformuler ?";
         setMessages((prev) =>
           prev.map((msg) =>
-            msg.id === patientMessageId
-              ? { ...msg, content: "Désolé, je n'ai pas compris. Pouvez-vous reformuler ?" }
-              : msg
+            msg.id === patientMessageId ? { ...msg, content: fullText } : msg
           )
         );
       } finally {
         setIsLoading(false);
+        // Always fire so the conversation-mode loop (TTS → resume mic) never
+        // stalls, even when the API errors out.
+        onPatientResponse?.(fullText || "");
       }
     },
-    [sessionId, messages, isLoading]
+    [sessionId, messages, isLoading, onPatientResponse, onStudentMessage]
   );
 
   const addSystemMessage = useCallback((content: string) => {

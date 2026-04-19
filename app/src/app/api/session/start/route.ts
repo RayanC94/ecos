@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPool, parseJsonField } from "@/lib/db";
+import { getSupabase, rowToCase } from "@/lib/db";
 import { v4 as uuidv4 } from "uuid";
 
 export async function POST(request: NextRequest) {
@@ -10,52 +10,45 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Missing case_id" }, { status: 400 });
     }
 
-    const pool = getPool();
+    const supabase = getSupabase();
 
-    // Verify case exists
-    const [caseRows] = await pool.query("SELECT * FROM cases WHERE id = ?", [case_id]);
-    const cases = caseRows as Record<string, unknown>[];
-    if (cases.length === 0) {
+    const { data: caseRow, error: caseErr } = await supabase
+      .from("cases")
+      .select("*")
+      .eq("id", case_id)
+      .maybeSingle();
+
+    if (caseErr) throw caseErr;
+    if (!caseRow) {
       return NextResponse.json({ error: "Case not found" }, { status: 404 });
     }
 
-    const row = cases[0];
-    const caseData = {
-      id: row.id,
-      sdd_number: row.sdd_number,
-      subject_number: row.subject_number,
-      title: row.title,
-      specialty: row.specialty,
-      des_group: row.des_group,
-      format: row.format,
-      source_pdf: row.source_pdf,
-      metadata: parseJsonField(row.metadata),
-      student_instructions: parseJsonField(row.student_instructions),
-      patient: parseJsonField(row.patient),
-      qa_pairs: parseJsonField(row.qa_pairs),
-      conditional_responses: parseJsonField(row.conditional_responses),
-      evaluation_grid: parseJsonField(row.evaluation_grid),
-      reference_sheet: row.reference_sheet,
-      iconography: parseJsonField(row.iconography),
-    };
-
-    // Create session
     const sessionId = uuidv4();
-    await pool.query(
-      `INSERT INTO sessions (id, case_id, user_id, status, chat_history)
-       VALUES (?, ?, ?, 'active', '[]')`,
-      [sessionId, case_id, user_id || null]
-    );
+    const { error: sessErr } = await supabase.from("sessions").insert({
+      id: sessionId,
+      case_id,
+      user_id: user_id ?? null,
+      status: "active",
+      chat_history: [],
+    });
+
+    if (sessErr) throw sessErr;
+
+    const fullCase = rowToCase(caseRow as Record<string, unknown>);
+    const {
+      evaluation_grid: _grid,
+      reference_sheet: _ref,
+      ...publicCase
+    } = fullCase;
+    void _grid;
+    void _ref;
 
     return NextResponse.json({
       session: { id: sessionId, case_id, status: "active" },
-      case_data: caseData,
+      case_data: publicCase,
     });
   } catch (error) {
     console.error("Session start error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

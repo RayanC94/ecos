@@ -40,6 +40,28 @@ export const PatientProfileSchema = z.object({
   opening_line: z.string(),
   scenario_instructions: z.string().default(""),
   patient_questions: z.array(z.string()).default([]),
+  clinical_data: z
+    .object({
+      biometrics: z
+        .object({
+          height_cm: z.number().optional(),
+          weight_kg: z.number().optional(),
+          bmi: z.number().optional(),
+        })
+        .optional(),
+      vital_signs: z
+        .object({
+          blood_pressure: z.string().optional(),
+          heart_rate: z.string().optional(),
+          respiratory_rate: z.string().optional(),
+          spo2: z.string().optional(),
+          temperature: z.string().optional(),
+          blood_glucose: z.string().optional(),
+        })
+        .optional(),
+      vital_signs_note: z.string().optional(),
+    })
+    .optional(),
 });
 
 export const QAPairSchema = z.object({
@@ -96,6 +118,19 @@ export const StudentInstructionsSchema = z.object({
   constraints: z.array(z.string()).default([]),
 });
 
+export const AnnexItemSchema = z.object({
+  filename: z.string(),
+  description: z.string().default(""),
+  type: z.enum(["ecg", "photo", "lab", "other"]).default("other"),
+  url: z.string(),
+  // If true, the annex is shown as soon as the session starts.
+  // Otherwise it stays hidden until the student (or the AI) explicitly
+  // mentions one of the reveal_triggers.
+  initially_visible: z.boolean().default(false),
+  reveal_triggers: z.array(z.string()).default([]),
+});
+
+
 export const ECOSCaseSchema = z.object({
   id: z.string(),
   sdd_number: z.number(),
@@ -112,7 +147,7 @@ export const ECOSCaseSchema = z.object({
   conditional_responses: z.array(ConditionalResponseSchema).default([]),
   evaluation_grid: EvaluationGridSchema,
   reference_sheet: z.string().optional(),
-  iconography: z.array(z.string()).default([]),
+  iconography: z.array(AnnexItemSchema).default([]),
 });
 
 // --- TypeScript types (inferred from Zod) ---
@@ -130,4 +165,5 @@ export type CommunicationRubric = z.infer<typeof CommunicationRubricSchema>;
 export type EvaluationGrid = z.infer<typeof EvaluationGridSchema>;
 export type CaseMetadata = z.infer<typeof CaseMetadataSchema>;
 export type StudentInstructions = z.infer<typeof StudentInstructionsSchema>;
+export type AnnexItem = z.infer<typeof AnnexItemSchema>;
 export type ECOSCase = z.infer<typeof ECOSCaseSchema>;

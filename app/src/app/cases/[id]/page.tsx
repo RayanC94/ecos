@@ -150,7 +150,9 @@ export default function CaseDetailPage() {
 
             {caseData.student_instructions.tasks.length > 0 && (
               <div>
-                <h3 className="font-medium text-sm mb-2">Objectifs</h3>
+                <h3 className="font-medium text-sm mb-2">
+                  Vous avez {caseData.metadata.time_limit_minutes} minutes pour :
+                </h3>
                 <ol className="list-decimal list-inside text-sm text-gray-700 space-y-1">
                   {caseData.student_instructions.tasks.map((task, i) => (
                     <li key={i}>{task}</li>
@@ -158,34 +160,17 @@ export default function CaseDetailPage() {
                 </ol>
               </div>
             )}
-          </CardContent>
-        </Card>
 
-        {/* Evaluation grid preview */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">
-              Grille d&apos;évaluation ({caseData.evaluation_grid.tasks.length}{" "}
-              items)
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-gray-500 mb-3">
-              Vous serez évalué sur ces critères à la fin de la consultation :
-            </p>
-            <ul className="space-y-1.5">
-              {caseData.evaluation_grid.tasks.slice(0, 5).map((task, i) => (
-                <li key={i} className="text-sm text-gray-600 flex gap-2">
-                  <span className="text-gray-300">•</span>
-                  {task.description}
-                </li>
-              ))}
-              {caseData.evaluation_grid.tasks.length > 5 && (
-                <li className="text-sm text-gray-400 italic">
-                  + {caseData.evaluation_grid.tasks.length - 5} autres critères
-                </li>
-              )}
-            </ul>
+            {caseData.student_instructions.constraints.length > 0 && (
+              <div className="p-3 bg-amber-50 rounded text-sm text-amber-900">
+                <p className="font-medium mb-1">Vous ne devez pas :</p>
+                <ul className="list-disc list-inside space-y-0.5">
+                  {caseData.student_instructions.constraints.map((c, i) => (
+                    <li key={i}>{c}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </CardContent>
         </Card>
 

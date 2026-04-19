@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPool, parseJsonField } from "@/lib/db";
+import { getSupabase } from "@/lib/db";
 
 export async function GET(
   request: NextRequest,
@@ -7,45 +7,43 @@ export async function GET(
 ) {
   try {
     const { sessionId } = await params;
-    const pool = getPool();
+    const supabase = getSupabase();
 
-    const [rows] = await pool.query(
-      "SELECT * FROM evaluations WHERE session_id = ? LIMIT 1",
-      [sessionId]
-    );
+    const { data: evalRow, error: evalErr } = await supabase
+      .from("evaluations")
+      .select("*")
+      .eq("session_id", sessionId)
+      .maybeSingle();
 
-    const results = rows as Record<string, unknown>[];
-    if (results.length === 0) {
+    if (evalErr) throw evalErr;
+    if (!evalRow) {
       return NextResponse.json({ error: "Evaluation not found" }, { status: 404 });
     }
 
-    const row = results[0];
+    const e = evalRow as Record<string, unknown>;
     const evaluation = {
-      session_id: row.session_id,
-      case_id: row.case_id,
-      task_scores: parseJsonField(row.task_scores) ?? [],
-      communication_scores: parseJsonField(row.communication_scores) ?? [],
-      total_score: Number(row.total_score),
-      max_score: Number(row.max_score),
-      percentage: Number(row.percentage),
-      strengths: parseJsonField(row.strengths) ?? [],
-      improvements: parseJsonField(row.improvements) ?? [],
-      summary: row.summary ?? "",
+      session_id: e.session_id,
+      case_id: e.case_id,
+      task_scores: (e.task_scores as unknown[]) ?? [],
+      communication_scores: (e.communication_scores as unknown[]) ?? [],
+      total_score: Number(e.total_score ?? 0),
+      max_score: Number(e.max_score ?? 0),
+      percentage: Number(e.percentage ?? 0),
+      strengths: (e.strengths as unknown[]) ?? [],
+      improvements: (e.improvements as unknown[]) ?? [],
+      summary: (e.summary as string) ?? "",
     };
 
-    // Get case title
-    const [caseRows] = await pool.query(
-      "SELECT title, sdd_number FROM cases WHERE id = ?",
-      [row.case_id]
-    );
-    const caseInfo = (caseRows as Record<string, unknown>[])[0];
+    const { data: caseRow } = await supabase
+      .from("cases")
+      .select("title, sdd_number")
+      .eq("id", e.case_id as string)
+      .maybeSingle();
 
-    return NextResponse.json({
-      evaluation,
-      case_title: caseInfo
-        ? `SDD ${caseInfo.sdd_number} — ${caseInfo.title}`
-        : "",
-    });
+    const c = caseRow as { title?: string; sdd_number?: number } | null;
+    const case_title = c ? `SDD ${c.sdd_number} — ${c.title}` : "";
+
+    return NextResponse.json({ evaluation, case_title });
   } catch (error) {
     console.error("Evaluations API error:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

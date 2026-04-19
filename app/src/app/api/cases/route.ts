@@ -1,32 +1,28 @@
-import { NextRequest, NextResponse } from "next/server";
-import { getPool, parseJsonField } from "@/lib/db";
-import type { ECOSCase } from "@/types/case";
+import { NextResponse } from "next/server";
+import { getSupabase, rowToCase } from "@/lib/db";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    const pool = getPool();
-    const [rows] = await pool.query(
-      "SELECT * FROM cases ORDER BY sdd_number"
-    );
+    const supabase = getSupabase();
+    // Only expose playable cases: tacfa_patient format with a populated opening_line.
+    // Other formats (tutecos, tacfa_no_patient) stay in the DB but are hidden from the
+    // student-facing list until we build the right UX for them.
+    const { data, error } = await supabase
+      .from("cases")
+      .select("*")
+      .eq("format", "tacfa_patient")
+      .not("patient", "is", null)
+      .order("sdd_number", { ascending: true });
 
-    const cases = (rows as Record<string, unknown>[]).map((row) => ({
-      id: row.id,
-      sdd_number: row.sdd_number,
-      subject_number: row.subject_number,
-      title: row.title,
-      specialty: row.specialty,
-      des_group: row.des_group,
-      format: row.format,
-      source_pdf: row.source_pdf,
-      metadata: parseJsonField(row.metadata),
-      student_instructions: parseJsonField(row.student_instructions),
-      patient: parseJsonField(row.patient),
-      qa_pairs: parseJsonField(row.qa_pairs),
-      conditional_responses: parseJsonField(row.conditional_responses),
-      evaluation_grid: parseJsonField(row.evaluation_grid),
-      reference_sheet: row.reference_sheet,
-      iconography: parseJsonField(row.iconography),
-    })) as ECOSCase[];
+    if (error) throw error;
+
+    const rows = (data ?? []) as Record<string, unknown>[];
+    const cases = rows
+      .filter((r) => {
+        const p = r.patient as { opening_line?: string } | null;
+        return !!p?.opening_line && p.opening_line.trim().length > 0;
+      })
+      .map(rowToCase);
 
     return NextResponse.json({ cases });
   } catch (error) {

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPool, parseJsonField } from "@/lib/db";
+import { getSupabase, rowToCase } from "@/lib/db";
 
 export async function GET(
   request: NextRequest,
@@ -7,35 +7,29 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const pool = getPool();
-    const [rows] = await pool.query("SELECT * FROM cases WHERE id = ?", [id]);
+    const supabase = getSupabase();
+    const { data, error } = await supabase
+      .from("cases")
+      .select("*")
+      .eq("id", id)
+      .maybeSingle();
 
-    const results = rows as Record<string, unknown>[];
-    if (results.length === 0) {
+    if (error) throw error;
+    if (!data) {
       return NextResponse.json({ error: "Case not found" }, { status: 404 });
     }
 
-    const row = results[0];
-    const caseData = {
-      id: row.id,
-      sdd_number: row.sdd_number,
-      subject_number: row.subject_number,
-      title: row.title,
-      specialty: row.specialty,
-      des_group: row.des_group,
-      format: row.format,
-      source_pdf: row.source_pdf,
-      metadata: parseJsonField(row.metadata),
-      student_instructions: parseJsonField(row.student_instructions),
-      patient: parseJsonField(row.patient),
-      qa_pairs: parseJsonField(row.qa_pairs),
-      conditional_responses: parseJsonField(row.conditional_responses),
-      evaluation_grid: parseJsonField(row.evaluation_grid),
-      reference_sheet: row.reference_sheet,
-      iconography: parseJsonField(row.iconography),
-    };
-
-    return NextResponse.json({ case_data: caseData });
+    // Strip grid + reference sheet from the pre-session detail view too —
+    // the student must not see them before the end.
+    const fullCase = rowToCase(data as Record<string, unknown>);
+    const {
+      evaluation_grid: _grid,
+      reference_sheet: _ref,
+      ...publicCase
+    } = fullCase;
+    void _grid;
+    void _ref;
+    return NextResponse.json({ case_data: publicCase });
   } catch (error) {
     console.error("Case detail API error:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

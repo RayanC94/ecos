@@ -14,11 +14,24 @@ export interface CommunicationScore {
   justification: string;
 }
 
+export interface ConclusionFieldScore {
+  score: number;
+  max_score: number;
+  comment: string;
+}
+
+export interface ConclusionScore {
+  hypotheses: ConclusionFieldScore;
+  examens: ConclusionFieldScore;
+  prise_en_charge: ConclusionFieldScore;
+}
+
 export interface EvaluationResult {
   session_id: string;
   case_id: string;
   task_scores: TaskScore[];
   communication_scores: CommunicationScore[];
+  conclusion_score: ConclusionScore | null;
   total_score: number;
   max_score: number;
   percentage: number;

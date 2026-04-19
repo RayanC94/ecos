@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPool, parseJsonField } from "@/lib/db";
+import { getSupabase, rowToCase } from "@/lib/db";
 
 export async function GET(
   request: NextRequest,
@@ -7,62 +7,52 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const pool = getPool();
+    const supabase = getSupabase();
 
-    // Get session
-    const [sessionRows] = await pool.query(
-      "SELECT * FROM sessions WHERE id = ?",
-      [id]
-    );
-    const sessions = sessionRows as Record<string, unknown>[];
-    if (sessions.length === 0) {
+    const { data: session, error: sessErr } = await supabase
+      .from("sessions")
+      .select("*")
+      .eq("id", id)
+      .maybeSingle();
+
+    if (sessErr) throw sessErr;
+    if (!session) {
       return NextResponse.json({ error: "Session not found" }, { status: 404 });
     }
 
-    const session = sessions[0];
+    const { data: caseRow, error: caseErr } = await supabase
+      .from("cases")
+      .select("*")
+      .eq("id", (session as { case_id: string }).case_id)
+      .maybeSingle();
 
-    // Get case data
-    const [caseRows] = await pool.query("SELECT * FROM cases WHERE id = ?", [
-      session.case_id,
-    ]);
-    const cases = caseRows as Record<string, unknown>[];
-    if (cases.length === 0) {
+    if (caseErr) throw caseErr;
+    if (!caseRow) {
       return NextResponse.json({ error: "Case not found" }, { status: 404 });
     }
 
-    const row = cases[0];
-    const caseData = {
-      id: row.id,
-      sdd_number: row.sdd_number,
-      subject_number: row.subject_number,
-      title: row.title,
-      specialty: row.specialty,
-      des_group: row.des_group,
-      format: row.format,
-      source_pdf: row.source_pdf,
-      metadata: parseJsonField(row.metadata),
-      student_instructions: parseJsonField(row.student_instructions),
-      patient: parseJsonField(row.patient),
-      qa_pairs: parseJsonField(row.qa_pairs),
-      conditional_responses: parseJsonField(row.conditional_responses),
-      evaluation_grid: parseJsonField(row.evaluation_grid),
-      reference_sheet: row.reference_sheet,
-      iconography: parseJsonField(row.iconography),
-    };
+    // Strip spoilers from the payload sent to the student UI while
+    // the session is active: the evaluation grid and the reference
+    // sheet are answers that would telegraph what to ask.
+    const fullCase = rowToCase(caseRow as Record<string, unknown>);
+    const {
+      evaluation_grid: _grid,
+      reference_sheet: _ref,
+      ...publicCase
+    } = fullCase;
+    void _grid;
+    void _ref;
 
     return NextResponse.json({
       session: {
-        id: session.id,
-        case_id: session.case_id,
-        status: session.status,
+        id: (session as { id: string }).id,
+        case_id: (session as { case_id: string }).case_id,
+        status: (session as { status: string }).status,
       },
-      case_data: caseData,
+      case_data: publicCase,
     });
   } catch (error) {
     console.error("Sessions API error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

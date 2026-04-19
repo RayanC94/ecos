@@ -1,7 +1,6 @@
 import { NextRequest } from "next/server";
 import { streamPatientResponse } from "@/lib/patient-engine";
-import { getPool, parseJsonField } from "@/lib/db";
-import type { ECOSCase } from "@/types/case";
+import { getSupabase, rowToCase } from "@/lib/db";
 import type { ChatMessage } from "@/types/session";
 
 export async function POST(request: NextRequest) {
@@ -14,51 +13,35 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    const pool = getPool();
+    const supabase = getSupabase();
 
-    // Get session
-    const [sessionRows] = await pool.query(
-      "SELECT case_id, status FROM sessions WHERE id = ?",
-      [session_id]
-    );
-    const sessions = sessionRows as Record<string, unknown>[];
-    if (sessions.length === 0) {
+    const { data: session, error: sessErr } = await supabase
+      .from("sessions")
+      .select("case_id, status")
+      .eq("id", session_id)
+      .maybeSingle();
+
+    if (sessErr) throw sessErr;
+    if (!session) {
       return new Response(JSON.stringify({ error: "Session not found" }), { status: 404 });
     }
-
-    const session = sessions[0];
-    if (session.status !== "active") {
+    if ((session as { status: string }).status !== "active") {
       return new Response(JSON.stringify({ error: "Session is not active" }), { status: 400 });
     }
 
-    // Get case data
-    const [caseRows] = await pool.query("SELECT * FROM cases WHERE id = ?", [session.case_id]);
-    const cases = caseRows as Record<string, unknown>[];
-    if (cases.length === 0) {
+    const { data: caseRow, error: caseErr } = await supabase
+      .from("cases")
+      .select("*")
+      .eq("id", (session as { case_id: string }).case_id)
+      .maybeSingle();
+
+    if (caseErr) throw caseErr;
+    if (!caseRow) {
       return new Response(JSON.stringify({ error: "Case not found" }), { status: 404 });
     }
 
-    const row = cases[0];
-    const caseData: ECOSCase = {
-      id: row.id as string,
-      sdd_number: row.sdd_number as number,
-      subject_number: row.subject_number as number,
-      title: row.title as string,
-      specialty: row.specialty as string,
-      des_group: row.des_group as number,
-      format: row.format as ECOSCase["format"],
-      source_pdf: row.source_pdf as string,
-      metadata: parseJsonField(row.metadata),
-      student_instructions: parseJsonField(row.student_instructions),
-      patient: parseJsonField(row.patient),
-      qa_pairs: parseJsonField(row.qa_pairs) ?? [],
-      conditional_responses: parseJsonField(row.conditional_responses) ?? [],
-      evaluation_grid: parseJsonField(row.evaluation_grid),
-      reference_sheet: row.reference_sheet as string | undefined,
-      iconography: parseJsonField(row.iconography) ?? [],
-    };
+    const caseData = rowToCase(caseRow as Record<string, unknown>);
 
-    // Stream the patient response
     const stream = await streamPatientResponse(
       caseData,
       (chat_history ?? []) as ChatMessage[],
@@ -74,9 +57,6 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error("Chat API error:", error);
-    return new Response(
-      JSON.stringify({ error: "Internal server error" }),
-      { status: 500 }
-    );
+    return new Response(JSON.stringify({ error: "Internal server error" }), { status: 500 });
   }
 }

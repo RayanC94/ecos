@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPool } from "@/lib/db";
+import { getSupabase } from "@/lib/db";
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,23 +9,24 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Missing session_id" }, { status: 400 });
     }
 
-    const pool = getPool();
+    const supabase = getSupabase();
+    const { error } = await supabase
+      .from("sessions")
+      .update({
+        status: "completed",
+        ended_at: new Date().toISOString(),
+        chat_history: chat_history ?? [],
+        duration_seconds: duration_seconds ?? null,
+      })
+      .eq("id", session_id);
 
-    await pool.query(
-      `UPDATE sessions
-       SET status = 'completed', ended_at = NOW(), chat_history = ?, duration_seconds = ?
-       WHERE id = ?`,
-      [JSON.stringify(chat_history ?? []), duration_seconds ?? null, session_id]
-    );
+    if (error) throw error;
 
     return NextResponse.json({
       session: { id: session_id, status: "completed" },
     });
   } catch (error) {
     console.error("Session end error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

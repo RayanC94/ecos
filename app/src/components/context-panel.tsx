@@ -1,16 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { ECOSCase } from "@/types/case";
 
 interface ContextPanelProps {
   caseData: ECOSCase;
+  autoCollapse?: boolean;
 }
 
-export function ContextPanel({ caseData }: ContextPanelProps) {
+export function ContextPanel({ caseData, autoCollapse = false }: ContextPanelProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const instructions = caseData.student_instructions;
+
+  // When autoCollapse flips on (first student message), fold the panel
+  // so the chat input remains visible without scrolling the whole page.
+  useEffect(() => {
+    if (autoCollapse) setIsCollapsed(true);
+  }, [autoCollapse]);
 
   if (isCollapsed) {
     return (

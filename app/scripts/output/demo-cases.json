@@ -1,0 +1,3093 @@
+[
+  {
+    "id": "sdd-147-1-sdd-147-epistaxis",
+    "source_pdf": "SDD 147. Epistaxis .docx.pdf",
+    "des_group": 0,
+    "specialty": "Inconnu",
+    "sdd_number": 147,
+    "subject_number": 1,
+    "title": "SDD 147 - Epistaxis",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "Elisa Durand (DES d'ORL - Promotion ECN 2023)",
+      "date": "26 octobre 2023",
+      "competency_domains": [
+        "Examen clinique",
+        "Annonce/information du patient"
+      ],
+      "learning_objectives": [
+        "Item 147 Epistaxis"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [
+        "Table de consultation",
+        "chaise"
+      ],
+      "time_limit_minutes": 8
+    },
+    "student_instructions": {
+      "context": "Vous êtes interne aux urgences et vous recevez M. Cavendish (40/60 ans) qui se présente aux urgences car il saigne du nez depuis 1h sans s'arrêter. Il a pour antécédents : allergie aux poils de chat et appendicite dans l'enfance. Il prend des antihistaminiques ponctuellement. Le patient a déjà effectué une compression bi digitale sans succès. Votre externe a déjà interrogé et examiné le patient.",
+      "tasks": [
+        "Interroger l'externe à la recherche des signes de gravité",
+        "Expliquer à l'externe la 1ere ligne de traitement que vous souhaitez mettre en place"
+      ],
+      "constraints": [
+        "Vous ne devez pas réaliser d'interrogatoire poussé",
+        "Vous ne devez pas réaliser la procédure de traitement"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "CAVENDISH",
+        "first_name": "M.",
+        "age": 50,
+        "gender": "M",
+        "profession": "professeur d'anglais",
+        "marital_status": "marié",
+        "children": "sans enfants"
+      },
+      "medical_history": {
+        "personal": [
+          "Appendicite dans l'enfance"
+        ],
+        "family": [
+          "Aucun"
+        ],
+        "allergies": [
+          "allergie aux poils de chat"
+        ]
+      },
+      "current_medications": [
+        "Antihistaminiques ponctuellement"
+      ],
+      "toxics": {
+        "smoking": "il ne fume pas",
+        "alcohol": "il ne boit pas",
+        "other": ""
+      },
+      "behavior": {
+        "posture": "allongé sur la table d'examen avec un mouchoir près du nez",
+        "pain": "",
+        "anxiety": "un peu stressé parce que ça fait maintenant 1h qu'il saigne du nez, il n'a jamais eu ça, ça l'inquiète un peu",
+        "anger": ""
+      },
+      "opening_line": "Bonjour, je suis allé voir M.CAVENDISH en box 2, je peux t'en parler ?",
+      "scenario_instructions": "Le PSS au cours de l'examen n'est pas agité et ne présente pas de troubles de conscience.",
+      "patient_questions": [
+        "le patient vous a fait part du fait qu'il avait peur d'avoir mal et qu'il ne voudrait surement pas faire le geste si celui ci était trop douloureux"
+      ]
+    },
+    "qa_pairs": [],
+    "conditional_responses": [
+      {
+        "trigger": "Si l'étudiant demande : « est-ce que vous avez des sueurs »",
+        "response": "le PS répond qu'il n'en a pas"
+      },
+      {
+        "trigger": "Si l'étudiant demande si le PS est pâle ou présente des marbrures",
+        "response": "le PSS pourra lui donner les photos en données complémentaires"
+      },
+      {
+        "trigger": "Si l'étudiant demande si le patient à des télangiectasies",
+        "response": "le PSS pourra lui donner les photos fournies en données complémentaires"
+      },
+      {
+        "trigger": "Si l'étudiant demande l'abondance du saignement",
+        "response": "ça goutte continuellement de la narine droite depuis 1h et qu'il pourrait quantifier ça comme une petite tasse à café"
+      },
+      {
+        "trigger": "Si l'étudiant demande les signes de pancartes type pression artérielle et fréquence cardiaque",
+        "response": "l'examinateur pourra lui remettre une copie du scope"
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 1,
+          "description": "Vérifie que le patient est installé en position assise ou demi-assise",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 2,
+          "description": "Recherche une tachycardie",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 3,
+          "description": "Recherche une hypotension",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 4,
+          "description": "Recherche une mauvaise tolérance de l'hémorragie : au moins 3 - polypnée - désaturation - temps de recoloration cutanée >3sec - pâleur - sueurs - marbrures - agitation - troubles de la conscience",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 5,
+          "description": "Recherche l'abondance du saignement",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 6,
+          "description": "Recherche la répétition des épisodes",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 7,
+          "description": "Recherche des télangiectasies sur le visage orientant vers une maladie de Rendu-Osler",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 8,
+          "description": "Explique à l'externe qu'il va devoir se moucher et se laver le nez au sérum physiologique une nouvelle fois",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 9,
+          "description": "Explique à l'externe qu'il va bénéficier d'une anesthésie locale.",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 10,
+          "description": "Explique à l'externe qu'il va bénéficier d'une antalgie par voie orale de palier 1 ou 2 selon sa douleur",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 8,
+          "description": "Explique à l'externe qu'une mèche sera rentrée par la narine puis tassée jusqu'au fond de la fosse nasale",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 9,
+          "description": "Explique à l'externe que si le méchage reste plus de 48h une antibioprophylaxie sera prescrite",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 10,
+          "description": "Explique à l'externe que la technique s'appelle un \"tamponnement antérieur\"",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "APTITUDE À ÉCOUTER : le patient / le pair",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Interrompt le patient/pair de façon inappropriée. Ignore les réponses du patient/collègue"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Se montre impatient"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Est attentif aux réponses du patient/pair"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Est attentif aux réponses du patient/pair. Adopte la technique de reformulation si l'information est imprécise ou éloignée des objectifs."
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Porte une attention soutenue aux réponses du patient/pair et à ses préoccupations."
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À MENER L'EXAMEN CLINIQUE",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "N'explique pas au patient les gestes réalisés ou ne respecte pas le confort du patient"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Explique peu les gestes réalisés"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Explique les gestes réalisés et respecte le confort du patient"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Donne l'information sur les gestes en expliquant les objectifs /les éléments recherchés et respecte le confort du patient"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Agit sans erreur Met à l'aise"
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À PLANIFIER LES SOINS (= approche centrée sur le patient)",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Le projet des soins ne correspond pas au tableau clinique ou ne prend pas en compte le patient et ses besoins"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Le projet des soins est adapté au tableau clinique"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Fait participer le patient à la planification de ses soins (ex invite le patient à poser des questions)"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Favorise la prise de décision en partenariat avec le patient."
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Favorise la prise de décision en partenariat avec le patient. Renforce la confiance du patient et son autonomie"
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": "Ce qui me semble important à retenir : => les signes de gravités +++ ils conditionnent la suite de la prise en charge, si ils sont présent il faudra d'abord conditionner le patient avec 1 voire 2 VVP, un monitoring, +/- oxygénothérapie et hospitalisation en USI, il faudra aussi prévoir un bilan biologique (NFS = retentissement de l'hémorragie, plaquette/TCA/TP/INR(si AVK) = troubles de l'hémostase, bilan pré transfusionnel (groupe ABO, Rhésus, RAI)) => retenir les grandes lignes d'un tamponnement antérieur, ça implique le patient dans sa prise en charge car il comprend ce qu'on va lui faire. Toujours penser à l'antalgie/anxiolyse du patient, ça permet de rendre l'expérience moins douloureuse pour le patient et ça renforce le lien de confiance. => ATTENTION, il est INNACCEPTABLE de laisser un patient avec une épistaxis couché, il y un fort risque d'inhalation !!!!!!! => Bien que le patient soit couché/demi assis/assis, l'étudiant s'est mis à sa hauteur grâce à la chaise mise à disposition ou en montant/descendant la table. Ce genre de comportement peut vous rapporter des points dans la partie comportement et communication non verbale !",
+    "iconography": [
+      {
+        "filename": "pdfimg-4.png",
+        "description": "Image extraite du PDF (page 5)",
+        "type": "photo",
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-4.png"
+      },
+      {
+        "filename": "pdfimg-5.jpg",
+        "description": "Image extraite du PDF (page 8)",
+        "type": "photo",
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-5.jpg"
+      },
+      {
+        "filename": "pdfimg-6.jpg",
+        "description": "Image extraite du PDF (page 9)",
+        "type": "photo",
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-6.jpg"
+      },
+      {
+        "filename": "pdfimg-8.png",
+        "description": "Image extraite du PDF (page 10)",
+        "type": "photo",
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/pdfimg-8.png"
+      },
+      {
+        "filename": "annex-page-5.png",
+        "description": "Annexe (page 5)",
+        "type": "other",
+        "url": "/annexes/sdd-147-1-sdd-147-epistaxis/annex-page-5.png"
+      }
+    ]
+  },
+  {
+    "id": "sdd-193-1-sdd-193-anomalie-de-l-eps",
+    "source_pdf": "SDD 193. Myélome .pdf",
+    "des_group": 0,
+    "specialty": "Inconnu",
+    "sdd_number": 193,
+    "subject_number": 1,
+    "title": "Anomalie à l'électrophorèse des protéines sériques - Myélome",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "Ambroise LE POGAM",
+      "date": "16/10/2023",
+      "competency_domains": [
+        "Stratégie diagnostique",
+        "Annonce/information au patient"
+      ],
+      "learning_objectives": [
+        "Item 320. Myélome",
+        "193. Anomalie à l'électrophorèse des protéines sériques"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [
+        "Salle de consultation"
+      ],
+      "time_limit_minutes": 8
+    },
+    "student_instructions": {
+      "context": "Vous êtes un interne de médecine générale en consultation, vous recevez M. Picard Roger, âgé de 70 ans. Son bilan de contrôle a retrouvé électrophorèse des protéines sériques (EPP) qui a découvert un pic monoclonal à 26,1 gr/L d'IgG. Il n'a pas apporté l'ensemble des résultats de cette biologie et ne les a pas lus.",
+      "tasks": [
+        "Rassurer le patient et répondre à ses questions",
+        "Prescrire les examens biologiques et radiologiques pour faire le diagnostic de l'étiologie et des potentielles conséquences du pic monoclonal ou du myélome"
+      ],
+      "constraints": [
+        "Faire d'examen clinique ou d'interrogatoire complémentaire",
+        "Réaliser un interrogatoire exhaustif du patient"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "Picard",
+        "first_name": "Roger",
+        "age": 70,
+        "gender": "M",
+        "profession": "ancien professeur de physique au lycée",
+        "marital_status": "vit avec sa femme",
+        "children": "2 enfants"
+      },
+      "medical_history": {
+        "personal": [
+          "Arthrose digitale",
+          "arthrose de genou gauche",
+          "prothèse de hanche droite sur coxarthrose",
+          "Hypertension artérielle sous monothérapie non compliquée"
+        ],
+        "family": [
+          "Aucun notable"
+        ],
+        "allergies": []
+      },
+      "current_medications": [
+        "Amlodipine 5 mg 1 cp le matin",
+        "Doliprane/Paracétamol jusqu'à 2 fois par jour en cas de douleur aux genoux"
+      ],
+      "toxics": {
+        "smoking": "5 cigarettes par jour non sevré, 10 PA",
+        "alcohol": "",
+        "other": ""
+      },
+      "behavior": {
+        "posture": "",
+        "pain": "EVA : 0/10",
+        "anxiety": "assez inquiet",
+        "anger": ""
+      },
+      "opening_line": "Bonjour docteur, je viens vous voir car mon médecin traitant m'a fait réaliser une prise de sang la semaine dernière et il est actuellement en congé. J'ai aucun problème, je n'ai mal nulle part et je me sens en forme j'ai même diminué la cigarette et repris le sport, c'était juste une prise de sang de contrôle. Le résultat est arrivé et il y a une grosse anomalie sur cet examen. Voilà je vous avoue que je suis assez inquiet, j'ai pas pu m'empêcher de regarder sur internet, et c'est dit que c'est à cause d'un cancer du sang, le myélome. C'est vrai ?",
+      "scenario_instructions": "Pas de symptômes positifs : le patient ne se plaint de rien, notamment pas de douleur, pas d'asthénie, pas de difficulté à sentir ou bouger les membres. Ne répondre à la négative que si demandé par l'étudiant.",
+      "patient_questions": [
+        "Du coup c'est un cancer ?",
+        "D'accord ce n'est pas forcément un myélome, mais c'est quoi la différence entre les deux alors",
+        "C'est contagieux docteur ?",
+        "Est-ce qu'il y a un risque que mes enfants aient la même chose ?",
+        "Est-ce qu'il faut dépister mes enfants ?"
+      ]
+    },
+    "qa_pairs": [],
+    "conditional_responses": [
+      {
+        "trigger": "Si après 5 minutes les examens biologiques et scannographiques n'ont toujours pas été abordés",
+        "response": "Et donc comment va être sur de la cause de cette anomalie"
+      },
+      {
+        "trigger": "Dire au moins une fois pour aller chercher une parole rassurante/empathique",
+        "response": "ça m'inquiète quand même pas mal cette histoire"
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Réponse aux inquiétudes et questions du patient",
+          "item_number": 1,
+          "description": "Répond au patient qu'il n'a pas obligatoirement un cancer / qu'il existe d'autres causes que le cancer ou myélome pouvant expliquer l'anomalie à l'EPS",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Réponse aux inquiétudes et questions du patient",
+          "item_number": 2,
+          "description": "Énonce la différence entre un pic monoclonal et un myélome",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Réponse aux inquiétudes et questions du patient",
+          "item_number": 3,
+          "description": "Affirme qu'il n'y a pas de risque de transmission à la famille",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Réponse aux inquiétudes et questions du patient",
+          "item_number": 4,
+          "description": "Affirme qu'il n'y pas besoin de dépistage de la famille ou de transmission aux enfants",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Stratégie diagnostique",
+          "item_number": 5,
+          "description": "Examen biologique : Calcémie, Créatinémie, NFS",
+          "points": 1,
+          "scoring_type": "weighted",
+          "acceptable_answers": [
+            "1 pt si 3/3"
+          ]
+        },
+        {
+          "task_group": "Stratégie diagnostique",
+          "item_number": 6,
+          "description": "Énonce la réalisation d'une Immunofixation des protéines sériques",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Stratégie diagnostique",
+          "item_number": 7,
+          "description": "Énonce le dosage des chaînes légères libres",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Stratégie diagnostique",
+          "item_number": 8,
+          "description": "Énonce la réalisation d'un dosage de l'albumine (plus précis que sur l'EPP)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Stratégie diagnostique",
+          "item_number": 9,
+          "description": "Rechercher complication rénale (cite au moins 1 des 3 éléments) : Protéinurie des 24H ET/OU Protéinurie et créatinurie sur échantillon ET/OU Électrophorèse des protéines urinaires",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Stratégie diagnostique",
+          "item_number": 10,
+          "description": "Recherche les complications osseuses : Scanner corps entier osseux OU non injecté",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "APTITUDE À PROPOSER UNE PRISE EN CHARGE (situations aiguës / chroniques)",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Est incapable de proposer une prise en charge adaptée à la situation clinique"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Propose une prise en charge en couvrant les éléments essentiels, n'arrive pas à justifier la démarche"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Propose une prise en charge en couvrant les éléments essentiels et justifie la démarche"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Propose une prise pertinente. Ne s'attarde pas au traitement/prise en charge inutile et justifie la démarche"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Établit l'ordre de priorité des différents aspects de la prise en charge du patient (hiérarchise)"
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À FOURNIR LES RENSEIGNEMENTS AU PATIENT / AUX AIDANTS",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Renseigne le patient / aidant de manière inadéquate (ex. informations inexactes) ou ne fait aucun effort pour renseigner le patient/aidant"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Donne des renseignements de façon incomplète ou s'attarde à des renseignements éloignés du problème"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Donne des renseignements de façon adaptée. Veille quelque peu à ce que le patient / aidant comprenne"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Donne des renseignements de façon adaptée. Veille à ce que le patient / aidant comprenne"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Renseigne avec justesse et illustre ses explications pour qu'elles soient bien comprises"
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": "La découverte d'un pic monoclonal d'IgG ou d'IgA lors de la réalisation d'une biologie « standard » de dépistage ou motivée par un symptôme est un motif fréquent de consultation. Étant une anomalie qui est rendue au patient avec le reste de l'examen biologique, il est fréquent que ce dernier consulte sur internet ou se documente et fasse un lien un peu précoce avec un « cancer » et notamment le myélome. Il faut savoir rassurer le patient : - La découverte de pic monoclonal est un problème fréquent - Il ne signe pas nécessairement la présence d'un cancer, par contre il nécessite d'initier un bilan biologique et radiologique « poussé » pour ne pas en méconnaitre un - L'importance du pic incite à réaliser un myélogramme, donc la réalisation est anxiogène pour le patient et mérite d'être expliquée au préalable : localisation sternale ou crête iliaque, anesthésie locale, rapide, pas de complication (exceptionnellement infection locale) si respect des contre-indications (chirurgie sternale, irradiation thoracique) - En cas de découverte d'une pathologie maligne/cancer, il existe de très nombreux traitement pour les myélomes qui ne sont pas aussi lourds que des chimiothérapies « classiques » - En cas d'absence de cancer, il suffira de surveiller le pic sans qu'il n'ait possiblement jamais de répercussion sur la santé du patient Au stade de pic monoclonal asymptomatique cliniquement il est nécessaire d'étayer le diagnostic avec un myélogramme à la recherche de plasmocytes > 10% ou dystrophiques signant le diagnostic de myélome.",
+    "iconography": [
+      {
+        "filename": "Copie_de_ECOS_-_Pic_monoclonal_.png",
+        "description": "Annexe jointe : Copie de ECOS - Pic monoclonal .png",
+        "type": "photo",
+        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/Copie_de_ECOS_-_Pic_monoclonal_.png"
+      },
+      {
+        "filename": "pdfimg-2.png",
+        "description": "Image extraite du PDF (page 4)",
+        "type": "photo",
+        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-2.png"
+      },
+      {
+        "filename": "pdfimg-3.png",
+        "description": "Image extraite du PDF (page 4)",
+        "type": "photo",
+        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-3.png"
+      },
+      {
+        "filename": "pdfimg-4.png",
+        "description": "Image extraite du PDF (page 8)",
+        "type": "photo",
+        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/pdfimg-4.png"
+      },
+      {
+        "filename": "annex-page-5.png",
+        "description": "Annexe (page 5)",
+        "type": "other",
+        "url": "/annexes/sdd-193-1-sdd-193-anomalie-de-l-eps/annex-page-5.png"
+      }
+    ]
+  },
+  {
+    "id": "sdd-161-2-sdd-161-douleur-thoracique-suj",
+    "source_pdf": "161. Sujet n°2 - Douleur thoracique.pdf",
+    "des_group": 0,
+    "specialty": "Inconnu",
+    "sdd_number": 161,
+    "subject_number": 2,
+    "title": "Douleur thoracique aiguë - Péricardite",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "Redwane RAKZA (DES Cardiologie - ECN 2021)",
+      "date": "11/04/2024",
+      "competency_domains": [
+        "Interrogatoire"
+      ],
+      "learning_objectives": [
+        "Item 230 - Douleur thoracique aigue",
+        "Item 235 - Péricardite"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [
+        "1 table",
+        "2 chaises"
+      ],
+      "time_limit_minutes": 8
+    },
+    "student_instructions": {
+      "context": "Vous êtes interne aux services des Urgences. Vous recevez Monsieur Lucas LEJEUNE, âgé de 26 ans qui se présente pour douleur thoracique. L'infirmier d'accueil a réalisé un premier bilan qui retrouve les constantes suivantes : TA 124/76 mmHg, Fc 88 bpm, SpO2 100%, Température 37.1°C. Vous voyez sur l'ECG réalisé à l'entrée aux Urgences que le rythme est sinusal avec un sus-décalage concave du segment ST sur l'ensemble des dérivations.",
+      "tasks": [
+        "interroger le patient",
+        "réaliser l'examen clinique à l'oral",
+        "poser le diagnostic principal"
+      ],
+      "constraints": [
+        "Vous ne devez pas prescrire d'examen complémentaire ou traitement"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "LEJEUNE",
+        "first_name": "Lucas",
+        "age": 26,
+        "gender": "M",
+        "profession": "Ingénieur informaticien",
+        "marital_status": "Une conjointe actuellement en étude de droit",
+        "children": null
+      },
+      "medical_history": {
+        "personal": [
+          "Aucun"
+        ],
+        "family": [
+          "Infarctus chez son père à l'âge de 51 ans"
+        ],
+        "allergies": [
+          "pas d'allergies connues"
+        ]
+      },
+      "current_medications": [
+        "PARACETAMOL à la maison"
+      ],
+      "toxics": {
+        "smoking": "fumeur actif (1 paquet par jour depuis l'âge de 17 ans)",
+        "alcohol": "alcool festif non quotidien",
+        "other": ""
+      },
+      "behavior": {
+        "posture": "Patient anxieux, se tient la poitrine, avec le torse penché vers l'avant",
+        "pain": "La respiration est limitée par la douleur",
+        "anxiety": "anxieux",
+        "anger": ""
+      },
+      "opening_line": "J'ai mal dans la poitrine",
+      "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
+      "patient_questions": [
+        "Qu'est-ce que j'ai docteur ?"
+      ]
+    },
+    "qa_pairs": [],
+    "conditional_responses": [
+      {
+        "trigger": "Si le candidat interroge les douleurs - localisation",
+        "response": "dans la poitrine, pas d'autres douleurs actuellement"
+      },
+      {
+        "trigger": "Si le candidat interroge les douleurs - type",
+        "response": "Comme si j'avais une barre qui appuie sur la poitrine"
+      },
+      {
+        "trigger": "Si le candidat interroge les douleurs - temporalité",
+        "response": "douleur permanente, qui fluctue mais toujours présente"
+      },
+      {
+        "trigger": "Si le candidat interroge les douleurs - date de début",
+        "response": "débuté depuis 3 jours"
+      },
+      {
+        "trigger": "Si le candidat interroge les douleurs - évolution",
+        "response": "aggravation progressive depuis l'apparition"
+      },
+      {
+        "trigger": "Si le candidat interroge les douleurs - aggravé/amélioré",
+        "response": "douleur aggravé par l'inspiration profonde, mais franchement amélioré par le fait de se tenir penché en avant, non modifié par l'activité physique"
+      },
+      {
+        "trigger": "Si le candidat interroge les douleurs - antécédent",
+        "response": "je n'ai jamais eu ce type de douleur auparavant"
+      },
+      {
+        "trigger": "Si le candidat interroge d'autres symptômes - palpitations",
+        "response": "pas de palpitations"
+      },
+      {
+        "trigger": "Si le candidat interroge d'autres symptômes - difficulté à respirer",
+        "response": "pas de difficulté à respirer"
+      },
+      {
+        "trigger": "Si le candidat interroge d'autres symptômes - perte de connaissance",
+        "response": "pas de perte de connaissance"
+      },
+      {
+        "trigger": "Si le candidat interroge sur les évènement récents - sport/loisir",
+        "response": "pas d'activité physique intense récente, pas de fêle, pas de drogues"
+      },
+      {
+        "trigger": "Si le candidat interroge sur les évènement récents - fièvre, infection, syndrome grippaux récent",
+        "response": "j'ai eu des crampes et des douleurs articulaires il y a 5-6 jours, mais maintenant ça va mieux, ma chérie a eu les mêmes symptômes mais sans la douleur dans la poitrine, elle va mieux"
+      },
+      {
+        "trigger": "Si le candidat interroge sur les évènement récents - traitement",
+        "response": "j'ai pris du paracétamol hier et aujourd'hui (1 gramme 3 fois par jours) mais sans amélioration"
+      },
+      {
+        "trigger": "Concernant l'examen clinique - auscultation cardiaque",
+        "response": "sans anomalies"
+      },
+      {
+        "trigger": "Concernant l'examen clinique - auscultation pulmonaire",
+        "response": "sans anomalie"
+      },
+      {
+        "trigger": "Concernant l'examen clinique - palpation thoracique",
+        "response": "ne reproduit pas la douleur"
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Récuperer les antécédents",
+          "item_number": 1,
+          "description": "Recherche les antécédents cardiovasculaires personnels ET familiaux",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Récuperer les antécédents",
+          "item_number": 2,
+          "description": "Rechercher au minimum 3 des facteurs de risque dans la liste suivante : OH, tabac, obésité, dyslipidémie, HTA",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Évaluer une douleur thoracique",
+          "item_number": 3,
+          "description": "Questionne la localisation et les irradiations de la douleur thoracique",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Évaluer une douleur thoracique",
+          "item_number": 4,
+          "description": "Quantifie la douleur sur une échelle numérique (de 1 à 10 par exemple)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Évaluer une douleur thoracique",
+          "item_number": 5,
+          "description": "Questionne la temporalité de la douleur (date de début ou évolution)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Évaluer une douleur thoracique",
+          "item_number": 6,
+          "description": "Recherche l'existence de positions ou mouvements modifiant la douleur",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Évaluer une douleur thoracique",
+          "item_number": 7,
+          "description": "Demander s'il y a eu des signes d'infection récente (syndrome grippal)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Examen clinique",
+          "item_number": 8,
+          "description": "réalise l'examen cardiaque en énonçant les 4 foyers d'auscultation : aortique, pulmonaire, mitral, tricuspide",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Examen clinique",
+          "item_number": 9,
+          "description": "Recherche des frottement péricardique ou une diminution des bruits du coeur",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Examen clinique",
+          "item_number": 10,
+          "description": "Réaliser une auscultation pulmonaire",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Poser le diagnostic",
+          "item_number": 11,
+          "description": "Poser le diagnostic de péricardite",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Poser le diagnostic",
+          "item_number": 12,
+          "description": "Précise qu'elle est aiguë",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "Aptitude à écouter",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Interrompt le patient /pair de façon inappropriée"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Se montre impatient"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Est attentif aux réponses du patient/pair"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Est attentif aux réponses du patient/pair"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Porte une attention soutenue aux réponses du patient/pair et à ses préoccupations"
+            }
+          ]
+        },
+        {
+          "name": "Aptitude à interroger",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Pose des questions fermées ou trop directives ou qui ne répondent pas aux objectifs"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Pose des questions qui s'éloignent des objectifs"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Utilise différents types de questions couvrant les éléments essentiels"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Pose des questions précises couvrant la plupart des éléments avec quelques omissions mineures"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Pose les questions avec assurance et savoir-faire"
+            }
+          ]
+        },
+        {
+          "name": "Aptitude à structurer, mener l'entrevue",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Approche désordonnée"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Entrevue peu structurée, présente les difficultés à recadrer les discussions qui s'éloignent des objectifs"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Entrevue centrée sur le problème et couvre les éléments essentiels"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Entrevue menée de façon logique, structurée, centrée sur le problème, ne cherche pas l'information non pertinente"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Entrevue ayant un but précis, approche intégrée"
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": "Devant une suspicion de péricardite il faut réunir les éléments nécessaire au diagnostic - Examen fonctionnel : présence d'une douleur thoracique intense réduite à l'antéflexion, souvent accompagnée de signes viraux actuels ou récents - Examen clinique (frottement péricardique), rare mais typique - ECG : ici on décrit bien une modification typique du segment ST - Echocardiographie, n'étant pas utile ici au diagnostic. Cependant il faut rester prudent devant toute douleur thoracique et rester SYSTÉMATIQUE : il n'est pas acceptable d'oublier de refaire le point sur les facteurs de risques et antécédents cardiovasculaires. L'interrogatoire plus que l'examen clinique est la clé dans la douleur thoracique.",
+    "iconography": []
+  },
+  {
+    "id": "sdd-283-1-sdd-283-consultation-de-suivi-",
+    "source_pdf": "SDD 283 - Consultation de suivi d_un asthme.pdf",
+    "des_group": 0,
+    "specialty": "Inconnu",
+    "sdd_number": 283,
+    "subject_number": 1,
+    "title": "Consultation de suivi d'un patient asthmatique",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "Maila Moulin (DES médecine générale, EN 2024), Clementine Vue (DES MIR, EN 2024)",
+      "date": "23/10/2024",
+      "competency_domains": [
+        "Entretien/interrogatoire",
+        "Iconographie"
+      ],
+      "learning_objectives": [
+        "Item 188 - Asthme, rhinite"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [
+        "Une table",
+        "deux chaises",
+        "une feuille d'interprétation d'EFR"
+      ],
+      "time_limit_minutes": 8
+    },
+    "student_instructions": {
+      "context": "Vous êtes médecin généraliste remplaçant et vous recevez pour la première fois M. L, 23 ans. Il a pour seul antécédent un asthme apparu dans l'enfance. Ses traitements habituels consistent en la prise de salbutamol si besoin. Il n'a plus fait aucun bilan pour son asthme depuis ses 16 ans. Vous le recevez ce jour en consultation car il ressent une dyspnée à l'effort. Il vous apporte un examen complémentaire réalisé une semaine avant la consultation, qu'il vous a posé sur votre bureau. Il est en bon état général par ailleurs, ses paramètres vitaux sont normaux.",
+      "tasks": [
+        "Interroger le patient sur l'équilibre de son asthme",
+        "Interpréter l'examen complémentaire",
+        "Conclure et énoncer la prise en charge au patient"
+      ],
+      "constraints": [
+        "Réaliser d'examen physique"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "L",
+        "first_name": "M.",
+        "age": 23,
+        "gender": "M",
+        "profession": null,
+        "marital_status": null,
+        "children": null
+      },
+      "medical_history": {
+        "personal": [
+          "Asthme depuis ses 6 ans"
+        ],
+        "family": [],
+        "allergies": [
+          "Allergies aux arachides"
+        ]
+      },
+      "current_medications": [
+        "SALBUTAMOL pris si besoin"
+      ],
+      "toxics": {
+        "smoking": "Pas d'intoxication alcoolo-tabagique",
+        "alcohol": "Pas d'intoxication alcoolo-tabagique",
+        "other": ""
+      },
+      "behavior": {
+        "posture": null,
+        "pain": null,
+        "anxiety": "Inquiet car vous êtes de plus en plus gênés",
+        "anger": null
+      },
+      "opening_line": "Bonjour docteur, je viens vous voir pour un bilan de mon asthme parce que je reprends le sport depuis peu et je ne me sens pas très à l'aise. Je suis venu avec un examen que j'ai réalisé il y a une semaine",
+      "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
+      "patient_questions": [
+        "qu'est-ce que je dois faire maintenant docteur ?"
+      ]
+    },
+    "qa_pairs": [],
+    "conditional_responses": [
+      {
+        "trigger": "Si l'étudiant n'a pas abordé la prise en charge après l'interprétation des examens",
+        "response": "qu'est-ce que je dois faire maintenant docteur ?"
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 1,
+          "description": "Demande le nombre de crises sur les 4 dernières semaines.",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 2,
+          "description": "Interroge sur la fréquence de consommation de ventoline.",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 3,
+          "description": "Interroge sur la prise de corticoïdes systémiques à la suite d'exacerbations sur l'année passée.",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 4,
+          "description": "Evalue la gêne au quotidien (ex : réveils nocturnes, limitation de l'activité physique, dyspnée, toux chronique…)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 5,
+          "description": "Demande si le patient est déjà passé aux urgences/a déjà été hospitalisé pour son asthme.",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 6,
+          "description": "Demande le ressenti du patient sur le contrôle de son asthme.",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 7,
+          "description": "Identifie des explorations fonctionnelles respiratoires (EFR).",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 8,
+          "description": "Évoque un trouble ventilatoire obstructif car Tiffeneau (ou VEMS/CVF) < 0.7",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 9,
+          "description": "Evoque le caractère réversible de l'obstruction car, après prise de bronchodilatateurs : - le VEMS augmente de 12% - ET le VEMS augmente de 200 mL (les deux critères sont attendus pour avoir le point)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 10,
+          "description": "Affirme l'absence de syndrome restrictif car la capacité pulmonaire totale (ou CPT) > 80%.",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 11,
+          "description": "Affirme l'absence de distension thoracique car : - la capacité pulmonaire totale (CPT) < 120% - OU le rapport VR/CPT < 30% (l'un des deux critères est attendu pour avoir le point)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 12,
+          "description": "Affirme l'absence de trouble de la diffusion car la DLCO > 70%",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 13,
+          "description": "Conclue à un asthme non équilibré nécessitant l'introduction d'un traitement de fond (les deux éléments sont attendus pour avoir le point).",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "APTITUDE À STRUCTURER/ MENER L'ENTREVUE",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Approche désordonnée"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Entrevue peu structurée, présente les difficultés à recadrer les discussions qui s'éloignent des objectifs"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Entrevue centrée sur le problème et couvre les éléments essentiels"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Entrevue menée de façon logique, structurée, centrée sur le problème, ne cherche pas l'information non pertinente"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Entrevue ayant un but précis, approche intégrée"
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À FAIRE LA SYNTHÈSE DES DONNÉES",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "N'arrive pas à faire ressortir les éléments nécessaires pour clarifier le problème"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Fait ressortir les éléments nécessaires pour clarifier le problème quelquefois sans les justifier"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Fait ressortir les éléments nécessaires pour clarifier le problème et justifie son raisonnement"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Fait ressortir les éléments positifs et négatifs pour clarifier le problème et justifie son raisonnement"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Agit avec assurance et sans erreur"
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": null,
+    "iconography": [
+      {
+        "filename": "pdfimg-2.png",
+        "description": "Image extraite du PDF (page 4)",
+        "type": "photo",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-2.png"
+      },
+      {
+        "filename": "pdfimg-3.png",
+        "description": "Image extraite du PDF (page 4)",
+        "type": "photo",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-3.png"
+      },
+      {
+        "filename": "pdfimg-4.jpg",
+        "description": "Image extraite du PDF (page 8)",
+        "type": "photo",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-4.jpg"
+      },
+      {
+        "filename": "pdfimg-5.png",
+        "description": "Image extraite du PDF (page 8)",
+        "type": "photo",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-5.png"
+      },
+      {
+        "filename": "pdfimg-6.png",
+        "description": "Image extraite du PDF (page 8)",
+        "type": "photo",
+        "url": "/annexes/sdd-283-1-sdd-283-consultation-de-suivi-/pdfimg-6.png"
+      }
+    ]
+  },
+  {
+    "id": "sdd-50-1-sdd-50-malaise-perte-de-connai",
+    "source_pdf": "50. Sujet n°1 - Stratégie diagnostic + Annonce.docx.pdf",
+    "des_group": 0,
+    "specialty": "Inconnu",
+    "sdd_number": 50,
+    "subject_number": 1,
+    "title": "SDD 50 Sujet n°1 - Spécialité : Urgences",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "Marion Sharpin-Guion (DES de médecine générale - promotion ECN 2023)",
+      "date": "14/09/2023",
+      "competency_domains": [
+        "Stratégie diagnostique",
+        "Annonce/information au patient"
+      ],
+      "learning_objectives": [
+        "342 – Malaise, perte de connaissance, crise comitiale chez l'adulte"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [
+        "Aucun"
+      ],
+      "time_limit_minutes": 7
+    },
+    "student_instructions": {
+      "context": "Vous êtes médecin urgentiste. Vous recevez Monsieur Minard, âgé de 35 ans, aux urgences de votre hôpital, amené par les pompiers après avoir fait un malaise sur la voie publique. Eléments préalablement obtenus en box IAO : Tension artérielle : 111/70 mmHg, fréquence cardiaque : 65 bpm, SpO2 : 99% air ambiant, glycémie 5,3 mmol/l (0,95 g/l). Examen clinique sans anomalie. Test d'hypotension orthostatique normal",
+      "tasks": [
+        "Réaliser l'interrogatoire",
+        "Demander un examen complémentaire approprié",
+        "Expliquer votre hypothèse diagnostique au patient"
+      ],
+      "constraints": [
+        "Vous ne devez pas faire d'examen clinique"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "Minard",
+        "first_name": "Victor",
+        "age": 35,
+        "gender": "M",
+        "profession": "ingénieur informaticien",
+        "marital_status": "Marié, vit avec sa femme et son fils de 3 mois",
+        "children": "fils de 3 mois"
+      },
+      "medical_history": {
+        "personal": [
+          "Aucun"
+        ],
+        "family": [
+          "Père : hypertension artérielle",
+          "Mère : diabétique (prend des médicaments pour ça, pas d'injection d'insuline)"
+        ],
+        "allergies": [
+          "pollen"
+        ]
+      },
+      "current_medications": [
+        "Aucun"
+      ],
+      "toxics": {
+        "smoking": "15 cigarettes par jour",
+        "alcohol": "l'apéro de temps en temps (max 2-3 bières/semaine) mais pas de manière régulière",
+        "other": ""
+      },
+      "behavior": {
+        "posture": "assis sur une chaise",
+        "pain": "non douloureux",
+        "anxiety": "Calme",
+        "anger": "un peu fatigué mais va bien"
+      },
+      "opening_line": "J'ai fait un malaise dans le métro en allant au travail ce matin.",
+      "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ». Ne répondre que précisément à la question posée/ne pas déroulé le script entièrement dès les première questi",
+      "patient_questions": [
+        "Vous vous demandez à quoi est dû ce malaise et si vous risquez d'en faire un nouveau dans la journée"
+      ]
+    },
+    "qa_pairs": [
+      {
+        "question": "Circonstances du malaise",
+        "answer": "Vous avez fait un malaise alors que vous étiez debout dans le métro ce matin en allant au travail. Il y avait beaucoup de monde dans le métro. Il faisait très chaud et vous aviez eu l'impression de manquer d'air."
+      },
+      {
+        "question": "Prodromes",
+        "answer": "Vous avez vu les bords de votre vision s'assombrir puis vous ne souvenez plus."
+      },
+      {
+        "question": "Douleur thoracique",
+        "answer": "Vous n'avez pas eu de douleur dans la poitrine."
+      },
+      {
+        "question": "Récupération",
+        "answer": "Quand vous avez repris connaissance probablement une dizaine de secondes plus tard, plusieurs personnes étaient en train de vous sortir du métro pour vous mettre sur le quai de la station. Ces personnes ont appelé les pompiers même si vous vous sentiez déjà mieux avec l'air frais."
+      },
+      {
+        "question": "Mouvements anormaux",
+        "answer": "Elles vous ont raconté vous avoir vu vous écrouler. Personne ne vous a parlé de convulsions ou autre mouvement anormal."
+      },
+      {
+        "question": "Traumatisme",
+        "answer": "Vous ne vous êtes pas cogné la tête."
+      },
+      {
+        "question": "Autres malaises",
+        "answer": "Vous n'avez pas fait d'autre malaise depuis ce moment. C'est la première fois que cela vous arrive."
+      },
+      {
+        "question": "Alimentation",
+        "answer": "Vous n'avez pris qu'un café ce matin comme à votre habitude."
+      },
+      {
+        "question": "Sommeil",
+        "answer": "Vous avez mal dormi cette nuit car vous avez un bébé de 3 mois à la maison qui a beaucoup pleuré."
+      },
+      {
+        "question": "État actuel",
+        "answer": "Aux urgences, vous vous sentez un peu fatigué mais ça va globalement beaucoup mieux. Un infirmier a pris votre tension à l'accueil avant de vous voir."
+      }
+    ],
+    "conditional_responses": [
+      {
+        "trigger": "Si jamais le candidat ne demande pas l'électrocardiogramme (ECG)",
+        "response": "demandez-lui s'il y a besoin de faire des examens aux urgences"
+      },
+      {
+        "trigger": "Dès que l'étudiant demande l'ECG",
+        "response": "ECG à donner à l'étudiant"
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 1,
+          "description": "Recherche les antécédents cardiovasculaires personnels ou familiaux",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 2,
+          "description": "Demander les circonstances de survenue du malaise (facteur déclenchant)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 3,
+          "description": "Demande l'existence de prodromes et les faire préciser au moins 2 parmi : sensation vertigineuse, bouffées de chaleur, sueurs et vision noire",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 4,
+          "description": "Demande s'il y a eu une perte de connaissance",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 5,
+          "description": "Demande s'il y a eu une douleur thoracique",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 6,
+          "description": "Demande s'il y a eu des mouvements anormaux au cours du malaise (convulsions des 4 membres simultanées)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 7,
+          "description": "Demande la durée du malaise ET le mode de récupération",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 8,
+          "description": "Demande la réalisation d'un ECG",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 9,
+          "description": "Explique au patient que son ECG est normal",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 10,
+          "description": "Fait le diagnostic de malaise vagal",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 11,
+          "description": "Rassure le patient sur la bénignité du diagnostic",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "APTITUDE À ÉCOUTER : le patient / le pair",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Interrompt le patient pair de façon inappropriée"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Se montre impatient"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Est attentif aux réponses du patient/pair"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Est attentif aux réponses du patient/pair"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Porte une attention soutenue aux réponses du patient/pair et à ses préoccupations"
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À QUESTIONNER",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Pose des questions fermées ou qui ne répondent pas aux objectifs"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Pose des questions qui explorent mal les objectifs"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Utilise différents types de questions pour explorer les éléments essentiels"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Pose des questions précises couvrant la majorité des objectifs avec quelques omissions mineures"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Pose les questions avec assurance et précision"
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À FOURNIR LES RENSEIGNEMENTS AU PATIENT / AUX AIDANTS",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Donne peu ou pas de renseignements de façon inadéquate (ex. informations erronées, inappropriées)"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Donne des renseignements de façon incomplète ou s'abstient à des questions importantes"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Donne des renseignements de façon adaptée. Veille quelque peu à ce que le patient / aidant comprenne"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Donne des renseignements de façon adaptée. Veille à ce que le patient / aidant comprenne"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Donne des renseignements de façon adaptée et illustre ses explications pour qu'elles soient bien comprises"
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": null,
+    "iconography": [
+      {
+        "filename": "Document_complmentaire.jpg",
+        "description": "Annexe jointe : Document complémentaire.jpg",
+        "type": "photo",
+        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/Document_complmentaire.jpg"
+      },
+      {
+        "filename": "pdfimg-11.png",
+        "description": "Image extraite du PDF (page 4)",
+        "type": "photo",
+        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/pdfimg-11.png"
+      },
+      {
+        "filename": "pdfimg-12.png",
+        "description": "Image extraite du PDF (page 4)",
+        "type": "photo",
+        "url": "/annexes/sdd-50-1-sdd-50-malaise-perte-de-connai/pdfimg-12.png"
+      }
+    ]
+  },
+  {
+    "id": "sdd-138-2-des-n-1-chirurgie-t-te-et-cou-",
+    "source_pdf": "SDD 138. Anomalie de la vision.pdf",
+    "des_group": 1,
+    "specialty": "Chirurgie tête et cou",
+    "sdd_number": 138,
+    "subject_number": 2,
+    "title": "SDD 138 Sujet n°2 - Spécialité : Ophtalmologie",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "Yagoub Sami (DES d'ophtalmologie - ECN 2023)",
+      "date": "18/01/24",
+      "competency_domains": [
+        "Iconographie",
+        "Stratégie diagnostique"
+      ],
+      "learning_objectives": [
+        "Item 82 – Altération aiguë de la vision",
+        "Item 195 – Artérite à cellules géantes",
+        "Item 340 – Accidents vasculaires cérébraux"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [
+        "Deux chaises",
+        "une table",
+        "quatre photographies"
+      ],
+      "time_limit_minutes": 8
+    },
+    "student_instructions": {
+      "context": "Vous êtes un jeune interne d'ophtalmologie. Vous recevez Mme G, âgée de 75 ans aux urgences ophtalmologiques. Elle présente une baisse d'acuité visuelle brutale de l'œil droit depuis 2 jours. Elle a pour antécédents personnels une hypertension artérielle traitée par Ramipril. Elle ne rapporte pas d'antécédent familial. La patiente a été vue par un orthoptiste du service. Il a mesuré son acuité visuelle à « Voit bouger la main » de l'œil droit. Il vous transmet les photographies des examens qu'il a réalisés. A l'interrogatoire, la patiente ne vous rapporte pas d'autre signe fonctionnel, notamment pas de céphalées.",
+      "tasks": [
+        "Examiner et décrire l'œil sur les 3 iconographies",
+        "Annoncer brièvement le diagnostic clinique",
+        "Donner deux examens complémentaires essentiels à réaliser et expliquer leur but"
+      ],
+      "constraints": [
+        "Interroger le patient",
+        "Décider du traitement ou de l'orientation du patient pour la suite"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "GARNAIS",
+        "first_name": "Françoise",
+        "age": 75,
+        "gender": "F",
+        "profession": "Retraitée de la fonction publique",
+        "marital_status": null,
+        "children": null
+      },
+      "medical_history": {
+        "personal": [
+          "Hypertension artérielle"
+        ],
+        "family": [
+          "Aucun antécédent notable"
+        ],
+        "allergies": []
+      },
+      "current_medications": [
+        "Ramipril"
+      ],
+      "toxics": {
+        "smoking": "Tabagisme à un demi paquet par jour depuis 30 ans",
+        "alcohol": "Pas de consommation d'alcool",
+        "other": ""
+      },
+      "behavior": {
+        "posture": null,
+        "pain": null,
+        "anxiety": "Patiente inquiète mais attentive",
+        "anger": null
+      },
+      "opening_line": "J'ai perdu la vue de mon œil droit il faut que vous m'aidiez !",
+      "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
+      "patient_questions": [
+        "Alors docteur vous pouvez me dire ce qui m'arrive ? Ça commence à m'inquiéter"
+      ]
+    },
+    "qa_pairs": [],
+    "conditional_responses": [
+      {
+        "trigger": "Si l'étudiant demande comment la baisse de vision est arrivée",
+        "response": "D'un seul coup, j'étais devant la télé et je me suis aperçue que l'œil droit voyait tout noir"
+      },
+      {
+        "trigger": "Si l'étudiant demande si la baisse et profonde",
+        "response": "J'y vois plus rien du tout docteur"
+      },
+      {
+        "trigger": "Si l'étudiant demande si l'œil est douloureux",
+        "response": "Non pas du tout"
+      },
+      {
+        "trigger": "Si l'étudiant demande quand a débuté l'épisode",
+        "response": "C'était il y a deux jours dans l'après-midi"
+      },
+      {
+        "trigger": "Si l'étudiant demande si la tension artérielle est bien contrôlée",
+        "response": "Souvent autour de 13 / 6 quand je vais chez mon médecin"
+      },
+      {
+        "trigger": "Si l'étudiant demande si vous avez mal à la tête",
+        "response": "Non, je me sens en pleine forme !!"
+      },
+      {
+        "trigger": "Si l'étudiant vous demande \"les constantes\", votre fréquence cardiaque (=pouls), tension artérielle, saturation en oxygène, température et fréquence respiratoire",
+        "response": "Tout est normal"
+      },
+      {
+        "trigger": "A 5 minutes si l'étudiant n'a pas posé de diagnostic",
+        "response": "Alors docteur vous pouvez me dire ce qui m'arrive ? Ça commence à m'inquiéter"
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 1,
+          "description": "Reconnaître un œil blanc",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 2,
+          "description": "Reconnaître une mydriase droite aréflectique",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 3,
+          "description": "Reconnaître une rétine pâle (ou œdème blanc ischémique)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 4,
+          "description": "Reconnaître une macula rouge cerise",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 5,
+          "description": "Reconnaître un rétrécissement du calibre artériel",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 6,
+          "description": "Poser le diagnostic clinique d'occlusion de l'artère centrale de la rétine",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 7,
+          "description": "Poser le diagnostic d'accident vasculaire cérébral",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 8,
+          "description": "Evoquer une maladie de Horton",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 9,
+          "description": "Prescrire une imagerie cérébrale et des troncs supra-aortiques (IRM ou Scanner)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 10,
+          "description": "Prescrire un dosage de la CRP",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 11,
+          "description": "Expliquer l'intérêt de l'imagerie cérébrale (recherche d'accident vasculaire cérébral)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 12,
+          "description": "Expliquer l'intérêt du dosage de la CRP (rechercher une artérite à cellules géantes)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "APTITUDE À FOURNIR LES RENSEIGNEMENTS AU PATIENT / AUX AIDANTS",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Performance Insuffisante",
+              "description": "Renseigne le patient / aidant de manière inadaptée (ex. informations inexactes) ou ne fait aucun effort pour renseigner le patient/aidant"
+            },
+            {
+              "score": 0.25,
+              "label": "Performance Limite",
+              "description": "Donne des renseignements de façon incomplète ou s'attarde à des renseignements éloignés du problème"
+            },
+            {
+              "score": 0.5,
+              "label": "Performance Satisfaisante",
+              "description": "Donne des renseignements de façon adaptée. Veille quelque peu à ce que le patient / aidant comprenne"
+            },
+            {
+              "score": 0.75,
+              "label": "Performance Très Satisfaisante",
+              "description": "Donne des renseignements de façon adaptée. Veille à ce que le patient / aidant comprenne"
+            },
+            {
+              "score": 1,
+              "label": "Performance Remarquable",
+              "description": "Renseigne avec justesse et illustre ses explications pour qu'elles soient bien comprises"
+            }
+          ]
+        },
+        {
+          "name": "COMMUNICATION NON VERBALE",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Performance Insuffisante",
+              "description": "Se comporte de manière inappropriée (p. ex. ne regarde pas son interlocuteur, se comporte de manière offensante ou agressive) ou porte des jugements"
+            },
+            {
+              "score": 0.25,
+              "label": "Performance Limite",
+              "description": "Tente d'établir un contact visuel. Présente les difficultés à établir la conversation (p.ex. priorise l'accomplissement de la tâche clinique) et cela peut induire la frustration du patient/pair"
+            },
+            {
+              "score": 0.5,
+              "label": "Performance Satisfaisante",
+              "description": "Regarde le patient/pair la majeure partie du temps. Établit la conversation"
+            },
+            {
+              "score": 0.75,
+              "label": "Performance Très Satisfaisante",
+              "description": "Regarde le patient/ pair la majeure partie du temps. Est attentif aux indices du patient/pair et réagit de manière appropriée par son comportement/gestes."
+            },
+            {
+              "score": 1,
+              "label": "Performance Remarquable",
+              "description": "Montre une bonne maîtrise de ses comportements et cherche à les adapter afin de favoriser la conversation /établir une relation."
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À FAIRE LA SYNTHÈSE DES DONNÉES",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Performance Insuffisante",
+              "description": "N'arrive pas à faire ressortir les éléments nécessaires pour clarifier le problème"
+            },
+            {
+              "score": 0.25,
+              "label": "Performance Limite",
+              "description": "Fait ressortir les éléments nécessaires pour clarifier le problème quelquefois sans les justifier"
+            },
+            {
+              "score": 0.5,
+              "label": "Performance Satisfaisante",
+              "description": "Fait ressortir les éléments nécessaires pour clarifier le problème et justifie son raisonnement"
+            },
+            {
+              "score": 0.75,
+              "label": "Performance Très Satisfaisante",
+              "description": "Fait ressortir les éléments positifs et négatifs pour clarifier le problème et justifie son raisonnement"
+            },
+            {
+              "score": 1,
+              "label": "Performance Remarquable",
+              "description": "Agit avec assurance et sans erreur"
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": "Cet ECOS vous place dans la peau d'un interne d'ophtalmologie qui dispose des principaux éléments qui lui sont nécessaires pour raisonner face à une baisse de vision aiguë. Il faut reconnaître le tableau d'une baisse de vision brutale, sur un œil blanc, avec fond d'œil accessible et anormal. Les principaux diagnostics à évoquer d'après le LISA sont l'OACR, l'OVCR, le décollement de rétine et la complication de la DMLA. Dans ce cas précis, le caractère profond et brutal de la baisse, la présence d'une pâleur rétinienne avec une macula rouge cerise, ainsi que l'existence d'une mydriase dite sensorielle font pencher pour l'OACR. Il faut alors reconnaître l'OACR comme un accident vasculaire cérébral et proposer une imagerie cérébrale, de préférence une IRM, ainsi qu'une imagerie des troncs supra-aortiques. Par ailleurs, l'artérite à cellules géantes (maladie de Horton) est à évoquer de par le risque de bilatéralisation et le traitement rapide disponible. Il est donc impératif de doser un paramètre inflammatoire, la CRP.",
+    "iconography": [
+      {
+        "filename": "pdfimg-8.png",
+        "description": "Image extraite du PDF (page 4)",
+        "type": "photo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-8.png"
+      },
+      {
+        "filename": "pdfimg-9.png",
+        "description": "Image extraite du PDF (page 4)",
+        "type": "photo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-9.png"
+      },
+      {
+        "filename": "pdfimg-10.png",
+        "description": "Image extraite du PDF (page 4)",
+        "type": "photo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-10.png"
+      },
+      {
+        "filename": "pdfimg-23.png",
+        "description": "Image extraite du PDF (page 10)",
+        "type": "photo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-23.png"
+      },
+      {
+        "filename": "pdfimg-28.jpg",
+        "description": "Image extraite du PDF (page 11)",
+        "type": "photo",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/pdfimg-28.jpg"
+      },
+      {
+        "filename": "annex-page-10.png",
+        "description": "Annexe (page 10)",
+        "type": "other",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-10.png"
+      },
+      {
+        "filename": "annex-page-11.png",
+        "description": "Annexe (page 11)",
+        "type": "other",
+        "url": "/annexes/sdd-138-2-des-n-1-chirurgie-t-te-et-cou-/annex-page-11.png"
+      }
+    ]
+  },
+  {
+    "id": "sdd-45-1-des-n-3-m-decine-de-l-aigu-mar",
+    "source_pdf": "SDD 45. Hypothermie.pdf",
+    "des_group": 3,
+    "specialty": "Médecine de l'aigu (MAR/MIR/Urgences)",
+    "sdd_number": 45,
+    "subject_number": 1,
+    "title": "Découverte d'une hypothermie chez un patient traité pour une infection urinaire masculine",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "CAUMARTIN Marin (DES MIR)",
+      "date": "21/01/2024",
+      "competency_domains": [
+        "Examen clinique",
+        "Urgence vitale"
+      ],
+      "learning_objectives": [
+        "Items 158, 332"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [],
+      "time_limit_minutes": 8
+    },
+    "student_instructions": {
+      "context": "Vous êtes interne de maladies infectieuses dans votre service d'hospitalisation. Vous êtes appelés par l'IDE au chevet de monsieur Joseph 83 ans, hospitalisé depuis 48h pour un sepsis à point de départ urinaire devant une infection urinaire masculine révélée par une confusion fébrile et une insuffisance rénale initiale. Il est traité depuis 48h par Céfotaxime intraveineuse. Il a comme principal antécédent une hypertension artérielle sous bithérapie et une maladie de Parkinson. L'IDE vous appelle car sa température corporelle est mesurée à 33°C",
+      "tasks": [
+        "Un interrogatoire et un examen clinique adapté",
+        "Analyser l'iconographie fournie en indiquant l'anomalie présente"
+      ],
+      "constraints": [
+        "Prescrire d'examen paraclinique",
+        "Initier une thérapeutique"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "Josef",
+        "first_name": "Monsieur",
+        "age": 83,
+        "gender": "M",
+        "profession": "Retraité, ancien boucher",
+        "marital_status": "Veuf",
+        "children": "fils très présent se rendant sur place tous les jours"
+      },
+      "medical_history": {
+        "personal": [
+          "Hypertension artérielle sous bithérapie (IEC/inhibiteurs calciques)",
+          "Maladie de Parkinson non traitée"
+        ],
+        "family": [
+          "Non connus"
+        ],
+        "allergies": [
+          "Pas d'allergies médicamenteuses connues"
+        ]
+      },
+      "current_medications": [
+        "Traitement d'entrée à domicile : Irbésartan 150 mg le matin",
+        "Traitement d'entrée à domicile : Amlodipine 5 mg le matin",
+        "Céfotaxime 1g IV trois fois par jour (depuis l'hospitalisation, J2)",
+        "Paracétamol à la demande si fièvre ou douleurs"
+      ],
+      "toxics": {
+        "smoking": "Tabac sevré 40 PA",
+        "alcohol": "OH sevré depuis le début de l'hospitalisation, évalué à 100 gramme d'alcool par semaine",
+        "other": ""
+      },
+      "behavior": {
+        "posture": "Patient allongé sur la table d'examen",
+        "pain": "Douleur spontanée à la palpation de la fosse lombaire droite",
+        "anxiety": "",
+        "anger": ""
+      },
+      "opening_line": "L'évaluateur joue le rôle de l'IDE et dit \"Je commençais mon tour et j'ai trouvé le patient à 33°C, aux deux oreilles, malgré la couverture. La fenêtre était fermée je ne comprends pas pourquoi il a froid comme ça. J'ai fait un électrocardiogramme, le voici\".",
+      "scenario_instructions": "Patient comateux, endormi. Pouls filants, extrémités froides, marbrures des membres inférieurs aux genoux. Yeux spontanément fermés, les ouvre à la mention du nom ou de la stimulation vocale. Les ferme spontanément si pas de sollicitations. Score de glasgow : Yeux Y3, Voix V3 (réponse inappropriée, ne répond pas à la question posée), Motricité M5 (ne bouge pas spontanément ou à la demande, repousse si stimulation douloureuse)",
+      "patient_questions": [],
+      "clinical_data": {
+        "biometrics": {
+          "height_cm": 170,
+          "weight_kg": 80
+        },
+        "vital_signs": {
+          "blood_pressure": "86/42 mmHg",
+          "heart_rate": "54/min",
+          "respiratory_rate": "25/min",
+          "spo2": "95% en air ambiant",
+          "temperature": "33°C",
+          "blood_glucose": "6 mmol/L (1.1 g/L)"
+        },
+        "vital_signs_note": "Non données spontanément par l'IDE en dehors de la température — à demander pour les obtenir."
+      }
+    },
+    "qa_pairs": [],
+    "conditional_responses": [
+      {
+        "trigger": "Si l'étudiant dit \"bonjour monsieur\"",
+        "response": "ouvrir les yeux. Les fermer si pas de stimulation par l'étudiant"
+      },
+      {
+        "trigger": "Si à 6 minutes l'étudiant n'a pas interprété l'ECG",
+        "response": "l'IDE joué par l'évaluateur demande : \"L'ECG est-il normal ?\""
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 1,
+          "description": "Demande les paramètres vitaux du patient : pression artérielle et fréquence respiratoire et fréquence cardiaque et saturation et glycémie capillaire",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 2,
+          "description": "Recherche des signes d'hypoperfusion périphériques : marbrures des membres inférieurs, pouls périphériques filants, extrémités froides, temps de recoloration cutané > 3 secondes",
+          "points": 1,
+          "scoring_type": "weighted",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 3,
+          "description": "Recherche d'une défaillance cardiaque : orthopnée, reflux hépatojugulaire, turgescence jugulaire, oedèmes des membres inférieurs",
+          "points": 1,
+          "scoring_type": "weighted",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 4,
+          "description": "Recherche d'une défaillance respiratoire : tirage sus claviculaire ou intercostal, expiration abdominale paradoxale, respiration superficielle, sueurs, cyanose, balancement thoracoabdominal",
+          "points": 1,
+          "scoring_type": "weighted",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 5,
+          "description": "Recherche d'une défaillance hépatique : ictère, flapping tremor, ascite",
+          "points": 1,
+          "scoring_type": "weighted",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 6,
+          "description": "Evaluation détaillée du score de glasgow - Ouverture des yeux Y3 - Voix V3 - Motricité M5",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 7,
+          "description": "Recherche d'une douleur thoracique, toux, crachats",
+          "points": 1,
+          "scoring_type": "weighted",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 8,
+          "description": "Recherche de signes fonctionnels urinaires : douleur rénale, hypogastrique ou des bourses ; pollakiurie, impériosités mictionnelles, incontinence ; dysurie, rétention d'urine ; brûlures mictionnelles, hématurie",
+          "points": 1,
+          "scoring_type": "weighted",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 9,
+          "description": "Recherche d'une douleur à la palpation des 2 fosses lombaires",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 10,
+          "description": "Recherche la présence de diarrhée",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 11,
+          "description": "Auscultation pulmonaire : recherche d'un foyer infectieux respiratoire à l'auscultation bilatérale (les deux hémichamps pulmonaires, sur 3 points différents)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 12,
+          "description": "Auscultation des 4 valves cardiaques à la recherche d'un souffle",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 13,
+          "description": "Recherche d'une veinite",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 14,
+          "description": "Réalisation d'une palpation abdominale : 9 cadrans palpés",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 15,
+          "description": "Objective une bradycardie et une onde J d'osborn à l'ECG",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "APTITUDE À STRUCTURER/ MENER L'ENTREVUE",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Performance Insuffisante",
+              "description": "Approche désordonnée"
+            },
+            {
+              "score": 0.25,
+              "label": "Performance Limite",
+              "description": "Entrevue peu structurée, présente les difficultés à recadrer les discussions qui s'éloignent des objectifs"
+            },
+            {
+              "score": 0.5,
+              "label": "Performance Satisfaisante",
+              "description": "Entrevue centrée sur le problème et couvre les éléments essentiels"
+            },
+            {
+              "score": 0.75,
+              "label": "Performance Très Satisfaisante",
+              "description": "Entrevue menée de façon logique, structurée, centrée sur le problème, ne cherche pas l'information non pertinente"
+            },
+            {
+              "score": 1,
+              "label": "Performance Remarquable",
+              "description": "Entrevue ayant un but précis, approche intégrée"
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À STRUCTURER L'EXAMEN CLINIQUE",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Performance Insuffisante",
+              "description": "L'examen clinique est incomplet et désorganisé ou ne fait pas l'examen clinique"
+            },
+            {
+              "score": 0.25,
+              "label": "Performance Limite",
+              "description": "Les éléments recherchés sont peu ciblés, s'attarde à des manœuvres inutiles"
+            },
+            {
+              "score": 0.5,
+              "label": "Performance Satisfaisante",
+              "description": "L'examen clinique est raisonnablement un enchaînement logique et est centré sur le problème, ne cherche pas l'information non pertinente"
+            },
+            {
+              "score": 0.75,
+              "label": "Performance Très Satisfaisante",
+              "description": "L'examen clinique suit un enchaînement logique et est centré sur le problème, il n'y a pas de manœuvre inutile"
+            },
+            {
+              "score": 1,
+              "label": "Performance Remarquable",
+              "description": "L'examen est réalisé sans erreur avec un but précis, démarche intégrée"
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À MENER L'EXAMEN CLINIQUE",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Performance Insuffisante",
+              "description": "N'explique pas au patient les gestes réalisés ou ne respecte pas le confort du patient"
+            },
+            {
+              "score": 0.25,
+              "label": "Performance Limite",
+              "description": "Explique peu les gestes réalisés"
+            },
+            {
+              "score": 0.5,
+              "label": "Performance Satisfaisante",
+              "description": "Explique les gestes réalisés et respecte le confort du patient"
+            },
+            {
+              "score": 0.75,
+              "label": "Performance Très Satisfaisante",
+              "description": "Donne l'information sur les gestes en expliquant les objectifs/les éléments recherchés et respecte le confort du patient"
+            },
+            {
+              "score": 1,
+              "label": "Performance Remarquable",
+              "description": "Agit sans erreur Met à l'aise"
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": "Nous sommes face à une hypothermie faisant découvrir une défaillance hémodynamique avec des arguments pour un sepsis non contrôlé (signes d'hypoperfusion périphérique, confusion, polypnée, persistance des douleurs lombaires) chez un patient à J2 d'une antibiothérapie pour infection urinaire masculine. L'hypothermie non liée à une exposition au froid (station allongée en extérieur, noyade, intoxication…) doit faire évoquer en premier lieu une cause septique. C'est un signe de dysrégulation thermique, notamment fréquent avec les bactéries à gram négatif type Entérobactéries, qui parfois peuvent être résistantes aux C3G de façon communautaire en France.",
+    "iconography": [
+      {
+        "filename": "pdfimg-21.png",
+        "description": "ECG à l'entrée aux urgences",
+        "type": "ecg",
+        "url": "/annexes/sdd-45-1-des-n-3-m-decine-de-l-aigu-mar/pdfimg-21.png",
+        "reveal_triggers": [
+          "ECG",
+          "électrocardiogramme",
+          "electro",
+          "cardio",
+          "tracé"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sdd-151-1-des-n-3-m-decine-de-l-aigu-mar",
+    "source_pdf": "SDD 151. Oedème de la face et du cou_.pdf",
+    "des_group": 3,
+    "specialty": "Médecine de l'aigu (MAR/MIR/Urgences)",
+    "sdd_number": 151,
+    "subject_number": 1,
+    "title": "SDD 151 Sujet n°1 - Anaphylaxie",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "Romain TYMEN (DESMIR Brest)",
+      "date": "02/01/2024",
+      "competency_domains": [
+        "Urgence vitale",
+        "Prise en charge thérapeutique"
+      ],
+      "learning_objectives": [
+        "Anaphylaxie",
+        "151- Oedème de la face et du cou"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [
+        "1 patient acteur"
+      ],
+      "time_limit_minutes": 7
+    },
+    "student_instructions": {
+      "context": "Vous êtes médecin d'astreinte dans un hôpital périphérique. Nous sommes dimanche matin, M Le Gall, 48 ans, sans antécédent notable, vient d'être transféré des urgences dans le service d'orthopédie, en hébergement pour la dermatologie. Le bilan des urgences conclut à une dermo-hypodermite bactérienne non nécrosante du membre inférieur droit. Les paramètres vitaux étaient dans les normes, les données biologiques mettaient en évidence un unique syndrome inflammatoire biologique. Devant l'importance de l'étendue de la dermo-hypodermite, il est convenu d'une hospitalisation pour surveillance. Anna, l'infirmière qui s'occupe du patient vous appelle : \"Bonjour, je suis infirmière en orthopédie, Mr Le Gall est hospitalisé chez nous pour érysipèle. Depuis 5 minutes, il dit avoir du mal à respirer\". Comme vous êtes dans le service à côté, vous arrivez sans lui laisser le temps de raccrocher. Avant votre arrivée, Anna a pris les paramètres vitaux du patient : Pression artérielle : 115/75 mmHg, fréquence cardiaque 135 bpm, SpO2 92% en air ambiant, T 37,3°C.",
+      "tasks": [
+        "Interroger le patient",
+        "Émettre un cadre diagnostique à voix haute",
+        "Effectuer la première intervention thérapeutique",
+        "Transmettre les informations réunies au réanimateur de garde"
+      ],
+      "constraints": [
+        "Vous ne devez pas ausculter le patient",
+        "Vous ne devez pas administrer de médicament (considérez que la verbalisation du médicament équivaut à l'administration)"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "LE GALL",
+        "first_name": "Jacques",
+        "age": 48,
+        "gender": "M",
+        "profession": "Transporteur de fond",
+        "marital_status": "marié avec 2 enfants de 10 et 15 ans",
+        "children": "2 enfants de 10 et 15 ans"
+      },
+      "medical_history": {
+        "personal": [
+          "1 épisode d'infection urinaire masculine traité par CEFTRIAXONE"
+        ],
+        "family": [],
+        "allergies": [
+          "Pas d'allergie connue"
+        ]
+      },
+      "current_medications": [
+        "Pas de traitement au long cours",
+        "En perfusion : AMOXICILLINE / ACIDE CLAVULANIQUE 2 g, début de perfusion dans le service il y a 15 minutes"
+      ],
+      "toxics": {
+        "smoking": "Tabac ½ paquet par jour depuis 30 ans",
+        "alcohol": "alcool occasionnel",
+        "other": ""
+      },
+      "behavior": {
+        "posture": "De la position allongée initiale, passage en position assise",
+        "pain": "Pas de douleur",
+        "anxiety": "Difficultés à respirer de plus en plus importantes, mime une sensation d'étouffement",
+        "anger": ""
+      },
+      "opening_line": "Aidez-moi Dr, j'ai du mal à respirer!",
+      "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
+      "patient_questions": []
+    },
+    "qa_pairs": [
+      {
+        "question": "Prise de nouveaux médicaments",
+        "answer": "on m'a passé de l'AUGMENTIN pour l'infection de la jambe. C'était juste avant que j'ai du mal à respirer"
+      }
+    ],
+    "conditional_responses": [
+      {
+        "trigger": "05 min : si le candidat ne l'a pas fait avant",
+        "response": "lui demander de contacter le réanimateur de garde"
+      },
+      {
+        "trigger": "06 min : si au cours de l'entretien avec le réanimateur de garde le candidat ne formule pas d'hypothèse diagnostique",
+        "response": "lui demander d'émettre une hypothèse"
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 1,
+          "description": "Recherche un rash cutané",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 2,
+          "description": "Recherche un oedème des parties molles OU des signes de lutte respiratoire",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 3,
+          "description": "Recherche une atteinte hémodynamique tachycardie OU signe d'hypoperfusion périphérique",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 4,
+          "description": "Recherche des antécédents allergiques ET la réaction provoquée",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 5,
+          "description": "Rechercher l'introduction récente de médicaments",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 6,
+          "description": "Identifie la perfusion en cours d'AMOXICILLINE / ACIDE CLAVULANIQUE",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 7,
+          "description": "Identifie le degré d'anaphylaxie : stade III",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 8,
+          "description": "Arrête la perfusion d'AMOXICILLINE / ACIDE CLAVULANIQUE",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Communication",
+          "item_number": 9,
+          "description": "Appelle le réanimateur de garde pour communiquer des informations précises et structurées - Présentation de l'interlocuteur et de sa situation",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Communication",
+          "item_number": 10,
+          "description": "Appelle le réanimateur de garde pour communiquer des informations précises et structurées - Mentionne un oedème des voies aériennes supérieures / un bronchospasme",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Communication",
+          "item_number": 11,
+          "description": "Appelle le réanimateur de garde pour communiquer des informations précises et structurées - Mentionne un Rash cutané",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Communication",
+          "item_number": 12,
+          "description": "Appelle le réanimateur de garde pour communiquer des informations précises et structurées - Mentionne la tachycardie",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Communication",
+          "item_number": 13,
+          "description": "Appelle le réanimateur de garde pour communiquer des informations précises et structurées - Mentionne le diagnostic d'anaphylaxie",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Communication",
+          "item_number": 14,
+          "description": "Appelle le réanimateur de garde pour communiquer des informations précises et structurées - Émet la notion d'urgence vitale",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Communication",
+          "item_number": 15,
+          "description": "Appelle le réanimateur de garde pour communiquer des informations précises et structurées - Demande une évaluation par le réanimateur / un transfert en réanimation",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "APTITUDE À STRUCTURER/ MENER L'ENTREVUE",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Approche désordonnée"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Entrevue peu structurée, éprouve des difficultés à recadrer les discussions ou s'éloigne des objectifs"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Entrevue centrée sur le problème et assure les éléments essentiels"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Entrevue menée de façon logique, structurée et focalisée sur le problème, ne cherche pas l'information non pertinente"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Entrevue ayant un but précis, approche rigoureuse"
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À FAIRE LA SYNTHÈSE DES DONNÉES",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "N'arrive pas à faire ressortir les éléments nécessaires pour clarifier le problème"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Fait ressortir les éléments nécessaires pour clarifier le problème mais les justifier"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Fait ressortir les éléments nécessaires pour clarifier le problème et justifier son raisonnement"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Fait ressortir les éléments positifs et négatifs pour clarifier le problème et justifier son raisonnement"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Agit avec assurance et sans erreur"
+            }
+          ]
+        },
+        {
+          "name": "COMMUNICATION AVEC LES PAIRS (clarté de communication)",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Insuffisante",
+              "description": "Est incapable de communiquer le message"
+            },
+            {
+              "score": 0.25,
+              "label": "Limite",
+              "description": "Est capable de communiquer les informations, n'arrive pas à les justifier"
+            },
+            {
+              "score": 0.5,
+              "label": "Satisfaisante",
+              "description": "Est capable de communiquer les informations et justifier son raisonnement"
+            },
+            {
+              "score": 0.75,
+              "label": "Très Satisfaisante",
+              "description": "Communique les informations pertinentes et les justifie. Ne s'attarde pas à de l'information inutile"
+            },
+            {
+              "score": 1,
+              "label": "Remarquable",
+              "description": "Relie les informations provenant des domaines différents faisant preuve d'une maîtrise du sujet"
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": "Chez un patient jeune sans antécédent présentant une difficulté respiratoire associée à un oedème des parties molles doit faire évoquer en première intention un choc anaphylactique. La première chose à identifier est l'agent allergène, et stopper son administration (rechercher tout contact récent et nouveau avec un médicament). Par la suite, la thérapeutique principale à mettre en place est une injection d'Adrénaline IV ou IM. Ici l'antibiothérapie étant administrée par voie intraveineuse, il faut conserver la perfusion et y administrer l'adrénaline en priorité par voie intraveineuse. Devant l'atteinte respiratoire sévère, il conviendra d'administrer des aérosols de Bêta 2 mimétiques pour lutter contre un bronchospasme. Vient enfin la nécessité de surveillance dans un secteur scopé.",
+    "iconography": []
+  },
+  {
+    "id": "sdd-87-2-sdd-87-grosse-jambe-rouge-aigu",
+    "source_pdf": "SDD 87. Grosse jambe rouge aigue - sujet n°2.pdf",
+    "des_group": 0,
+    "specialty": "Inconnu",
+    "sdd_number": 87,
+    "subject_number": 2,
+    "title": "Grosse jambe rouge aiguë",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "HARDY Quentin (DES dermatologie 2022)",
+      "date": "05/05/24",
+      "competency_domains": [
+        "Stratégie pertinente de la prise en charge",
+        "Stratégie diagnostique"
+      ],
+      "learning_objectives": [
+        "Item 350"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [
+        "2 chaises",
+        "une table"
+      ],
+      "time_limit_minutes": 8
+    },
+    "student_instructions": {
+      "context": "Vous êtes interne en médecine générale en stage chez le généraliste en milieu rural. Vous rendez visite chez elle, un vendredi après-midi, à Mme D., 87 ans. Lors de la visite de la semaine précédente, vous aviez suspecté une TVP pour laquelle vous aviez réalisé un bilan. Sur la prise de sang faite hier, les D-dimères sont augmentés, et la CRP à 7 mg/L. Vous concluez à une probable TVP droite, sans signe d'embolie pulmonaire associée. Ses traitements sont AMLOR, NOCTAMIDE, DAFLON. Son dernier DFG, datant de 7 jours, s'établit à 56 ml/min.",
+      "tasks": [
+        "expliquer, en terme simple, le diagnostic de TVP et sa principale complication",
+        "proposer une prise en charge diagnostique",
+        "proposer une prise en charge thérapeutique, en accord avec la patiente"
+      ],
+      "constraints": [
+        "interroger le patient",
+        "examiner la patiente",
+        "réaliser d'ordonnances"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "D.",
+        "first_name": "Mme",
+        "age": 87,
+        "gender": "F",
+        "profession": null,
+        "marital_status": "Au domicile avec son mari",
+        "children": null
+      },
+      "medical_history": {
+        "personal": [
+          "HTA",
+          "lymphœdème des 2 jambes"
+        ],
+        "family": [
+          "non pertinents"
+        ],
+        "allergies": []
+      },
+      "current_medications": [
+        "AMLOR",
+        "NOCTAMIDE",
+        "DAFLON"
+      ],
+      "toxics": {
+        "smoking": null,
+        "alcohol": null,
+        "other": null
+      },
+      "behavior": {
+        "posture": "Patiente simulée en face du généraliste, autour de la table du salon",
+        "pain": null,
+        "anxiety": null,
+        "anger": "Patiente respectueuse, mais très ferme. Pas de troubles cognitifs, mais caractère très \"trempé\". Autonome."
+      },
+      "opening_line": "Bonjour Docteur, Alors qu'a dit la prise de sang faite hier ? J'ai une phlébite c'est ça !?",
+      "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
+      "patient_questions": [
+        "Et alors docteur, je vous remercie bien pour vos bons soins, mais s'il m'arrive quelque chose ce w-e, je fais quoi ??"
+      ]
+    },
+    "qa_pairs": [],
+    "conditional_responses": [
+      {
+        "trigger": "Si proposition d'aller au SAU le plus proche",
+        "response": "Oh vous savez Docteur, j'ai horreur des hôpitaux. Et puis c'est demain que nous fêtons nos noces de platine avec mon mari et toute la famille. Je ne manquerai ça pour rien au monde. Donc hors de question d'aller à l'hôpital, ce n'est même pas la peine d'essayer Docteur"
+      },
+      {
+        "trigger": "Si proposition d'HBPM curative",
+        "response": "Surtout pas ! J'ai croisé un dentiste sadique quand j'étais môme… Depuis, j'ai une peur bleue de toute aiguille… Donc impossible de me faire la moindre piqûre, à moins d'une anesthésie générale… Déjà que pour les prises de sang c'est toute une histoire…"
+      },
+      {
+        "trigger": "Si à 5 minutes, l'étudiant.e n'a pas évoqué les consignes de surveillance dans les jours à venir",
+        "response": "Et alors docteur, je vous remercie bien pour vos bons soins, mais s'il m'arrive quelque chose ce w-e, je fais quoi ??"
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 1,
+          "description": "Explique la TVP : caillot dans une des veines de jambe",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 2,
+          "description": "Explique le terme de caillot : sang coagulé / formant un bouchon (ou tout synonyme acceptable)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 3,
+          "description": "Explique le risque aigu de la TVP : l'embolie pulmonaire",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 4,
+          "description": "Explique qu'une embolie pulmonaire correspond au déplacement du caillot de sang jusqu'aux vaisseaux du poumon",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 5,
+          "description": "Propose de prendre rdv : -en ambulatoire",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 6,
+          "description": "Propose de prendre rdv : -pour une échographie doppler veineux de jambe droite",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 7,
+          "description": "Prescrit : - un repos non strict au lit",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 8,
+          "description": "Prescrit : - un AOD",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 9,
+          "description": "Prescrit : - à débuter avant demain",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 10,
+          "description": "Prescrit : -à poursuivre jusqu'à l'échographie doppler",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 11,
+          "description": "Enonce la nécessité de consulter en cas d'aggravation des symptomes",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 12,
+          "description": "Enonce les possibilités de consultation au moins 1 parmi : 15 - SAU - consultation chez le médecin généraliste",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 13,
+          "description": "Enonce les éléments à surveiller : ok si 2 - gêne à respirer - perte de connaissance (ou quasi malaise) - douleur dans la poitrine - crachat de sang",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "APTITUDE À ÉCOUTER : le patient / le pair",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Performance Insuffisante",
+              "description": "Interrompt le patient/le pair de façon inappropriée"
+            },
+            {
+              "score": 0.25,
+              "label": "Performance Limite",
+              "description": "Se montre impatient"
+            },
+            {
+              "score": 0.5,
+              "label": "Performance Satisfaisante",
+              "description": "Est attentif aux réponses du patient/pair"
+            },
+            {
+              "score": 0.75,
+              "label": "Performance Très Satisfaisante",
+              "description": "Est attentif aux réponses du patient/pair"
+            },
+            {
+              "score": 1,
+              "label": "Performance Remarquable",
+              "description": "Porte une attention soutenue aux réponses du patient/pair et à ses préoccupations."
+            }
+          ]
+        },
+        {
+          "name": "APTITUDE À PROPOSER UNE PRISE EN CHARGE (situations aiguës / chroniques)",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Performance Insuffisante",
+              "description": "Est incapable de proposer une prise en charge adaptée à la situation clinique"
+            },
+            {
+              "score": 0.25,
+              "label": "Performance Limite",
+              "description": "Propose une prise en charge en couvrant les éléments essentiels, n'arrive pas à justifier la démarche"
+            },
+            {
+              "score": 0.5,
+              "label": "Performance Satisfaisante",
+              "description": "Propose une prise en charge en couvrant les éléments essentiels et justifie la démarche."
+            },
+            {
+              "score": 0.75,
+              "label": "Performance Très Satisfaisante",
+              "description": "Propose une prise pertinente. Ne s'attarde pas au traitement/prise en charge inutile et justifie la démarche."
+            },
+            {
+              "score": 1,
+              "label": "Performance Remarquable",
+              "description": "Établit l'ordre de priorité des différents aspects de la prise en charge du patient (hiérarchise)."
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": "La suspicion de TVP est très fréquente, avec bien souvent une absence de TVP finalement. Ici, on suspecte une TVP non provoquée a priori, chez une patiente âgée, à fonction rénale considérée comme non impactant les traitements antithrombotiques. Il n'y a pas d'argument pour une EP associée. Pas de contre-indication au traitement antithrombotique rapportée. Dans un schéma \"théorique\" possible, il aurait fallu ici réaliser au domicile de la patiente une dose d'HBPM curative, puis probablement l'adresser au SAU (pour si nécessaire échographie veineuse de débrouillage par l'urgentiste, bilan biologique, +/- d-dimères, +/-angioscanner thoracique, etc.). Le contexte particulier ici modifie ce schéma. C'était le but de l'ECOS : modifier ses propositions selon les demandes du patient, pour trouver un compromis acceptable par la patiente, et correct d'un point de vue médical. Un AOD avec échographie doppler veineux dans les jours, en ville, est licite, seulement si les consignes de surveillance sont bien énoncées à la patiente.",
+    "iconography": []
+  },
+  {
+    "id": "sdd-304-1-sdd-304-d-pistage-diab-te-gest",
+    "source_pdf": "SDD 304 - Dépistage diabète gestationnel.pdf",
+    "des_group": 0,
+    "specialty": "Inconnu",
+    "sdd_number": 304,
+    "subject_number": 1,
+    "title": "Dépistage du diabète gestationnel",
+    "format": "tacfa_patient",
+    "metadata": {
+      "author": "SAMANNI Léa (DES Endocrinologie-Diabétologie-Nutrition, ECN 2023)",
+      "date": "11/11/2023",
+      "competency_domains": [
+        "Entretien/interrogatoire",
+        "Annonce et information du patient"
+      ],
+      "learning_objectives": [
+        "Item 255 - Diabète gestationnel"
+      ],
+      "requires_simulated_patient": true,
+      "requires_mannequin": false,
+      "materials": [
+        "1 bureau",
+        "2 chaises"
+      ],
+      "time_limit_minutes": 8
+    },
+    "student_instructions": {
+      "context": "Vous êtes médecin généraliste en cabinet. Vous recevez la patiente Mme. SAVALI âgée de 38 ans. Celle-ci est enceinte de 12 semaines d'aménorrhée. Vous lui avez déjà prescrit tous les examens complémentaires obligatoires à réaliser lors de la première consultation de suivi de grossesse. Elle vous rapporte les résultats de ces derniers qui sont tous normaux et rassurants. Elle vous montre fièrement sa glycémie à jeûn, qui est à 0, 85 g/L. Elle se demande d'ailleurs pourquoi vous lui avez prescrit cette glycémie, elle vous l'a déjà dit : elle n'a pas de diabète !",
+      "tasks": [
+        "Interroger la patiente sur ses facteurs de risque de diabète gestationnel puis lui expliquer pourquoi la glycémie a été prescrite dans son cas",
+        "Expliquer à la patiente les risques maternels et foetaux associés au diabète gestationnel",
+        "Décider de la suite de la stratégie de dépistage du diabète gestationnel. Expliquer simplement à la patiente en quoi cela consiste"
+      ],
+      "constraints": [
+        "Examiner la patiente",
+        "Réaliser un interrogatoire générale",
+        "Rédiger d'ordonnance"
+      ]
+    },
+    "patient": {
+      "identity": {
+        "name": "SAVALI",
+        "first_name": "Justine",
+        "age": 38,
+        "gender": "F",
+        "profession": "comptable dans une entreprise de logistique",
+        "marital_status": "Vit avec son conjoint",
+        "children": "G1P0"
+      },
+      "medical_history": {
+        "personal": [
+          "Premières règles à 15 ans, cycles réguliers avant la mise sous pilule",
+          "Arrêt de la pilule il y a 6 mois dans ce contexte de désir de grossesse",
+          "Il s'agit de sa première grossesse (G1P0)",
+          "Cholécystectomie il y a 8 ans",
+          "Appendicectomie il y a 20 ans",
+          "Aucun ATCD cardiovasculaire"
+        ],
+        "family": [
+          "HTA chez le père"
+        ],
+        "allergies": [
+          "Aucune allergie"
+        ]
+      },
+      "current_medications": [
+        "Aucun"
+      ],
+      "toxics": {
+        "smoking": "Elle n'a jamais fumé",
+        "alcohol": "ne consomme que très rarement de l'alcool (et encore moins depuis qu'elle est enceinte)",
+        "other": ""
+      },
+      "behavior": {
+        "posture": "Patiente assise face à l'étudiant",
+        "pain": "",
+        "anxiety": "",
+        "anger": "Patiente un peu \"rebelle\", qui ne comprend pas pourquoi on lui parle de diabète et qu'il faudra motiver pour faire l'HGPO du deuxième trimestre !"
+      },
+      "opening_line": "Bon je vous l'avais dit docteur : je n'ai pas de diabète moi ! Je ne comprends pas pourquoi vous m'avez prescrit cette glycémie d'ailleurs",
+      "scenario_instructions": "Ce que tu peux dire spontanément ou sous condition est clairement indiqué. Si le candidat pose une question dont la réponse ne se trouve pas dans le scénario, n'improvise pas et réponds « je ne sais pas » ou « c'est normal ».",
+      "patient_questions": [
+        "Donc si j'ai bien compris ma glycémie est normale sur la prise de sang, est-ce que je dois faire d'autres tests maintenant ?"
+      ]
+    },
+    "qa_pairs": [],
+    "conditional_responses": [
+      {
+        "trigger": "Si l'étudiant(e) demande à la patiente son poids et sa taille",
+        "response": "Je mesure 1m60, je crois que je pèse 73kg, et mon IMC est de 28, c'est vous qui l'avez calculé docteur la dernière fois"
+      },
+      {
+        "trigger": "Si l'étudiant(e) demande à la patiente si elle a des antécédents personnels de diabète gestationnel et/ou de macrosomie foetale",
+        "response": "C'est ma première grossesse docteur"
+      },
+      {
+        "trigger": "Si l'étudiant(e) demande à la patiente si elle a des antécédents familiaux de diabète (type 1 ou 2)",
+        "response": "Personne n'a de diabète dans ma famille, je ne vois pas pourquoi j'en aurais"
+      },
+      {
+        "trigger": "Si l'étudiant(e) demande à la patiente ses antécédents personnels autres",
+        "response": "Oh pas grand chose, une opération de la vésicule biliaire et les amygdales quand j'étais petite"
+      },
+      {
+        "trigger": "Si l'étudiant(e) demande à la patiente ses antécédents familiaux autres",
+        "response": "Mon père, il a de la tension je crois"
+      }
+    ],
+    "evaluation_grid": {
+      "tasks": [
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 1,
+          "description": "L'étudiant(e) demande à la patiente son IMC OU les éléments de mesure permettant de le calculer (poids ET taille)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 2,
+          "description": "L'étudiant(e) demande à la patiente si elle a des antécédents personnels de diabète gestationnel",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 3,
+          "description": "L'étudiant(e) demande à la patiente si elle a des antécédents de macrosomie foetale (poids de naissance > 4 kg)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 4,
+          "description": "L'étudiant demande à la patiente si elle a des antécédents familiaux au premier degré (père, frère, mère, sœur) de diabète (de type 2)",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 5,
+          "description": "L'étudiant explique à la patiente qu'au vu de son âge ET de son IMC, elle est à risque de développer un diabète gestationnel",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 6,
+          "description": "L'étudiant explique à la patiente les risques maternels associés au diabète gestationnel au cours de la grossesse et de l'accouchement : Pré-éclampsie et/ou HTA gravidique, Césarienne",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 7,
+          "description": "L'étudiant explique à la patiente les risques maternels associés au diabète gestationnel au DÉCOURS de la grossesse : Augmentation du risque cardio-vasculaire, Risque ultérieur de développer un diabète de type 2, Syndrome métabolique",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 8,
+          "description": "L'étudiant explique à la patiente les risques foetaux associés au diabète gestationnel : Macrosomie foetale, Hypoglycémie néonatale sévère",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 9,
+          "description": "Il explique aussi le risque pour le foetus de développer ultérieurement : Obésité, HTA, Diabète de type 2",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 10,
+          "description": "Etudiant explique à la patiente qu'il faudrait faire une hyperglycémie provoquée par voie orale, à réaliser entre 24 et 28 SA",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        },
+        {
+          "task_group": "Aptitudes cliniques",
+          "item_number": 11,
+          "description": "Explications simples de l'étudiant(e) sur le test d'hyperglycémie provoquée par voie orale : première prise de sang à jeûn, puis ingestion de 75g de glucose, et mesure de la glycémie à 1h et à 2h",
+          "points": 1,
+          "scoring_type": "binary",
+          "acceptable_answers": []
+        }
+      ],
+      "communication_rubrics": [
+        {
+          "name": "APTITUDE A FOURNIR LES RENSEIGNEMENTS AU PATIENT / AUX AIDANTS",
+          "levels": [
+            {
+              "score": 0,
+              "label": "Performance Insuffisante",
+              "description": "Renseigne le patient / aidant de manière inadaptée (ex. informations incomplètes ou inadaptées au niveau de compréhension du patient). Ne fait aucun effort pour renseigner le patient/aidant"
+            },
+            {
+              "score": 0.25,
+              "label": "Performance Limite",
+              "description": "Donne des renseignements de façon incomplète ou s'attarde à des détails non pertinents. Eloigné du problème"
+            },
+            {
+              "score": 0.5,
+              "label": "Performance Satisfaisante",
+              "description": "Donne des renseignements de façon adaptée. Veille quelque peu à ce que le patient / aidant comprenne"
+            },
+            {
+              "score": 0.75,
+              "label": "Performance Très Satisfaisante",
+              "description": "Donne des renseignements de façon adaptée. Veille à ce que le patient / aidant comprenne"
+            },
+            {
+              "score": 1,
+              "label": "Performance Remarquable",
+              "description": "Renseigne avec justesse et illustre ses propos pour qu'elles soient bien comprises"
+            }
+          ]
+        }
+      ]
+    },
+    "reference_sheet": null,
+    "iconography": []
+  }
+]

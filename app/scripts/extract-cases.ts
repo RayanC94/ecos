@@ -24,6 +24,64 @@ if (!ANTHROPIC_API_KEY) {
 const anthropic = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
 const PDF_ROOT = path.resolve(__dirname, "../../Banque de sujets ECOS");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
+const ANNEXES_PUBLIC_DIR = path.resolve(__dirname, "../public/annexes");
+
+// ---- Annexe helpers (tacfa_patient uniquement) ----
+
+function findImageFiles(folder: string): string[] {
+  const extensions = [".jpg", ".jpeg", ".png", ".gif"];
+  try {
+    const entries = fs.readdirSync(folder, { withFileTypes: true });
+    return entries
+      .filter(
+        (e) =>
+          e.isFile() &&
+          extensions.includes(path.extname(e.name).toLowerCase())
+      )
+      .map((e) => path.join(folder, e.name));
+  } catch {
+    return [];
+  }
+}
+
+function classifyAnnex(filename: string): "ecg" | "photo" | "lab" | "other" {
+  const lower = filename.toLowerCase();
+  if (lower.includes("ecg") || lower.includes("electrocardiogramme")) return "ecg";
+  if (
+    lower.includes("labo") ||
+    lower.includes("biologie") ||
+    lower.includes("analyse") ||
+    lower.includes("eps")
+  )
+    return "lab";
+  const ext = path.extname(lower);
+  if ([".jpg", ".jpeg", ".png"].includes(ext)) return "photo";
+  return "other";
+}
+
+function copyAnnexes(
+  imageFiles: string[],
+  caseId: string
+): Array<{ filename: string; description: string; type: string; url: string }> {
+  if (imageFiles.length === 0) return [];
+
+  const targetDir = path.join(ANNEXES_PUBLIC_DIR, caseId);
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+
+  return imageFiles.map((filePath) => {
+    const filename = path.basename(filePath);
+    const targetPath = path.join(targetDir, filename);
+    fs.copyFileSync(filePath, targetPath);
+    return {
+      filename,
+      description: "",
+      type: classifyAnnex(filename),
+      url: `/annexes/${caseId}/${encodeURIComponent(filename)}`,
+    };
+  });
+}
 
 // DES group mapping from folder names
 const DES_MAP: Record<string, { des_group: number; specialty: string }> = {
@@ -236,14 +294,27 @@ async function extractCase(
     const { des_group, specialty } = findDesGroup(folderName);
     const sddNumber = parsed.sdd_number ?? 0;
     const subjectNumber = parsed.subject_number ?? 1;
+    const caseId = generateCaseId(sddNumber, subjectNumber, folderName);
 
-    return {
-      id: generateCaseId(sddNumber, subjectNumber, folderName),
+    const baseResult: Record<string, unknown> = {
+      id: caseId,
       source_pdf: fileName,
       des_group,
       specialty: parsed.specialty ?? specialty,
       ...parsed,
     };
+
+    // Scan le dossier pour les images — uniquement pour les cas avec patient simulé
+    if (parsed.format === "tacfa_patient" || parsed.metadata?.requires_simulated_patient === true) {
+      const caseFolder = path.dirname(filePath);
+      const imageFiles = findImageFiles(caseFolder);
+      if (imageFiles.length > 0) {
+        baseResult.iconography = copyAnnexes(imageFiles, caseId);
+        console.log(`    Annexes: ${imageFiles.length} image(s) copiée(s)`);
+      }
+    }
+
+    return baseResult;
   } catch (error) {
     console.error(`    ERROR extracting ${fileName}:`, error);
     return null;
