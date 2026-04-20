@@ -99,12 +99,13 @@ export function ConclusionDialog({
           />
         </div>
 
-        <div className="flex gap-2 justify-end mt-3">
+        <div className="flex flex-col-reverse sm:flex-row gap-2 sm:justify-end mt-3">
           {!timeUp && (
             <Button
               variant="outline"
               onClick={onCancel}
               disabled={submitting}
+              className="w-full sm:w-auto"
             >
               Retour
             </Button>
@@ -112,7 +113,7 @@ export function ConclusionDialog({
           <Button
             onClick={handleSubmit}
             disabled={submitting}
-            className="flex-1 sm:flex-none"
+            className="w-full sm:w-auto"
           >
             {submitting ? "Évaluation en cours…" : "Conclure et être évalué·e"}
           </Button>

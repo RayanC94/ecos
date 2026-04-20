@@ -80,29 +80,30 @@ export default function ResultsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="border-b bg-white">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="max-w-3xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <Link href="/cases">
-              <Button variant="ghost" size="sm">
-                ← Cas cliniques
+              <Button variant="ghost" size="sm" className="shrink-0 text-xs sm:text-sm">
+                <span className="sm:hidden">←</span>
+                <span className="hidden sm:inline">← Cas cliniques</span>
               </Button>
             </Link>
-            <h1 className="font-semibold text-gray-900 truncate">
+            <h1 className="font-semibold text-sm sm:text-base text-gray-900 truncate min-w-0">
               Résultats{caseTitle ? ` — ${caseTitle}` : ""}
             </h1>
           </div>
         </div>
       </header>
 
-      <main className="max-w-3xl mx-auto px-4 py-8">
+      <main className="max-w-3xl mx-auto px-3 sm:px-4 py-5 sm:py-8">
         <ResultsSummary evaluation={evaluation} />
 
-        <div className="flex gap-4 justify-center mt-8 pb-8">
-          <Link href={`/cases/${evaluation.case_id}`}>
-            <Button variant="outline">Recommencer ce cas</Button>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-8 pb-6 sm:pb-8">
+          <Link href={`/cases/${evaluation.case_id}`} className="w-full sm:w-auto">
+            <Button variant="outline" className="w-full sm:w-auto">Recommencer ce cas</Button>
           </Link>
-          <Link href="/cases">
-            <Button>Cas suivant</Button>
+          <Link href="/cases" className="w-full sm:w-auto">
+            <Button className="w-full sm:w-auto">Cas suivant</Button>
           </Link>
         </div>
       </main>

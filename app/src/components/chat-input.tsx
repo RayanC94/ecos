@@ -51,7 +51,7 @@ export function ChatInput({
           size="icon"
           onClick={isListening ? stopListening : startListening}
           disabled={disabled}
-          className={`shrink-0 h-10 w-10 ${isListening ? "animate-pulse" : ""}`}
+          className={`shrink-0 h-11 w-11 sm:h-10 sm:w-10 ${isListening ? "animate-pulse" : ""}`}
           aria-label={isListening ? "Arrêter la dictée" : "Dicter"}
           title={
             isListening
@@ -60,9 +60,9 @@ export function ChatInput({
           }
         >
           {isListening ? (
-            <MicOff className="h-4 w-4" />
+            <MicOff className="h-5 w-5 sm:h-4 sm:w-4" />
           ) : (
-            <Mic className="h-4 w-4" />
+            <Mic className="h-5 w-5 sm:h-4 sm:w-4" />
           )}
         </Button>
       )}
@@ -77,14 +77,14 @@ export function ChatInput({
         }}
         placeholder={isListening ? "Dictée en cours — parlez…" : placeholder}
         disabled={disabled}
-        className="flex-1 text-base"
+        className="flex-1 text-base h-11 sm:h-10"
         autoFocus
       />
       <Button
         onClick={handleSubmit}
         disabled={disabled || !value.trim()}
         size="default"
-        className="shrink-0"
+        className="shrink-0 h-11 sm:h-10"
       >
         Envoyer
       </Button>

@@ -342,16 +342,17 @@ export default function SessionPage() {
 
   return (
     <div className="h-dvh flex flex-col bg-white overflow-hidden">
-      <header className="border-b bg-white px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-between shrink-0 gap-2">
-        <div className="flex items-center gap-2 min-w-0">
+      <header className="border-b bg-white px-2 py-2 sm:px-4 sm:py-3 flex items-center justify-between shrink-0 gap-2">
+        <div className="flex items-center gap-1 sm:gap-2 min-w-0 flex-1">
           <Link href="/cases">
-            <Button variant="ghost" size="icon" className="h-9 w-9 shrink-0 text-base">
+            <Button variant="ghost" size="icon" className="h-10 w-10 shrink-0 text-base">
               ←
             </Button>
           </Link>
-          <div className="min-w-0">
-            <h1 className="font-semibold text-xs sm:text-sm text-gray-900 truncate max-w-[150px] sm:max-w-[300px]">
-              SDD {caseData.sdd_number} — {caseData.title}
+          <div className="min-w-0 flex-1">
+            <h1 className="font-semibold text-xs sm:text-sm text-gray-900 truncate">
+              <span className="sm:hidden">SDD {caseData.sdd_number}</span>
+              <span className="hidden sm:inline">SDD {caseData.sdd_number} — {caseData.title}</span>
             </h1>
             <p className="text-[10px] text-gray-400 hidden sm:block">
               {caseData.specialty}
@@ -359,7 +360,7 @@ export default function SessionPage() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <Timer
             formatted={timer.formatted}
             timerState={timer.timerState}
@@ -370,7 +371,7 @@ export default function SessionPage() {
             size="default"
             onClick={() => setExamMode((v) => !v)}
             disabled={sessionEnded}
-            className="h-10 gap-2 px-3 font-medium"
+            className="h-10 gap-1.5 sm:gap-2 px-2 sm:px-3 font-medium"
             title={
               examMode
                 ? "Désactiver le mode examen (afficher l'historique)"
@@ -390,7 +391,7 @@ export default function SessionPage() {
             size="default"
             onClick={() => setShowConclusion(true)}
             disabled={sessionEnded}
-            className="h-10 px-3 sm:px-4 font-medium"
+            className="h-10 px-2.5 sm:px-4 text-sm font-medium"
           >
             Terminer
           </Button>
@@ -399,7 +400,7 @@ export default function SessionPage() {
 
       {/* Oral mode — the headline feature, big and central under the header. */}
       <div
-        className={`border-b shrink-0 px-3 py-3 sm:px-5 sm:py-3 transition-colors ${
+        className={`border-b shrink-0 px-3 py-2.5 sm:px-5 sm:py-3 transition-colors ${
           conversationMode
             ? oralModeStatus === "listening"
               ? "bg-gradient-to-r from-red-50 via-rose-50 to-amber-50"
@@ -407,12 +408,12 @@ export default function SessionPage() {
             : "bg-gradient-to-r from-teal-50 via-emerald-50 to-teal-50"
         }`}
       >
-        <div className="flex items-center gap-3 flex-wrap">
+        <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
           <Button
             onClick={() => setConversationMode((v) => !v)}
             disabled={sessionEnded}
             size="lg"
-            className={`gap-2.5 h-12 px-5 sm:px-6 text-base font-bold shadow-md transition-all ${
+            className={`gap-2 h-11 sm:h-12 px-4 sm:px-6 text-sm sm:text-base font-bold shadow-md transition-all ${
               conversationMode
                 ? "bg-red-600 hover:bg-red-700 text-white ring-2 ring-red-300"
                 : "bg-teal-600 hover:bg-teal-700 text-white ring-2 ring-teal-300"
@@ -424,9 +425,14 @@ export default function SessionPage() {
               <Mic className="h-5 w-5" />
             )}
             <span>
-              {conversationMode
-                ? "Arrêter l'oral"
-                : "🎙 Parler au patient"}
+              {conversationMode ? (
+                "Arrêter l'oral"
+              ) : (
+                <>
+                  <span className="sm:hidden">Parler</span>
+                  <span className="hidden sm:inline">🎙 Parler au patient</span>
+                </>
+              )}
             </span>
           </Button>
 
@@ -435,52 +441,60 @@ export default function SessionPage() {
             <select
               value={ttsRate}
               onChange={(e) => setTtsRate(Number(e.target.value))}
-              className="h-9 rounded-md border border-gray-300 bg-white px-2 text-xs font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-400"
+              className="h-11 sm:h-9 rounded-md border border-gray-300 bg-white px-2 text-sm sm:text-xs font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-400"
               title="Vitesse de la voix du patient"
             >
-              <option value={1}>Normal (1×)</option>
-              <option value={1.25}>Rapide (1.25×)</option>
-              <option value={1.5}>Très rapide (1.5×)</option>
-              <option value={2}>Ultra rapide (2×)</option>
+              <option value={1}>1×</option>
+              <option value={1.25}>1.25×</option>
+              <option value={1.5}>1.5×</option>
+              <option value={2}>2×</option>
             </select>
           </label>
 
           {conversationMode && (
             <>
-              <div className="flex items-center gap-2">
-                <span
-                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${
-                    oralModeStatus === "listening"
-                      ? "bg-red-100 text-red-700 animate-pulse"
-                      : oralModeStatus === "thinking"
-                        ? "bg-amber-100 text-amber-700"
-                        : "bg-teal-100 text-teal-700"
-                  }`}
-                >
-                  <span className="h-2 w-2 rounded-full bg-current" />
+              <span
+                className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold ${
+                  oralModeStatus === "listening"
+                    ? "bg-red-100 text-red-700 animate-pulse"
+                    : oralModeStatus === "thinking"
+                      ? "bg-amber-100 text-amber-700"
+                      : "bg-teal-100 text-teal-700"
+                }`}
+              >
+                <span className="h-2 w-2 rounded-full bg-current" />
+                <span className="sm:hidden">
+                  {oralModeStatus === "listening"
+                    ? "Écoute"
+                    : oralModeStatus === "thinking"
+                      ? "Réfléchit"
+                      : "Répond"}
+                </span>
+                <span className="hidden sm:inline">
                   {oralModeStatus === "listening"
                     ? "Je vous écoute…"
                     : oralModeStatus === "thinking"
                       ? "Le patient réfléchit…"
                       : "Le patient répond…"}
                 </span>
-              </div>
+              </span>
               <Button
                 type="button"
                 variant="outline"
                 size="sm"
                 onClick={manualRestartListening}
-                className="h-9 gap-1.5"
+                className="h-11 sm:h-9 gap-1.5 ml-auto sm:ml-0"
                 title="Si le micro reste bloqué, cliquez pour reprendre l'écoute"
               >
                 <RefreshCw className="h-3.5 w-3.5" />
-                <span>Reprendre l'écoute</span>
+                <span className="hidden sm:inline">Reprendre l'écoute</span>
+                <span className="sm:hidden">Reprendre</span>
               </Button>
             </>
           )}
 
           {!conversationMode && (
-            <p className="text-xs sm:text-sm text-gray-600 leading-tight">
+            <p className="hidden sm:block text-xs sm:text-sm text-gray-600 leading-tight">
               Mode oral mains libres — parlez au patient, il vous répond à
               voix haute.
             </p>

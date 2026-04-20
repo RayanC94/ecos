@@ -21,8 +21,8 @@ export function ContextPanel({ caseData, autoCollapse = false }: ContextPanelPro
 
   if (isCollapsed) {
     return (
-      <div className="border-b bg-gray-50 px-4 py-2 flex items-center justify-between">
-        <span className="text-sm text-gray-500">Consignes masquées</span>
+      <div className="border-b bg-gray-50 px-3 sm:px-4 py-1.5 sm:py-2 flex items-center justify-between">
+        <span className="text-xs sm:text-sm text-gray-500">Consignes masquées</span>
         <Button
           variant="ghost"
           size="sm"
@@ -35,16 +35,16 @@ export function ContextPanel({ caseData, autoCollapse = false }: ContextPanelPro
   }
 
   return (
-    <div className="border-b bg-blue-50/50 px-6 py-4">
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="font-semibold text-sm text-blue-900">
+    <div className="border-b bg-blue-50/50 px-3 sm:px-6 py-3 sm:py-4 max-h-[40vh] overflow-y-auto">
+      <div className="flex items-center justify-between mb-2 sm:mb-3 gap-2">
+        <h3 className="font-semibold text-xs sm:text-sm text-blue-900 min-w-0 truncate">
           Consignes - {caseData.title}
         </h3>
         <Button
           variant="ghost"
           size="sm"
           onClick={() => setIsCollapsed(true)}
-          className="text-xs"
+          className="text-xs shrink-0"
         >
           Masquer
         </Button>

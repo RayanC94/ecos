@@ -55,18 +55,18 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="border-b bg-white">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-blue-900">
+        <div className="max-w-5xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between gap-2">
+          <Link href="/" className="text-base sm:text-xl font-bold text-blue-900 truncate">
             ECOS Simulateur
           </Link>
-          <nav className="flex gap-4">
+          <nav className="flex gap-1 sm:gap-4 shrink-0">
             <Link href="/cases">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="text-xs sm:text-sm px-2 sm:px-3">
                 Cas cliniques
               </Button>
             </Link>
             <Link href="/dashboard">
-              <Button variant="ghost" size="sm" className="font-medium">
+              <Button variant="ghost" size="sm" className="font-medium text-xs sm:text-sm px-2 sm:px-3">
                 Progression
               </Button>
             </Link>
@@ -74,8 +74,8 @@ export default function DashboardPage() {
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-4 py-8 space-y-6">
-        <h2 className="text-2xl font-bold text-gray-900">Ma progression</h2>
+      <main className="max-w-5xl mx-auto px-3 sm:px-4 py-5 sm:py-8 space-y-5 sm:space-y-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Ma progression</h2>
 
         {loading ? (
           <div className="text-center py-12 text-gray-400">Chargement...</div>

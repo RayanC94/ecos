@@ -60,18 +60,18 @@ export default function CasesPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="border-b bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-blue-900">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between gap-2">
+          <Link href="/" className="text-base sm:text-xl font-bold text-blue-900 truncate">
             ECOS Simulateur
           </Link>
-          <nav className="flex gap-4">
+          <nav className="flex gap-1 sm:gap-4 shrink-0">
             <Link href="/cases">
-              <Button variant="ghost" size="sm" className="font-medium">
+              <Button variant="ghost" size="sm" className="font-medium text-xs sm:text-sm px-2 sm:px-3">
                 Cas cliniques
               </Button>
             </Link>
             <Link href="/dashboard">
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="text-xs sm:text-sm px-2 sm:px-3">
                 Progression
               </Button>
             </Link>
@@ -79,7 +79,7 @@ export default function CasesPage() {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-4 py-6 flex gap-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 flex gap-6">
         {/* Sidebar */}
         <aside className="w-64 shrink-0 hidden lg:block">
           <div className="sticky top-6">
@@ -93,15 +93,15 @@ export default function CasesPage() {
 
         {/* Main content */}
         <main className="flex-1 min-w-0">
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
               Cas cliniques
             </h2>
             <Input
-              placeholder="Rechercher un cas (titre, spécialité, SDD)..."
+              placeholder="Rechercher (titre, spécialité, SDD)..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="max-w-md"
+              className="max-w-md text-base h-11 sm:h-10"
             />
           </div>
 

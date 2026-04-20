@@ -86,6 +86,8 @@ function AnnexViewer({ annex, onClose }: AnnexViewerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const draggingRef = useRef(false);
   const dragStartRef = useRef({ x: 0, y: 0, sl: 0, st: 0 });
+  // Pinch-zoom state: distance + scale captured at gesture start.
+  const pinchRef = useRef<{ dist: number; scale: number } | null>(null);
 
   // ESC to close.
   useEffect(() => {
@@ -149,6 +151,51 @@ function AnnexViewer({ annex, onClose }: AnnexViewerProps) {
     draggingRef.current = false;
   }
 
+  // Touch handling: single-finger uses native scroll via touch-pan-*
+  // CSS, so we only intercept pinch (two fingers) to drive zoom. Native
+  // overscroll + momentum then remain snappy on iOS Safari.
+  function touchDistance(t: React.TouchList): number {
+    const a = t[0];
+    const b = t[1];
+    const dx = a.clientX - b.clientX;
+    const dy = a.clientY - b.clientY;
+    return Math.hypot(dx, dy);
+  }
+
+  function onTouchStart(e: React.TouchEvent) {
+    if (e.touches.length === 2) {
+      const currentScale =
+        scale ??
+        (natural && containerRef.current
+          ? Math.min(
+              containerRef.current.clientWidth / natural.w,
+              containerRef.current.clientHeight / natural.h
+            )
+          : 1);
+      pinchRef.current = {
+        dist: touchDistance(e.touches),
+        scale: currentScale,
+      };
+    }
+  }
+
+  function onTouchMove(e: React.TouchEvent) {
+    if (e.touches.length === 2 && pinchRef.current) {
+      e.preventDefault();
+      const d = touchDistance(e.touches);
+      const ratio = d / pinchRef.current.dist;
+      const next = Math.max(
+        MIN_SCALE,
+        Math.min(MAX_SCALE, pinchRef.current.scale * ratio)
+      );
+      setScale(next);
+    }
+  }
+
+  function onTouchEnd(e: React.TouchEvent) {
+    if (e.touches.length < 2) pinchRef.current = null;
+  }
+
   // Auto-fill: on first load, pick a default zoom that fills the
   // viewport nicely — if the natural image is smaller than the
   // container, bump it up; otherwise leave it in fit mode.
@@ -206,39 +253,39 @@ function AnnexViewer({ annex, onClose }: AnnexViewerProps) {
               <span className="text-gray-600"> — {annex.description}</span>
             )}
           </h2>
-          <div className="flex items-center gap-1 shrink-0">
+          <div className="flex items-center gap-0.5 sm:gap-1 shrink-0">
             <button
               type="button"
               onClick={zoomOut}
               title="Dézoomer (−)"
-              className="p-1.5 rounded hover:bg-gray-100 text-gray-700"
+              className="h-10 w-10 sm:h-9 sm:w-9 flex items-center justify-center rounded hover:bg-gray-100 text-gray-700"
             >
-              <Minus className="h-4 w-4" />
+              <Minus className="h-5 w-5 sm:h-4 sm:w-4" />
             </button>
-            <span className="text-xs font-mono tabular-nums w-16 text-center text-gray-600">
+            <span className="text-xs font-mono tabular-nums w-12 sm:w-16 text-center text-gray-600">
               {currentScaleText}
             </span>
             <button
               type="button"
               onClick={zoomIn}
               title="Zoomer (+)"
-              className="p-1.5 rounded hover:bg-gray-100 text-gray-700"
+              className="h-10 w-10 sm:h-9 sm:w-9 flex items-center justify-center rounded hover:bg-gray-100 text-gray-700"
             >
-              <Plus className="h-4 w-4" />
+              <Plus className="h-5 w-5 sm:h-4 sm:w-4" />
             </button>
             <button
               type="button"
               onClick={fit}
               title="Ajuster (0)"
-              className="p-1.5 rounded hover:bg-gray-100 text-gray-700 ml-1"
+              className="h-10 w-10 sm:h-9 sm:w-9 flex items-center justify-center rounded hover:bg-gray-100 text-gray-700 ml-0.5 sm:ml-1"
             >
-              <Maximize2 className="h-4 w-4" />
+              <Maximize2 className="h-5 w-5 sm:h-4 sm:w-4" />
             </button>
             <button
               type="button"
               onClick={onClose}
               title="Fermer (Échap)"
-              className="p-1.5 rounded hover:bg-red-50 hover:text-red-600 text-gray-700 ml-1"
+              className="h-10 w-10 sm:h-9 sm:w-9 flex items-center justify-center rounded hover:bg-red-50 hover:text-red-600 text-gray-700 ml-0.5 sm:ml-1"
             >
               <X className="h-5 w-5" />
             </button>
@@ -251,6 +298,10 @@ function AnnexViewer({ annex, onClose }: AnnexViewerProps) {
           onMouseUp={endDrag}
           onMouseLeave={endDrag}
           onWheel={onWheel}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          style={{ touchAction: "pan-x pan-y" }}
           className={`flex-1 min-h-0 overflow-auto bg-gray-100 select-none ${
             scale === null ? "flex items-center justify-center" : "cursor-grab active:cursor-grabbing"
           }`}
@@ -267,7 +318,8 @@ function AnnexViewer({ annex, onClose }: AnnexViewerProps) {
           />
         </div>
         <footer className="shrink-0 border-t bg-gray-50 px-3 py-1.5 text-[11px] text-gray-500 flex items-center justify-center gap-4">
-          <span>Cliquez-glissez pour déplacer</span>
+          <span className="sm:hidden">Pincer pour zoomer · glisser pour déplacer</span>
+          <span className="hidden sm:inline">Cliquez-glissez pour déplacer</span>
           <span className="hidden sm:inline">·</span>
           <span className="hidden sm:inline">Ctrl + molette pour zoomer</span>
           <span className="hidden sm:inline">·</span>
